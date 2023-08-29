@@ -1,57 +1,78 @@
 import React, { useEffect, useState } from "react";
 import { Card, Button, Col, Row, Container, Image,Carousel } from 'react-bootstrap';
-import configData from '../config.json';
+
 
 
 const Home = () => {
   
   
-  const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-
-  const fetchMovies = async () => {
-    setLoading(true);
-    let url = "";
-    url = `${configData.SERVER_URL}home_banner?_embed&status=publish&order=asc`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      //console.log(data);
-      setMovies(data);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchMovies();
-    
-  }, []);
 
   return (
    <Carousel>
-    {loading && <h2 className="loading">Loading...</h2>}
-        {
-          movies.map((home) => {
-            return (
-              <Carousel.Item key={home.id}>
+
+              <Carousel.Item>
               <Image
                 className="w-100 m-tm-none"
-                src={home['acf']['rest_api_home_banner']['url']}
-                alt={home['title']['rendered']}
+                src='/images/HomeBanner-1.jpeg'
+                alt="walmart vridhi"
               />
               <Image
                 className="w-100 d-sm-none"
-                src={home['acf']['rest_api_mobile_banner']['url']}
-                alt={home['title']['rendered']}
+                src='/images/HomeBanner-2.jpeg'
+                alt="walmart vridhi"
               />
 
+      </Carousel.Item>
+      <Carousel.Item>
+              <Image
+                className="w-100 m-tm-none"
+                src='/images/HomeBanner-2.jpeg'
+                alt="walmart vridhi"
+              />
+              <Image
+                className="w-100 d-sm-none"
+                src='/images/HomeBanner-2.jpeg'
+                alt="walmart vridhi"
+              />
+      </Carousel.Item>
+      <Carousel.Item>
+              <Image
+                className="w-100 m-tm-none"
+                src='/images/HomeBanner-3.jpeg'
+                alt="walmart vridhi"
+              />
+              <Image
+                className="w-100 d-sm-none"
+                src='/images/HomeBanner-3.jpeg'
+                alt="walmart vridhi"
+              />
+      </Carousel.Item>
+      <Carousel.Item>
+              <Image
+                className="w-100 m-tm-none"
+                src='/images/HomeBanner-4.jpeg'
+                alt="walmart vridhi"
+              />
+              <Image
+                className="w-100 d-sm-none"
+                src='/images/HomeBanner-4.jpeg'
+                alt="walmart vridhi"
+              />
+      </Carousel.Item>
+      <Carousel.Item>
+              <Image
+                className="w-100 m-tm-none"
+                src='/images/HomeBanner-5.jpeg'
+                alt="walmart vridhi"
+              />
+              <Image
+                className="w-100 d-sm-none"
+                src='/images/HomeBanner-5.jpeg'
+                alt="walmart vridhi"
+              />
             </Carousel.Item>
-              
-            )
-          })}
+
+           
        </Carousel>
     
   );
