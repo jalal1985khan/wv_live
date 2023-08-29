@@ -1,6 +1,6 @@
 // next.config.js
 module.exports = {
   images: {
-    domains: ['wvstaging.ivistasolutions.biz'],
+    domains: ['wvstaging.ivistasolutions.biz','walmartvriddhi.vercel.app'],
   },
 }
