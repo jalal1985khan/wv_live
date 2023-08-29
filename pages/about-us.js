@@ -45,7 +45,7 @@ function ContainerExample() {
         </Col>
       </Row> 
 <Row>
-<Col>
+          <Col xs={12} lg={3}>
 <Card className="rounded-0 border-0 card-logo mb-2">
       <Card.Body className="about-card-body">
         <Image
@@ -60,7 +60,7 @@ function ContainerExample() {
       </Card.Body>
     </Card>
 </Col>    
-<Col>
+<Col xs={12} lg={3}>
 <Card className="rounded-0 border-0 card-logo mb-2">
       <Card.Body className="about-card-body">
         
@@ -76,7 +76,7 @@ function ContainerExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col xs={12} lg={3}>
 <Card className="rounded-0 border-0 card-logo mb-2">
       <Card.Body className="about-card-body">
         
@@ -93,7 +93,7 @@ function ContainerExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col xs={12} lg={3}>
 <Card className="rounded-0 border-0 card-logo">
       <Card.Body className="about-card-body">
         
