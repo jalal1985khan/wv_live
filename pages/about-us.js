@@ -1,10 +1,9 @@
-import {Container, Row, Col,Image, Card, Button} from 'react-bootstrap';
+import {Container, Row, Col, Card, Button} from 'react-bootstrap';
+import Image from 'next/image'
 import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
 import Footer from '../components/Footer';
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
 
 function ContainerExample() {
   return (
@@ -12,12 +11,11 @@ function ContainerExample() {
     <Header/>
     <Image
       src="/images/banner_about.jpeg"
-      width="100%"
+      width="800"
       height="620"
       background='no-repeat'
       background-size= 'cover'
-      
-      className="banner-img"
+      className="banner-img w-100 h-100"
       
     />
     <Brand/>
@@ -26,8 +24,11 @@ function ContainerExample() {
         <Col className="text-center">
         <p className="fs-1 bogle-bold walmart-default mt-4">About Walmart Vriddhi</p>
 <Image
-                  src='/images/line-svg-png-1.png'
-                  alt=''
+              src='/images/line-svg-png-1.png'
+              alt=''
+              width={100}
+              height={25}
+              className=""
                 />
 <p className="col-md-8 mx-auto text-center fs-4">Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets.
 
@@ -50,6 +51,9 @@ function ContainerExample() {
         <Image
                   src="/images/flipkart-1.png"
                   alt=''
+                  width={400}
+                  height={400}
+                  className="img-fluid"
          
                 />
         <div className="card-hover text-white fs-5">The Flipkart Group is one of India’s digital commerce leaders and includes group companies like Flipkart, Flipkart Wholesale, and Myntra.</div>
@@ -63,6 +67,9 @@ function ContainerExample() {
         <Image
                   src="/images/flipkart-wholesale.png"
                   alt=''
+                  width={200}
+                  height={200}
+                  className="img-fluid"
          
                 />
         <div className="card-hover text-white fs-5">Flipkart Wholesale is transforming the Kirana retail ecosystem in India by leveraging cutting-edge and locally developed technology.</div>
@@ -77,6 +84,9 @@ function ContainerExample() {
                   src="/images/Walmart-global-sourcing.png"
                   alt=''
                   effect="blur"
+                  width={200}
+                  height={200}
+                  className="img-fluid"
                 />
         <div className="card-hover text-white fs-5">Walmart Global Sourcing has long been giving Indian manufacturers a way to sell their products, including apparel, homeware, jewelry, hardlines, and more, in overseas markets such as the U.S., Canada, Mexico, Central America, and the United Kingdom.
 </div>
@@ -90,6 +100,9 @@ function ContainerExample() {
         <Image
                   src="/images/Walmart-Marketplace.png"
                   alt=''
+                  width={200}
+                  height={200}
+                  className="img-fluid"
                   
                 />
         <div className="card-hover text-white fs-5">Walmart Marketplace allows third-party sellers to list their items on Walmart’s website. MSMEs have the unique opportunity to reach over 100 million unique Walmart.com visitors each month.</div>
@@ -104,6 +117,9 @@ function ContainerExample() {
 <Image
                   src="/images/white-logo-swasti.png"
                   alt=''
+                  width={200}
+              height={100}
+              className="img-fluid"
                   
                 />
 <p>Swasti, a member of the Catalyst family, was founded in 2004. Swasti co-designs demonstrable and scalable solution models for businesses in partnership with communities on the ground and influences policies nationally and internationally. Swasti is helping communities, governments, and partners shape safe, secure, healthy and more prosperous lives across the world through various initiatives that reach over 400,000 people.
@@ -115,8 +131,10 @@ Over the past eight years, Walmart and Swasti have shared a meaningful partnersh
 <Image
                   src="/images/about-us.png"
                   alt=''
+                  width={600}
+                  height={600}
                   
-                  className="ab-image m-tm-none"
+                  className="ab-image m-tm-none img-fluid"
                 />
 </Col>
 </Row>
