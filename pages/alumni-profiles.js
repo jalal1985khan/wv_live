@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { Card, Button, Col, Row, Container, Image } from 'react-bootstrap';
 import Link from 'next/link'
 import Header from '../components/Header';
@@ -6,11 +6,12 @@ import Brand from '../components/BrandLogo';
 import Footer from '../components/Footer';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
-import { usePathname } from 'next/navigation'
 import Carousel from '../components/AlumniCarousel'
 import Video from '../components/AlumniVideo'
 import News from '../components/AlumniNew'
 import Share from '../components/AlumniShare'
+import { usePathname } from 'next/navigation'
+
 
 const alumniProfiles = () => {
   const pathname = usePathname()

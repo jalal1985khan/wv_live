@@ -3,11 +3,11 @@ import Footer from '../components/Footer';
 import { Container } from 'react-bootstrap';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
-import { usePathname } from 'next/navigation'
+import {useRouter} from 'next/router';
 
 
 const privacy = ({ data }) => {
-const pathname = usePathname()
+const pathname = useRouter()
     return (
         <div>
     <NextSeo

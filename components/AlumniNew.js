@@ -122,7 +122,7 @@ function AlumniCarousel() {
             movies.map((post, index) => {
             //console.log(post);
                 return ( 
-                    <div>
+                  <div key={post.id}>
                     <Image
                     alt={post['title']['rendered']}
                     src={post['_embedded']['wp:featuredmedia'][0]['source_url']}

@@ -8,8 +8,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import dynamic from "next/dynamic";
 import Image from 'next/image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+
 
 
 
@@ -126,11 +125,11 @@ function AlumniCarousel() {
                 
                 {
             movies.map((post, index) => {
-            console.log(post);
+            //console.log(post);
                 return ( 
                 
        
-                    <div class="item">
+                    <div class="item" key={post.id}>
                         
                             <Image
                         alt={post['title']['rendered']}

@@ -6,7 +6,7 @@ import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation'
 
 const privacy = ({ data }) => {  
-const pathname = usePathname()
+  const pathname = usePathname()
   return (
     <div>
       <NextSeo

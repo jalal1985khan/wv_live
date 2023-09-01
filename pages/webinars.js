@@ -6,12 +6,12 @@ import Footer from '../components/Footer';
 import { Card, Button, Col, Row, Modal } from 'react-bootstrap';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
-import { usePathname } from 'next/navigation'
+import {useRouter} from 'next/router';
 
 
 
 const Webinars = ({ webinarvideo, spotlightvideo }) => {
-  const pathname = usePathname()
+  const pathname = useRouter()
 
   useEffect(() => {
     const $ = document.querySelector.bind(document);

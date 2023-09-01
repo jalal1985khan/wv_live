@@ -8,11 +8,11 @@ import Footer from '../components/Footer';
 import Moment from 'react-moment';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
-import { usePathname } from 'next/navigation'
+import {useRouter} from 'next/router';
 
 
 const SuccessStories = ({ heroBannerpost }) => { 
-  const pathname = usePathname()
+  const pathname = useRouter()
   const [posts, setMovies] = useState([]);
   const [page, setPage] = useState(12);
   const [loading, setLoading] = useState(false);
