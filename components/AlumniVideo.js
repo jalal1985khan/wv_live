@@ -45,14 +45,8 @@ function AlumniCarousel() {
     //const pathname = usePathname()
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(10);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState({});
-    const [next, setNext] = useState();
-    const [total, setTotal] = useState();
-    const [end, setEnd] = useState(true);
 
     const fetchMovies = async () => {
-        setLoading(true);
         let url = "";
         const urlPage = `${page}`;
         //console.log(urlPage)
@@ -64,51 +58,14 @@ function AlumniCarousel() {
           const data = await response.json();
           //console.log(data);
           setMovies(data);
-          setLoading(false);
         } catch (error) {
           console.log(error);
         }
       };
-    
-      const fetchNos = async () => {
-        setLoading(true);
-        let cat = "";
-        cat = `${configData.SERVER_URL}categories/12`;
-    
-        try {
-          const response = await fetch(cat);
-          const cats = await response.json();
-          //console.log(cats);
-          setNext(cats);
-          setLoading(false);
-    
-        } catch (error) {
-          console.log(error);
-        }
-      };
-    
-    
-    
     
       useEffect(() => {
         fetchMovies();
-        fetchNos();
-      }, [page], [next]);
-    
-    
-      const loadMore = () => {
-        setTotal(next.count)
-        //console.log(total)
-        const main = next.count;
-    
-        if (total == page) {
-          setEnd(false);
-        }
-    
-        setPage((oldPage) => {
-          return oldPage + 2;
-        })
-      };
+      }, []);
 
 
     return (
@@ -130,7 +87,6 @@ function AlumniCarousel() {
                 
        
                     <div class="item" key={post.id}>
-                        
                             <Image
                         alt={post['title']['rendered']}
                         src={post['acf']['video_thumbnail']['url']}
@@ -139,9 +95,8 @@ function AlumniCarousel() {
                         height={360}
             />
                   
-                </div>
-                                      
-            )
+                  </div>
+                )
             
             
             })
@@ -151,5 +106,4 @@ function AlumniCarousel() {
             </> 
   )
 }
-
 export default AlumniCarousel
