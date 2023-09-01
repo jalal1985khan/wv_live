@@ -2,11 +2,48 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Container } from 'react-bootstrap';
 import configData from "../config.json";
+import { NextSeo } from 'next-seo';
+import { usePathname } from 'next/navigation'
 
 
 const privacy = ({ data }) => {
+const pathname = usePathname()
     return (
         <div>
+    <NextSeo
+      title="Terms of use  - Walmart Vriddhi"
+      description="Terms of use  - Walmart Vriddhi"
+        canonical={pathname}
+        openGraph={{
+          url: pathname,
+          title: 'Terms of use  - Walmart Vriddhi',
+          description: 'Terms of use  - Walmart Vriddhi',
+          images: [
+            {
+              url:'/images/Walmart-Vriddhi-logo.svg',
+              width: 800,
+              height: 600,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            {
+              url:'/images/Walmart-Vriddhi-logo.svg',
+              width: 900,
+              height: 800,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            { url: '/images/Walmart-Vriddhi-logo.svg' },
+            { url: '/images/Walmart-Vriddhi-logo.svg' },
+          ],
+          siteName: "Terms of use  - Walmart Vriddhi",
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+    />
             <Header />
             <Container fluid>
                 {

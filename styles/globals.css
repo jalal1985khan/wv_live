@@ -1136,6 +1136,84 @@ img.step_01 {
 .m-btn {
     width: 40%
 }
+span h1{
+font-size: 1.25rem!important;    
+}
+h5 strong {
+    font-size: 33px;
+}
+.heading{
+    width:700px !important;
+    text-align: center;
+    color: #0071CE;
+    font-family: "Bogle Bold", Sans-serif;
+    font-size: 27px !important;
+    font-weight: 900;
+    line-height: 1.3em;    
+}
+.justify{
+justify-content: center;    
+}
+li.nav-item{
+    padding: 12px;
+}
+li.nav-item:hover {
+    background: #F9B222;
+    padding: 12px;
+}
+
+
+.owl-theme .owl-nav {
+position:absolute !important;
+top: 18% !important;
+width:100%;
+display: flex;
+justify-content: space-between;
+}
+.owl-carousel .owl-nav button.owl-prev{
+    /* background: red !important; */
+    font-size: 49px;
+    color: #fff;
+}
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background: #869791;
+    color: #FFF;
+    text-decoration: none;
+}
+.owl-theme .owl-nav [class*='owl-'] {
+    margin: 0px !important;
+}
+
+.owl-nav .owl-next .owl-prev{
+    padding: 12px !important;  
+}
+span.left {
+    margin-top: -8px;
+}
+span.right {
+    margin-top: -8px;
+}
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+    background: white !important;
+    color: #2F6EB5 !important;
+    border: none;
+    /* padding: 7px !important; */
+    font-size: 40px !important;
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.owl-carousel .owl-stage-outer {
+    height: auto !important;
+}
+
+
 
 @media only screen and (max-width: 600px) {
     button.register.btn.btn-primary {

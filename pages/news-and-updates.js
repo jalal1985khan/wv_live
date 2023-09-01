@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
-import {Card, Button,Col, Row, Container, Image} from 'react-bootstrap';
+import {Card, Button,Col, Row, Container} from 'react-bootstrap';
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
 import Footer from '../components/Footer';
 import Moment from 'react-moment';
 import configData from "../config.json";
+import { NextSeo } from 'next-seo';
+import { usePathname } from 'next/navigation'
 
 
-const SuccessStories = ({heroBannerpost}) => { 
+const SuccessStories = ({ heroBannerpost }) => { 
+  const pathname = usePathname()
   const [posts, setMovies] = useState([]);
   const [page, setPage] = useState(12);
   const [loading, setLoading] = useState(false);
@@ -77,19 +81,62 @@ return oldPage + 3;
   };
   
   return (
-   <div>
+    <>
+      
+      
+
  <Header/>
  
  <Container fluid style={{padding:0}} className="overflow-hidden">
 <Row>
 {
-heroBannerpost.map((post,index)=>{
-return (
-<>
+            heroBannerpost.map((post, index) => {
+              var Myimg = post['acf']['inside_banner']['url'];
+              var Mytitle = post['title']['rendered'];
+
+  return (
+  
+
+  <>
+    <NextSeo
+      title={Mytitle}
+      description="News and updates  - Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize"
+        canonical={pathname}
+        openGraph={{
+          url: pathname,
+          title: 'News and updates  - Walmart Vriddhi',
+          description: 'News and updates  - Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize',
+          images: [
+            {
+              url: Myimg,
+              width: 800,
+              height: 600,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            {
+              url: Myimg,
+              width: 900,
+              height: 800,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            { url: Myimg },
+            { url: Myimg },
+          ],
+          siteName: {Mytitle},
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+    />
+
 <Image
       src={post['acf']['inside_banner']['url']}
-      width="100%"
-      height="620"
+      width="800"
+      height="300"
       background='no-repeat'
       background-size= 'cover'
       alt={post['title']['rendered']}
@@ -129,9 +176,11 @@ return (
 <Col sm={4} className="p-3" key={index}>
 <Card className="news-card" >
 <Image
-                    src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                    alt={post['title']['rendered']}
-                    className="news-img"
+        src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
+        alt={post['title']['rendered']}
+        className="news-img"
+        width={600}
+        height={250}
                   />
       <Card.Body>
       <h3 dangerouslySetInnerHTML={{__html:post['acf']['source']}} className="fs-6 authors bogle-medium"></h3>
@@ -164,7 +213,7 @@ return (
 <Footer/>
 
 
-   </div>
+   </>
   );
 };
 

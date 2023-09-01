@@ -7,8 +7,12 @@ import Footer from '../components/Footer';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation'
+import Carousel from '../components/AlumniCarousel'
+import Video from '../components/AlumniVideo'
+import News from '../components/AlumniNew'
+import Share from '../components/AlumniShare'
 
-const SuccessStories = () => {
+const alumniProfiles = () => {
   const pathname = usePathname()
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(10);
@@ -25,7 +29,7 @@ const SuccessStories = () => {
     //console.log(urlPage)
     //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
+    url = `${configData.SERVER_URL}msme_speaks?_embed&status[]=publish&per_page=${urlPage}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -78,8 +82,8 @@ const SuccessStories = () => {
   };
 
   return (
-    <div>
-      <NextSeo
+      <>
+          <NextSeo
       title="Business Owner Training, Business Owner Training Programs, Sell Products Online in India"
       description="The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here"
         canonical={pathname}
@@ -112,9 +116,9 @@ const SuccessStories = () => {
           site: '@site',
           cardType: 'summary_large_image',
         }}
-    />
-      <Header />
-      <Image
+          />
+          <Header />
+          <Image
         src="/images/success_banner.jpeg"
         width="100%"
         height="620"
@@ -124,66 +128,45 @@ const SuccessStories = () => {
         className="banner-img"
         
       />
-      <Brand />
-      <Container className="text-center">
-        <p className="fs-1 bogle-medium walmart-default" >MSME Success Stories</p>
-        <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="MSME Success Stories" />
-        <p className="fs-3">We are proud to be part of business journeys that have turned into stories of inspiration and success. Take a look at some of our growth stories.</p>
-      </Container>
-      <Container>
-        <Row>
+<Brand />
+<Container className="text-center">
+<p className="fs-1 bogle-medium walmart-default" >Walmart Vriddhi Alumni</p>
+<Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
+<p className="fs-3">
+Walmart Vriddhi supplier development program has assisted over 25,000 MSMEs in India to help them enhance their domestic capabilities and participate in the global economy.</p>
+</Container>
+          
+<Container className="text-center wbg-main" fluid>
+<Container>
+<p className="fs-1 bogle-medium text-white" >Program Beneficiaries</p>
+<Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
+<Carousel/>
+</Container>
+</Container>
+<Container className="text-center">
+<p className="fs-1 bogle-medium walmart-default" >MSME Speaks</p>
+<Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
+<p className="fs-3">Hear from our graduates about their experience of the Walmart Vriddhi program and how it benefitted them.</p>
+<Video/>
+      </Container> 
 
-          {
+<Container>
+<Container className="text-center">
+<p className="fs-1 bogle-medium walmart-default" >Alumni Achievements</p>
+<Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
+<p className="fs-3">A collection of events that define the journey of Walmart Vriddhi graduates.</p>
+</Container>        
+<News/>
+      </Container> 
+<Container className="text-center wbg-main" fluid>
+<p className="fs-1 bogle-medium text-white" >Alumni Corner</p>
+<Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
+<Share/>
+</Container>        
 
-            movies.map((post, index) => {
-              //console.log(post);
-              return (
-<>
-                <Col sm={6} className="p-3" key={post.id}>
-                  <Card className="story_post" >
-                    <Image
-                      src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                      alt={post['title']['rendered']}
-                      width="100%"
-                    />
-                    <Card.Body>
-                      <Button variant="primary" className="pri-category mb-3">MSME SuperPower: {post['acf']['primary_category']}</Button>
-                      <Card.Title className="fs-3 bogle-medium mb-4" style={{ height: 58 }}>{post['title']['rendered']}</Card.Title>
-                      <h3 dangerouslySetInnerHTML={{ __html: post['acf']['author_name'] }} className="fs-4 authors"></h3>
-                      <h3 dangerouslySetInnerHTML={{ __html: post['acf']['author_designation'] }} className="fs-6 mb-3" style={{ height: 25 }}></h3>
-                      <div dangerouslySetInnerHTML={{ __html: post['excerpt']['rendered'] }} className="fs-5 mb-3 m-height" style={{ height: 200 }}></div>
-                      <Link key={index} href={`/success-story/${post['slug']}`}>
-                        <Button variant="primary" className="authors_btn fs-5">Know more</Button>
-                      </Link>
-                    </Card.Body>
-                  </Card>
-
-                  </Col>
-                  
-                  </>
-              )
-
-
-            })}
-
-        </Row>
-      </Container>
-
-
-      <section className="section text-center mb-3">
-        {loading && <h2 className="loading">Loading...</h2>}
-        <div className="loadmodediv">
-          {end &&
-            <Button variant="primary" className="authors_btn fs-5" onClick={loadMore}>
-              Load More
-            </Button>}
-        </div>
-      </section>
-      <Footer />
-
-
-    </div>
+ <Footer/>     
+      </>
   );
 };
 
-export default SuccessStories;
+export default alumniProfiles;

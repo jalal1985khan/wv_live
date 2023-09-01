@@ -4,10 +4,45 @@ import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
 import Footer from '../components/Footer';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { NextSeo } from 'next-seo';
 
 function ContainerExample() {
   return (
     <>
+       <NextSeo
+      title="About us  - Walmart Vriddhi"
+      description="About Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize"
+        canonical="https://www.walmartvriddhi.org/about-us/"
+        openGraph={{
+          url: 'https://www.url.ie/a',
+          title: 'About us  - Walmart Vriddhi',
+          description: 'About Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize',
+          images: [
+            {
+              url: '/images/banner_about.jpeg',
+              width: 800,
+              height: 600,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            {
+              url: '/images/banner_about.jpeg',
+              width: 900,
+              height: 800,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            { url: '/images/banner_about.jpeg' },
+            { url: '/images/banner_about.jpeg' },
+          ],
+          siteName: 'About us  - Walmart Vriddhi',
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+    />
     <Header/>
     <Image
       src="/images/banner_about.jpeg"

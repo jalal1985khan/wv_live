@@ -3,14 +3,16 @@ import { Container } from 'react-bootstrap';
 import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
 import Footer from '../components/Footer';
-import { Card, Col, Row, Image} from 'react-bootstrap';
+import { Card, Col, Row, Image } from 'react-bootstrap';
+import { NextSeo } from 'next-seo';
+import { usePathname } from 'next/navigation'
 
 
 
 
 
 const Webinars = () => {
-
+const pathname = usePathname()
 
     useEffect(() => {
         const $ = document.querySelector.bind(document);
@@ -55,6 +57,40 @@ const Webinars = () => {
 
     return (
         <div>
+      <NextSeo
+      title="MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program"
+      description="Walmart Vriddhi has assisted countless small businesses in going digital and growing their market reach Learn more about the different steps of the MSME growth journey program here"
+      canonical={pathname}
+      openGraph={{
+        url: pathname,
+        title:"MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program",
+        description:"Walmart Vriddhi has assisted countless small businesses in going digital and growing their market reach Learn more about the different steps of the MSME growth journey program here",
+        images: [
+          {
+            url:'/images/msme_banner.jpeg',
+            width: 800,
+            height: 600,
+            alt: 'MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program',
+            type: 'image/jpeg',
+          },
+          {
+            url:'/images/msme_banner.jpeg',
+            width: 900,
+            height: 800,
+            alt: 'MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program',
+            type: 'image/jpeg',
+          },
+          { url:'/images/msme_banner.jpeg'},
+          { url:'/images/msme_banner.jpeg'},
+        ],
+        siteName: 'SiteName',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />
             <Header />
            
             <Image

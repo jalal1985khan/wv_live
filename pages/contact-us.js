@@ -1,4 +1,5 @@
-import {Container, Row, Col,Card, Image} from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import Image from 'next/image'
 import Brand from '../components/BrandLogo';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -11,12 +12,11 @@ function ContainerExample() {
     
       <Image
       src="/images/contact_banner.jpeg"
-      width="100%"
-      height="620"
+      width="800"
+      height="500"
       background='no-repeat'
       background-size= 'cover'
-      
-      className="banner-img"
+      className="banner-img w-100 h-100"
       
     />
     <Brand/>
@@ -33,7 +33,9 @@ function ContainerExample() {
         <Image
                   src='/images/call_us.png'
                   alt=''
-         
+                  width="100"
+                height="100"
+                className=""
                 />
      
       <Card.Body>
@@ -49,7 +51,8 @@ function ContainerExample() {
         <Image
                   src='/images/email_icon.png'
                   alt=''
-         
+                  width="100"
+                  height="100"
                 />
       <Card.Body>
         <Card.Title>email us at</Card.Title>

@@ -123,6 +123,9 @@ const SuccessStories = () => {
                       <Link href="/success-stories" className="nav-link px-5" aria-current="page" >Success Stories</Link>
                     </li>
                     <li className="nav-item">
+                      <Link href="/alumni-profiles" className="nav-link px-5" aria-current="page" >Alumni Profiles</Link>
+                    </li>
+                    <li className="nav-item">
                       <Link href="/webinars" className="nav-link px-5" aria-current="page" >Webinars</Link>
                     </li>
                     <li className="nav-item">
@@ -164,7 +167,7 @@ const SuccessStories = () => {
                         
                         className="search-img"
                       /></Col>
-                      <Col className="d-flex justify-content-center align-items-center"><h3 className="fs-5" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} /></Col>
+                      <Col className="d-flex justify-content-center align-items-center"><span className="fs-5" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} /></Col>
   
                     </Row></Link>
   
