@@ -15,7 +15,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
       loop: true,
       margin: 10,
       nav: false,
-      dots:true``,
+      dots:true,
       //stagePadding: 50,
       //stageOuterClass:'owl-stage-outer',
       navText: [
