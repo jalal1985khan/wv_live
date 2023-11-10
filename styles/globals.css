@@ -830,6 +830,27 @@ span.errors {
     transition: background-color 1s ease-out;
 }
 
+.a-box-5 {
+    height: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 100% !important; */
+    margin: 5px !important;
+    width: 99% !important;
+    background-color: #2F6EB5 !important;
+    color: #fff;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+}
+
+.a-box-5:hover {
+    background-color: #FDBD01 !important;
+    color: #000 !important;
+}
+
 .card-box {
     width: 80%;
     padding: 27px;
@@ -1350,4 +1371,57 @@ img.img-benefits {
 img.m-img {
     width: 30%;
     align-self: center;
+}
+#rcc-confirm-button{
+    background: #4CAF50 !important;
+    border: 0px;
+    border-radius: 0px !important;
+    box-shadow: none;
+    color: #fff !important;
+    cursor: pointer;
+    flex: 0 0 auto;
+    padding: 10px 20px !important;
+    margin: 15px;
+    font-size: 15px;
+}
+#rcc-decline-button{
+    background: #ff0000 !important;
+    border: 0px;
+    border-radius: 0px !important;
+    box-shadow: none;
+    color: #fff !important;
+    cursor: pointer;
+    flex: 0 0 auto;
+    padding: 10px 20px !important;
+    margin: 15px;
+    font-size: 15px;   
+}
+.info{
+display: none;    
+}
+
+.profile{
+width:100%;
+}
+.profile:hover{
+background-color: #1570CD;
+height: 270px !important;
+color:#fff;
+position: absolute;
+width:28.3%;
+z-index: 999;    
+}
+.profile:hover .info{
+display: block; 
+    }
+.profile-img{
+width:200px;
+}
+.know{
+color:#1570CD !important;
+background: #fff !important;
+border-radius: 25px !important;    
+}
+.mb-51{
+    height: 800px !important;  
 }

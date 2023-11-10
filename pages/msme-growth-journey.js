@@ -127,7 +127,6 @@ const pathname = usePathname()
                         <div className="line"></div>
                     </div>
                 </Container>
-
                 <Container fluid className='wbg-white overflow-hidden'>
                     <div className="tab-content">
                         <div className="tab-pane active"  >
@@ -164,10 +163,6 @@ const pathname = usePathname()
                                         <Col sm={6} className="fs-4 b-box-2">Basics of Finance</Col>
 
                                     </Row>
-
-
-
-
                                     <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5">Advanced Business</div>
                                     <p className="fs-4">The program helps you apply advanced business management tools and strategies to your business. It offers relevant case studies to assist you gain real-life experience of MSMEs and get a deep understanding of markets, consumers, and digital transformation tools.</p>
                                     <Image
@@ -176,7 +171,6 @@ const pathname = usePathname()
                                         width='100%'
                                         className=""
                                      
-
                                     />
 
                                     <Row className="d-flex align-items-center">
@@ -191,22 +185,24 @@ const pathname = usePathname()
                                     </Row>
                                     <Row className="d-flex align-items-center">
                                         <Col sm={4} className="fs-4 a-box-3">Digital Enablement</Col>
-                                        <Col sm={4} className="fs-4 a-box-3">Global Sourcing</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Business Case</Col>
+                                        <Col sm={4} className="fs-4 a-box-3">Product Development</Col>
                                     </Row>
                                     <Row className="d-flex align-items-center">
-                                        <Col sm={4} className="fs-4 a-box-3">Product Development</Col>
+                                        
                                         <Col sm={4} className="fs-4 a-box-3">Advanced Marketing</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Data-Based Performance Management</Col>
+                                        <Col sm={4} className="fs-4 a-box-3">Demand Forecasting</Col>
                                     </Row>
                                     <Row className="d-flex align-items-center">
-                                        <Col sm={4} className="fs-4 a-box-3">Demand Forecasting</Col>
+                                        
                                         <Col sm={4} className="fs-4 a-box-3">Procurement</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Managing your Finances</Col>
+                                        <Col sm={4} className="fs-4 a-box-3">Advanced Financing</Col>
                                     </Row>
                                     <Row className="d-flex align-items-center">
-                                        <Col sm={6} className="fs-4 a-box-2">Advanced Financing</Col>
-                                        <Col sm={6} className="fs-4 a-box-2">Women in Business</Col>
+                                        
+                                        <Col sm={12} className="fs-4 a-box-5">Women in Business</Col>
 
                                     </Row>
 
@@ -233,7 +229,7 @@ const pathname = usePathname()
                                                 <Image
                                                     src='/images/opportunities.svg'
                                                     alt=''
-                                                    width='90%'
+                                                    width='55%'
                                                     className=""
                                                     
 
@@ -248,7 +244,7 @@ const pathname = usePathname()
                                                 <Image
                                                     src='../images/identify.svg'
                                                     alt=''
-                                                    width='90%'
+                                                    width='55%'
                                                     className=""
                                                  
 
@@ -261,7 +257,7 @@ const pathname = usePathname()
                                                 <Image
                                                     src='../images/actionable.svg'
                                                     alt=''
-                                                    width='90%'
+                                                    width='55%'
                                                     className=""
                                                     
 
@@ -271,10 +267,10 @@ const pathname = usePathname()
                                         </Col>
                                     </Row>
                                     <Row className="d-flex align-items-center">
-                                        <Col sm={4} className=" fs-5 p-box-4" ><p>Duration of Personalized Mentoring:</p><p className="bogle-medium walmart-default">6 months</p></Col>
-                                        <Col sm={2} className="fs-5 p-box-4"><p>Number of sessions:</p><p className="bogle-medium walmart-default">6</p></Col>
-                                        <Col sm={2} className="fs-5 p-box-4"><p>Duration of sessions:</p><p className="bogle-medium walmart-default">60-90 minutes</p></Col>
-                                        <Col sm={4} className="fs-5 p-box-4"><p>Medium:</p><p className="bogle-medium walmart-default">Virtual meetings</p></Col>
+                                        <Col sm={4} className=" fs-5 p-box-4" ><p>Duration of Personalized Mentoring:</p><p className="bogle-medium walmart-default fs-2">100 days</p></Col>
+                                        <Col sm={2} className="fs-5 p-box-4"><p>Number of sessions:</p><p className="bogle-medium walmart-default fs-2">6</p></Col>
+                                        <Col sm={2} className="fs-5 p-box-4"><p>Duration of sessions:</p><p className="bogle-medium walmart-default fs-2">60-90 minutes</p></Col>
+                                        <Col sm={4} className="fs-5 p-box-4"><p>Medium:</p><p className="bogle-medium walmart-default fs-2">Virtual meetings</p></Col>
                                     </Row>
                                     <p className="fs-3 bogle-medium walmart-default mt-4">Mentors: Average industry experience of 30 years</p>
                                     <Image

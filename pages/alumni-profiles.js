@@ -11,6 +11,7 @@ import Video from '../components/AlumniVideo'
 import News from '../components/AlumniNew'
 import Share from '../components/AlumniShare'
 import { usePathname } from 'next/navigation'
+import Profile from '../components/AlumniProfile'
 
 
 const alumniProfiles = () => {
@@ -22,6 +23,7 @@ const alumniProfiles = () => {
   const [next, setNext] = useState();
   const [total, setTotal] = useState();
   const [end, setEnd] = useState(true);
+
 
   const fetchMovies = async () => {
     setLoading(true);
@@ -82,6 +84,8 @@ const alumniProfiles = () => {
     })
   };
 
+
+
   return (
       <>
           <NextSeo
@@ -136,7 +140,19 @@ const alumniProfiles = () => {
 <p className="fs-3">
 Walmart Vriddhi supplier development program has assisted over 25,000 MSMEs in India to help them enhance their domestic capabilities and participate in the global economy.</p>
 </Container>
-          
+<Container className="text-center">
+<p className="fs-1 bogle-medium walmart-default" >Meet the Walmart Vriddhi Graduates</p>
+<Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
+<p className="fs-3">
+Introducing our graduates who successfully finished the program.</p>    
+      </Container> 
+      <Container>
+    
+     <Profile/> 
+      
+      </Container>      
+<Container>
+</Container>
 <Container className="text-center wbg-main" fluid>
 <Container>
 <p className="fs-1 bogle-medium text-white" >Program Beneficiaries</p>

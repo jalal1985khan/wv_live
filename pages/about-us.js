@@ -80,7 +80,7 @@ function ContainerExample() {
         </Col>
       </Row> 
 <Row>
-          <Col xs={12} lg={3}>
+          <Col xs={12} lg={4}>
 <Card className="rounded-0 border-0 card-logo mb-2">
       <Card.Body className="about-card-body">
         <Image
@@ -95,7 +95,7 @@ function ContainerExample() {
       </Card.Body>
     </Card>
 </Col>    
-<Col xs={12} lg={3}>
+<Col xs={12} lg={4}>
 <Card className="rounded-0 border-0 card-logo mb-2">
       <Card.Body className="about-card-body">
         
@@ -111,24 +111,8 @@ function ContainerExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col xs={12} lg={3}>
-<Card className="rounded-0 border-0 card-logo mb-2">
-      <Card.Body className="about-card-body">
-        
-        <Image
-                  src="/images/Walmart-global-sourcing.png"
-                  alt=''
-                  effect="blur"
-                  width={200}
-                  height={200}
-                  className="img-fluid"
-                />
-        <div className="card-hover text-white fs-5">Walmart Global Sourcing has long been giving Indian manufacturers a way to sell their products, including apparel, homeware, jewelry, hardlines, and more, in overseas markets such as the U.S., Canada, Mexico, Central America, and the United Kingdom.
-</div>
-      </Card.Body>
-    </Card>
-</Col>
-<Col xs={12} lg={3}>
+
+<Col xs={12} lg={4}>
 <Card className="rounded-0 border-0 card-logo">
       <Card.Body className="about-card-body">
         
@@ -159,7 +143,7 @@ function ContainerExample() {
                 />
 <p>Swasti, a member of the Catalyst family, was founded in 2004. Swasti co-designs demonstrable and scalable solution models for businesses in partnership with communities on the ground and influences policies nationally and internationally. Swasti is helping communities, governments, and partners shape safe, secure, healthy and more prosperous lives across the world through various initiatives that reach over 400,000 people.
 Over the past eight years, Walmart and Swasti have shared a meaningful partnership which now includes the Walmart Vriddhi program.</p>
-<Button className="ab-button mb-4">Read more</Button>
+<Button className="ab-button mb-4">Know more</Button>
 </Col>
 <Col className="p-0 d-flex justify-content-end">
 

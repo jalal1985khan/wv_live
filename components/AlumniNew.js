@@ -46,8 +46,8 @@ function AlumniCarousel() {
         const response = await fetch(url);
         const data = await response.json();
         setMovies(data);
-        console.log('hello')
-        console.log(data)
+        //console.log('hello')
+        //console.log(data)
 
       } catch (error) {
         console.log(error);

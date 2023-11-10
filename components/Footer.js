@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import CookieConsent from "react-cookie-consent";
 
 
 
@@ -67,6 +68,25 @@ function Footer() {
                     </Row>
                 </Container>
             </Container>
+            <CookieConsent
+      enableDeclineButton
+      flipButtons
+      location="bottom"
+      buttonText="Accept All"
+      declineButtonText="Decline"
+      cookieName="YourCoockieName"
+                style={{ background: '#ffff' , color:'black' }}
+      buttonStyle={{
+        color: 'black',
+        fontSize: '15px',
+      }}
+      declineButtonStyle={{
+        margin: '10px 10px 10px 0',
+      }}
+      expires={450}
+    >
+  We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies. However, you may visit "Cookie Settings" to provide a controlled consent.
+    </CookieConsent>
         </>
 
 

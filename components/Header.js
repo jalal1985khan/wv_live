@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Link from 'next/link'
 import configData from "../config.json";
 import useDebounce from "../components/useDebounce";
+import { FaSistrix } from 'react-icons/fa';
+
 
 const SuccessStories = () => {
   const [movies, setMovies] = useState([]);
@@ -86,7 +88,7 @@ const SuccessStories = () => {
 
                     />
                     <Button variant="outline-secondary" id="button-addon2" className="src-button">
-                      <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+                      <FaSistrix size={25} />
                     </Button>
                   </InputGroup>
                   {error.show && <div className="error">{error.msg}</div>}
