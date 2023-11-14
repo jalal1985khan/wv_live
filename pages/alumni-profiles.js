@@ -126,7 +126,7 @@ const alumniProfiles = () => {
           />
           <Header />
           <Image
-        src="/images/success_banner.jpeg"
+        src="/images/alumni_profile_banner.png"
         width="100%"
         height="620"
         background='no-repeat'
