@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Button, Col, Row, Container, Image } from 'react-bootstrap';
+import { Card, Button, Col, Row, Container, Image,Dropdown,Form } from 'react-bootstrap';
 import Link from 'next/link'
 import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
@@ -23,6 +23,7 @@ const alumniProfiles = () => {
   const [next, setNext] = useState();
   const [total, setTotal] = useState();
   const [end, setEnd] = useState(true);
+  const [selectedFilter, setSelectedFilter] = useState('all');
 
 
   const fetchMovies = async () => {
@@ -83,6 +84,7 @@ const alumniProfiles = () => {
       return oldPage + 2;
     })
   };
+
 
 
 
@@ -147,9 +149,7 @@ Walmart Vriddhi supplier development program has assisted over 25,000 MSMEs in I
 Introducing our graduates who successfully finished the program.</p>    
       </Container> 
       <Container>
-    
      <Profile/> 
-      
       </Container>      
 <Container>
 </Container>
@@ -175,8 +175,8 @@ Introducing our graduates who successfully finished the program.</p>
 </Container>        
 <News/>
       </Container> 
-<Container className="text-center wbg-main" fluid>
-<p className="fs-1 bogle-medium text-white" >Alumni Corner</p>
+<Container className="text-center wbg-main " fluid>
+<p className="fs-1 bogle-medium text-white mt-5" >Alumni Corner</p>
 <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
 <Share/>
 </Container>        

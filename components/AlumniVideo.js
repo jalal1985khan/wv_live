@@ -56,7 +56,7 @@ function AlumniCarousel() {
         try {
           const response = await fetch(url);
           const data = await response.json();
-          //console.log(data);
+          console.log(data);
           setMovies(data);
         } catch (error) {
           console.log(error);
@@ -87,9 +87,10 @@ function AlumniCarousel() {
                 
        
                     <div class="item" key={post.id}>
-                            <Image
+                     
+                    <Image
                         alt={post['title']['rendered']}
-                        src={post['acf']['video_thumbnail']['url']}
+                        src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
                         className="w-100 h-100"
                         width={360}
                         height={360}

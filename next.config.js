@@ -1,7 +1,7 @@
 // next.config.js
 module.exports = {
   images: {
-    domains: ['walmart.ivistaz.co','walmartvriddhi.vercel.app'],
+    domains: ['beta.walmartvriddhi.org','walmartvriddhi.vercel.app','walmartvriddhi.org'],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
