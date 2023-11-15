@@ -25,6 +25,11 @@ const alumniProfiles = () => {
   const [end, setEnd] = useState(true);
   const [selectedFilter, setSelectedFilter] = useState('all');
 
+  const title = "Business Owner Training, Business Owner Training Programs, Sell Products Online in India";
+  const desc = "The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here";
+  const banner = '/images/alumni_profile_banner.png';
+  const url = 'https://www.walmartvriddhi.org/alumni-profiles/'; 
+
 
   const fetchMovies = async () => {
     setLoading(true);
@@ -91,32 +96,32 @@ const alumniProfiles = () => {
   return (
       <>
           <NextSeo
-      title="Business Owner Training, Business Owner Training Programs, Sell Products Online in India"
-      description="The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here"
+      title={title}
+      description={desc}
         canonical={pathname}
         openGraph={{
           url: pathname,
-          title: 'Business Owner Training, Business Owner Training Programs, Sell Products Online in India',
-          description: 'The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here',
+          title: title,
+          description: desc,
           images: [
             {
-              url:'/images/success_banner.jpeg',
+              url:banner,
               width: 800,
               height: 600,
               alt: 'Walmart Vridhi',
               type: 'image/jpeg',
             },
             {
-              url:'/images/success_banner.jpeg',
+              url:banner,
               width: 900,
               height: 800,
               alt: 'Walmart Vridhi',
               type: 'image/jpeg',
             },
-            { url: '/images/success_banner.jpeg' },
-            { url: '/images/success_banner.jpeg' },
+            { url: banner },
+            { url: banner },
           ],
-          siteName: "Business Owner Training, Business Owner Training Programs, Sell Products Online in India",
+          siteName: title,
         }}
         twitter={{
           handle: '@handle',
@@ -126,7 +131,7 @@ const alumniProfiles = () => {
           />
           <Header />
           <Image
-        src="/images/alumni_profile_banner.png"
+        src={banner}
         width="100%"
         height="620"
         background='no-repeat'

@@ -7,35 +7,41 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { NextSeo } from 'next-seo';
 
 function ContainerExample() {
+
+  const title = "About us  - Walmart Vriddhi";
+  const desc = "About Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize";
+  const banner = '/images/banner_about.jpeg';
+  const url = 'https://www.walmartvriddhi.org/about-us/';
+
   return (
     <>
-       <NextSeo
-      title="About us  - Walmart Vriddhi"
-      description="About Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize"
-        canonical="https://www.walmartvriddhi.org/about-us/"
+      <NextSeo
+      title= {title}
+      description={desc}
+        canonical={url}
         openGraph={{
-          url: 'https://www.url.ie/a',
-          title: 'About us  - Walmart Vriddhi',
-          description: 'About Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize',
+          url: url,
+          title: title,
+          description: desc,
           images: [
             {
-              url: '/images/banner_about.jpeg',
+              url: banner,
               width: 800,
               height: 600,
               alt: 'Walmart Vridhi',
               type: 'image/jpeg',
             },
             {
-              url: '/images/banner_about.jpeg',
+              url: banner,
               width: 900,
               height: 800,
               alt: 'Walmart Vridhi',
               type: 'image/jpeg',
             },
-            { url: '/images/banner_about.jpeg' },
-            { url: '/images/banner_about.jpeg' },
+            { url: banner },
+            { url: banner },
           ],
-          siteName: 'About us  - Walmart Vriddhi',
+          siteName: title,
         }}
         twitter={{
           handle: '@handle',
@@ -45,7 +51,7 @@ function ContainerExample() {
     />
     <Header/>
     <Image
-      src="/images/banner_about.jpeg"
+      src={banner}
       width="800"
       height="620"
       background='no-repeat'

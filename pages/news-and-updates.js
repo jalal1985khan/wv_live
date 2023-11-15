@@ -91,6 +91,7 @@ return oldPage + 3;
 <Row>
 {
             heroBannerpost.map((post, index) => {
+              console.log(post);
               var Myimg = post['acf']['inside_banner']['url'];
               var Mytitle = post['title']['rendered'];
 
@@ -134,7 +135,7 @@ return oldPage + 3;
     />
 
 <Image
-      src={post['acf']['inside_banner']['url']}
+      src={post['acf']['inside_banner']}
       width="800"
       height="300"
       background='no-repeat'

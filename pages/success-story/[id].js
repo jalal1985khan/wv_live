@@ -6,9 +6,11 @@ import {Col,Container, Row, Image} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import configData from "../../config.json";
 import { NextSeo } from 'next-seo';
+import { usePathname } from 'next/navigation'
 
-const post = ({data}) => {
-  console.log(data);
+const post = ({ data }) => {
+  const pathname = usePathname()
+  //console.log(data);
   return (
     <div>
 <Header/>   
@@ -31,9 +33,9 @@ return (
     <NextSeo
       title={post['title']['rendered']}
       description={string} 
-      canonical="https://www.canonical.ie/"
+      canonical={pathname}
       openGraph={{
-        url: 'https://www.url.ie/a',
+        url: pathname,
         title: post['title']['rendered'],
         description: string,
         images: [

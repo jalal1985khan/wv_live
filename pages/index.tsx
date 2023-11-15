@@ -12,41 +12,47 @@ import Footer from '../components/Footer';
 import { NextSeo } from 'next-seo';
 
 export default function Home() {
+
+  const title = "Learning program for MSME entrepreneurs";
+  const desc = "Walmart Vriddhi initiative is designed to support MSMEs in modernising, expanding, and reaching their domestic ambitions.";
+  const banner = "/images/banner_1_1.png";
+
+
   return (
     <>
       <Head>
-        <title>Learning program for MSME entrepreneurs</title>
-        <meta name="description" content="Walmart Vriddhi initiative is designed to support MSMEs in modernising, expanding, and reaching their domestic ambitions." />
+        <title>{title}</title>
+        <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" /> 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" async />
       </Head>
 
       <NextSeo
-      title="Learning program for MSME entrepreneurs"
-      description="This example uses more of the available config options."
+      title={title}
+      description={desc}
       canonical="https://www.walmartvriddhi.org/"
       openGraph={{
         url: 'https://www.walmartvriddhi.org/',
-        title: 'Learning program for MSME entrepreneurs',
-        description: 'Walmart Vriddhi initiative is designed to support MSMEs in modernising, expanding, and reaching their domestic ambitions.',
+        title: title,
+        description: desc,
         images: [
           {
-            url: '/images/banner_1_1.png',
+            url: banner,
             width: 800,
             height: 600,
-            alt: 'Walmart Vriddhi initiative is designed to support MSMEs in modernising, expanding, and reaching their domestic ambitions.',
+            alt: desc,
             type: 'image/jpeg',
           },
           {
-            url: '/images/banner_1_1.png',
+            url: banner,
             width: 900,
             height: 800,
-            alt: 'Walmart Vriddhi initiative is designed to support MSMEs in modernising, expanding, and reaching their domestic ambitions.',
+            alt: desc,
             type: 'image/jpeg',
           },
-          { url: '/images/banner_1_1.png' },
-          { url: '/images/banner_1_1.png' },
+          { url: banner },
+          { url: banner },
         ],
         siteName: 'SiteName',
       }}

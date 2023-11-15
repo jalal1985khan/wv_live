@@ -12,7 +12,12 @@ import { usePathname } from 'next/navigation'
 
 
 const Webinars = () => {
-const pathname = usePathname()
+    const pathname = usePathname()
+    const title = "MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program";
+    const desc = "Walmart Vriddhi has assisted countless small businesses in going digital and growing their market reach Learn more about the different steps of the MSME growth journey program here";
+    const banner = '/images/msme_banner.jpeg';
+    const url = 'https://www.walmartvriddhi.org/msme-growth-journey/'; 
+
 
     useEffect(() => {
         const $ = document.querySelector.bind(document);
@@ -58,30 +63,30 @@ const pathname = usePathname()
     return (
         <div>
       <NextSeo
-      title="MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program"
-      description="Walmart Vriddhi has assisted countless small businesses in going digital and growing their market reach Learn more about the different steps of the MSME growth journey program here"
+      title={title}
+      description={desc}
       canonical={pathname}
       openGraph={{
         url: pathname,
-        title:"MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program",
-        description:"Walmart Vriddhi has assisted countless small businesses in going digital and growing their market reach Learn more about the different steps of the MSME growth journey program here",
+        title: title,
+        description:desc,
         images: [
           {
-            url:'/images/msme_banner.jpeg',
+            url: banner,
             width: 800,
             height: 600,
-            alt: 'MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program',
+            alt: desc,
             type: 'image/jpeg',
           },
           {
-            url:'/images/msme_banner.jpeg',
+            url: banner,
             width: 900,
             height: 800,
-            alt: 'MSME growth program, MSME growth journey program, MSME Supply Chain Management, msme online training program',
+            alt: desc,
             type: 'image/jpeg',
           },
-          { url:'/images/msme_banner.jpeg'},
-          { url:'/images/msme_banner.jpeg'},
+          { url:banner},
+          { url:banner},
         ],
         siteName: 'SiteName',
       }}
@@ -91,10 +96,10 @@ const pathname = usePathname()
         cardType: 'summary_large_image',
       }}
     />
-            <Header />
+<Header />
            
             <Image
-                src="/images/msme_banner.jpeg"
+                src={banner}
                 width="100%"
                 height="620"
                 background='no-repeat'

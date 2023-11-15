@@ -4,7 +4,7 @@ import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import configData from "../config.json";
 import useDebounce from "../components/useDebounce";
-
+import Link from 'next/link';
 
 const SuccessStories = () => {
   const [movies, setMovies] = useState([]);
@@ -59,6 +59,7 @@ const SuccessStories = () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
+      console.log(data);
       setProfile(data);
       if (postsPerPage > data.length) {
         console.log('less then');  
@@ -73,11 +74,6 @@ const SuccessStories = () => {
         setshowPre(true);
       }
       
-
-      
-      
-      
-
 
     } catch (error) {
       console.log(error);
@@ -226,9 +222,10 @@ const SuccessStories = () => {
                     />
                     <Container className="mt-3 info">
                       <p className="fw-bold text-white fs-6">{post['acf']['business_category']}</p>
-                      <a href="#" className="btn know">
-                        Know More
-                      </a>
+                      <Row className="sharerow">
+                            <Col><Link href={post['slug']} className="btn know">Know More</Link></Col>
+                            <Col>{post['acf']['visit_the_website'] ? <Link href={post['acf']['visit_the_website']} className="btn know" target="_bank">Visit the website</Link> : ''}</Col>
+                      </Row>
                     </Container>
                   </div>
                   <div className="col-md-8">
@@ -246,11 +243,13 @@ const SuccessStories = () => {
           <Row className="col-51">
               {profile.map((post, index) =>
                 
+                
               (
             
             
             <Col lg={4} key={index}>
-              <div className="card mb-3 profile">
+                  <div className="card mb-3 ">
+                    <div class="container profile">
                 <div className="row g-0">
                   <div className="col-md-4">
                     <Image
@@ -260,12 +259,16 @@ const SuccessStories = () => {
                       width={150}
                       height={150}
                     />
-                    <Container className="mt-3 info">
-                      <p className="fw-bold text-white fs-6">{post['acf']['business_category']}</p>
-                      <a href="#" className="btn know">
-                        Know More
-                      </a>
-                    </Container>
+                  
+                  <Container className="mt-3 info">
+    <p className="fw-bold text-white fs-6">{post['acf']['business_category']}</p>
+        <Row className="sharerow">
+          <Col><Link href={`/walmart_graduates/${post['slug']}`} className="btn know">Know More</Link></Col>
+                              <Col>
+                                {post['acf']['visit_the_website'] ? <Link href={post['acf']['visit_the_website']} className="btn know" target="_bank">Visit the website</Link> : ''}
+                              </Col>
+    </Row>    
+  </Container>
                   </div>
                   <div className="col-md-8">
                     <div className="card-body">
@@ -273,7 +276,8 @@ const SuccessStories = () => {
                       <p className="card-text fs-4">{post['acf']['company_name_&_place']}</p>
                     </div>
                   </div>
-                </div>
+                      </div>
+                      </div>
               </div>
             </Col>
           ))}

@@ -771,7 +771,29 @@ span.errors {
     background-color: #2F6EB5 !important;
     color: #fff !important;
 }
+.share{
+    
+    background: white;
+    border-radius: 11px;
+    padding: 6px;
+    position: absolute;
+    margin-top: -79px !important;    
+}
+.s-share{
+    background: #3B88D7;
+    border-radius: 25px;
+    padding: 4px;
+    width: 33px;
+    height: 33px;
+    margin-left: 9px;  
+}
+.p-share:hover .share{
+    display: flex !important;
+    padding-top: 5px;
+    margin-top: 0px !important;
+    position: absolute;
 
+}
 .a-box-2 {
     height: 135px;
     display: flex;
@@ -851,6 +873,29 @@ span.errors {
     color: #000 !important;
 }
 
+.profile-stat{
+    display: flex;
+    align-items: center;
+    padding-left: 23px !important;
+}
+.profile-btn{
+        padding: 8px;
+        border-radius: 10px;
+        color: #fff;
+        background: #1471CE;
+        text-decoration: none;
+}
+.profile-btn:hover{
+    padding: 8px;
+    border-radius: 10px;
+    color: #fff;
+    background: #1471CE;
+    text-decoration: none;
+}
+
+.yellow-border{
+border-bottom: 2px solid #F9B222;    
+}
 .card-box {
     width: 80%;
     padding: 27px;
@@ -938,7 +983,9 @@ display: none;
     margin-right: 12px;
     width: 47.5% !important;
 }
-
+.sharerow{
+  width:100% !important;
+}
 .border-box {
     position: relative;
     display: inline-block;
@@ -1425,17 +1472,20 @@ display: none;
 
 .profile{
 width:100%;
+position: relative;
 }
 .profile:hover{
-background-color: #1570CD;
-height: 270px !important;
-color:#fff;
-position: absolute;
-width:28.3%;
-z-index: 999;    
-}
+    background-color: #1570CD;
+    height: 270px !important;
+    color:#fff;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    border-radius: 6px;    
+    }
 .profile:hover .info{
 display: block; 
+position: absolute;
     }
 .profile-img{
 width:200px;

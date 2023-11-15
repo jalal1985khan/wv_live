@@ -18,6 +18,12 @@ const SuccessStories = () => {
   const [total, setTotal] = useState();
   const [end, setEnd] = useState(true);
 
+  
+  const title = "Business Owner Training, Business Owner Training Programs, Sell Products Online in India";
+  const desc = "The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here";
+  const banner = '/images/success_banner.jpeg';
+  const url = 'https://www.walmartvriddhi.org/success-stories/'; 
+
   const fetchMovies = async () => {
     setLoading(true);
     let url = "";
@@ -80,32 +86,32 @@ const SuccessStories = () => {
   return (
     <div>
       <NextSeo
-      title="Business Owner Training, Business Owner Training Programs, Sell Products Online in India"
-      description="The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here"
+        title={title}
+      description={desc}
         canonical={pathname}
         openGraph={{
           url: pathname,
-          title: 'Business Owner Training, Business Owner Training Programs, Sell Products Online in India',
-          description: 'The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here',
+          title: title,
+          description: desc,
           images: [
             {
-              url:'/images/success_banner.jpeg',
+              url:banner,
               width: 800,
               height: 600,
               alt: 'Walmart Vridhi',
               type: 'image/jpeg',
             },
             {
-              url:'/images/success_banner.jpeg',
+              url:banner,
               width: 900,
               height: 800,
               alt: 'Walmart Vridhi',
               type: 'image/jpeg',
             },
-            { url: '/images/success_banner.jpeg' },
-            { url: '/images/success_banner.jpeg' },
+            { url: banner },
+            { url: banner },
           ],
-          siteName: "Business Owner Training, Business Owner Training Programs, Sell Products Online in India",
+          siteName: title,
         }}
         twitter={{
           handle: '@handle',
@@ -115,7 +121,7 @@ const SuccessStories = () => {
     />
       <Header />
       <Image
-        src="/images/success_banner.jpeg"
+        src={banner}
         width="100%"
         height="620"
         background='no-repeat'
