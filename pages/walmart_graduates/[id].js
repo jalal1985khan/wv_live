@@ -68,7 +68,7 @@ return (
 <Container fluid className="wbg-main yellow-border">
 <Container>
                 <Row>
-                    <Col>
+                    <Col className="m-center">
                 <div className="row g-0">
                   <div className="col-md-3 p-2">
                     <Image
@@ -88,8 +88,7 @@ return (
                     </div>
                     
                     </Col>
-                    <Col className="d-flex align-items-center justify-content-end text-white fs-5">
-       
+                    <Col className="d-flex align-items-center justify-content-end text-white fs-5" sm={12} lg={6}>       
 <div className="p-share">
 Share Profile <TbShare className="s-share" />
 <Row className="share" style={{'display':'none'}}>

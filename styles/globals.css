@@ -1307,6 +1307,25 @@ span.right {
 
 
 @media only screen and (max-width: 600px) {
+.m-center{
+    text-align: -webkit-center;    
+}
+.profile-img {
+    width: 153px !important;
+}
+.share{
+display: flex !important;
+position: relative !important;
+margin-top: 0px !important;    
+}
+.s-share{
+display: none;    
+}
+.p-share{
+    width: 100%;    
+}
+
+
     button.register.btn.btn-primary {
         padding: 9px;
         border-radius: 30px;
