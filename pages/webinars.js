@@ -23,4 +23,11 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
 
 
 }
-  export default Webinars
+export default Webinars
+
+
+async function getWebinars() {
+  const res = await fetch(`${configData.SERVER_URL}industry_connect?_embed&status=publish`)
+  const json = await res.json()
+  return json
+}
