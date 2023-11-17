@@ -33,9 +33,9 @@ return (
     <NextSeo
       title={post['title']['rendered']}
       description={string} 
-      canonical={pathname}
+      canonical=''
       openGraph={{
-        url: pathname,
+        url: '',
         title: post['title']['rendered'],
         description: string,
         images: [
