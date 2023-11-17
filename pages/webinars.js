@@ -46,6 +46,48 @@ webinarvideo.map((web, index) => {
   )
 })}
     
+      
+
+
+
+    {
+
+spotlightvideo.map((spot, index) => {
+
+  return (
+
+    <Col md={4} className='py-3' key={index}>
+
+      <Card className="webinar_post" >
+        <Image
+          src={spot['_embedded']['wp:featuredmedia'][0]['source_url']}
+          alt={spot['title']['rendered']}
+          className="img-hover webimg"
+         
+          onClick={() => {
+            setProduct(spot.id)
+            setUrl(spot.acf.video_url)
+            setTitle(spot.title.rendered)
+          }}
+        />
+        <Card.Body>
+          <Card.Title className="fs-3 bogle-medium" style={{ height: 65 }} dangerouslySetInnerHTML={{ __html: spot['title']['rendered'] }} />
+          <div dangerouslySetInnerHTML={{ __html: spot['acf']['short_decription'] }} style={{ height: 180 }} />
+          <div style={{ height: 220 }}>
+            <Button variant="primary" className="pri-category mb-3" >{spot['acf']['category']}</Button>
+            <h3 className="fs-5 bogle-medium mb-3">{spot['acf']['expert_name']}</h3>
+            <h3 className="fs-6 mb-3">{spot['acf']['expert_designation']}</h3>
+            <h3 className="fs-5 bogle-medium mb-3">{spot['acf']['expert_name_copy']}</h3>
+            <h3 className="fs-6 mb-3">{spot['acf']['expert_designation_copy']}</h3>
+          </div >
+        </Card.Body>
+      </Card>
+    </Col>
+  )
+
+
+})}
+
     </>
 
 
