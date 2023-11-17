@@ -44,7 +44,7 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
 
 
   const [isOpen, setOpen] = useState(false)
-  const handleClose = () => setProduct(false);
+  const handleClose = () => setProduct(null);
   const [currentProduct, setProduct] = useState(null);
   const [currentUrl, setUrl] = useState(null);
   const [currentTitle, setTitle] = useState(null);
@@ -123,8 +123,9 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
             <div className="tab-pane active"  >
               <Row className='w-center'>
                 <p className="fs-1 bogle-medium " >Webinars</p>
-                <Modal show={currentProduct} onHide={handleClose}
-
+                <Modal
+                  show={currentProduct}
+                  onHide={handleClose}
                   closeTimeoutMS={300}
                   isOpen={Boolean(currentProduct)}
                   onRequestClose={() => setProduct(null)}
@@ -182,7 +183,8 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                   <Modal.Header closeButton>
                     <Modal.Title dangerouslySetInnerHTML={{ __html: currentTitle }} />
                   </Modal.Header>
-                  <Modal.Body><iframe width="100%" height="400" src={currentUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></Modal.Body>
+                  <Modal.Body>
+                    <iframe width="100%" height="400" src={currentUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></Modal.Body>
                 </Modal>
 
                 {
