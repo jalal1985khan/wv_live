@@ -52,6 +52,41 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
 
   return (
     <>
+      
+      <NextSeo
+      title="MSME Business Training, Business Training Programs, Small Business Training Programs, Business Training Programs Online"
+      description="Walmart Vriddhi is a supplier development program tailored to help MSMEs grow their business by expanding their domestic and international markets Know more about us here"
+        canonical=''
+        openGraph={{
+          url: '',
+          title: 'MSME Business Training, Business Training Programs, Small Business Training Programs, Business Training Programs Online',
+          description: 'Walmart Vriddhi is a supplier development program tailored to help MSMEs grow their business by expanding their domestic and international markets Know more about us here',
+          images: [
+            {
+              url:'/images/banner_webinar.jpeg',
+              width: 800,
+              height: 600,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            {
+              url:'/images/banner_webinar.jpeg',
+              width: 900,
+              height: 800,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            { url: '/images/banner_webinar.jpeg' },
+            { url: '/images/banner_webinar.jpeg' },
+          ],
+          siteName: "MSME Business Training, Business Training Programs, Small Business Training Programs, Business Training Programs Online",
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+    />
    <Header />
       <Image
         src="../images/banner_webinar.jpeg"
