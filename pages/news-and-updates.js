@@ -101,9 +101,9 @@ const loadMore = () => {
   <NextSeo
       title={Mytitle}
       description="News and updates  - Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize"
-        canonical={pathname}
+        canonical=''
         openGraph={{
-          url: pathname,
+          url: '',
           title: 'News and updates  - Walmart Vriddhi',
           description: 'News and updates  - Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize',
           images: [
