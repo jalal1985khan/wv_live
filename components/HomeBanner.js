@@ -7,15 +7,13 @@ import Image from 'next/image'
 const Home = () => {
   return (
    <Carousel>
-
-              <Carousel.Item>
+<Carousel.Item>
               <Image
           className="w-100 m-tm-none"
           src='/images/HomeBanner-1.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
-          
+          height={610}  
               />
               <Image
                 className="w-100 d-sm-none"
