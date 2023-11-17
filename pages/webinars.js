@@ -108,7 +108,7 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
           <div className="tabs">
             <div className="tab-item active" >
               <Image src="../images/settings.svg" alt="msme training Program online" className="img" />
-              <span className="eael-tab-title">Industry Connect Series</span>
+              <span className="eael-tab-title">Industry Connect Series {pathname}</span>
             </div>
             <div className="tab-item">
               <Image src="../images/peoples.svg" alt="msme training Program online" className="img" />
