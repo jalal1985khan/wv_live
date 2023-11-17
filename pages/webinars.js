@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import { Card, Button, Col, Row, Modal } from 'react-bootstrap';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
 const Webinars = ({ webinarvideo, spotlightvideo }) => {
@@ -100,7 +100,7 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
       <Brand />
       <Container fluid className="wbg-main p-0">
         <Container className="text-center">
-          <p className="fs-1 bogle-medium text-white" >Webinars</p>
+          <p className="fs-1 bogle-medium text-white" >Webinars{pathname}</p>
           <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
           <p className="fs-3 text-white">A collection of webinars that define the Walmart Vriddhi story through the MSME spotlight and industry connect series</p>
         </Container>
@@ -108,7 +108,7 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
           <div className="tabs">
             <div className="tab-item active" >
               <Image src="../images/settings.svg" alt="msme training Program online" className="img" />
-              <span className="eael-tab-title">Industry Connect Series {pathname}</span>
+              <span className="eael-tab-title">Industry Connect Series</span>
             </div>
             <div className="tab-item">
               <Image src="../images/peoples.svg" alt="msme training Program online" className="img" />
