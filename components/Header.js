@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from 'react-bootstrap';
-import { Container, Button, Form, Nav, Navbar, Offcanvas, Image, InputGroup } from 'react-bootstrap';
+import { Container, Button, Form, Nav, Navbar, Offcanvas, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from 'next/link'
 import configData from "../config.json";
 import useDebounce from "../components/useDebounce";
 import { FaSistrix } from 'react-icons/fa';
+import Image from 'next/image';
 
 
 const SuccessStories = () => {
@@ -63,9 +64,10 @@ const SuccessStories = () => {
             <Link href="/">
               <Navbar.Brand >
                 <Image
-                  src='../images/Walmart-Vriddhi-logo.svg'
+                  src='/images/Walmart-Vriddhi-logo.svg'
                   alt="walmart Vriddhi"
-                  
+                  width={400}
+                  height={90}
                   className="logo-img"
                   
                 />
