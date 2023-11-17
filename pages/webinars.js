@@ -31,3 +31,14 @@ async function getWebinars() {
   const json = await res.json()
   return json
 }
+
+
+export async function getServerSideProps() {
+  const webinarvideo = await getWebinars()
+
+  return {
+    props: {
+      webinarvideo,
+    },
+  }
+}
