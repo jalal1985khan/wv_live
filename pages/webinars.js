@@ -8,8 +8,6 @@ import configData from "../config.json";
 import { NextSeo } from 'next-seo';
 import {useRouter} from 'next/router';
 
-
-
 const Webinars = ({ webinarvideo, spotlightvideo }) => {
   const pathname = useRouter()
 
