@@ -11,7 +11,7 @@ const Home = () => {
               <Image
           className="w-100 m-tm-none"
           src='/images/HomeBanner-1.jpeg'
-          alt="walmart vridhi"
+          alt="walmart vridhi registartion"
           width={800}
           height={610}  
               />
