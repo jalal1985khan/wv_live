@@ -12,6 +12,8 @@ import { useRouter } from 'next/navigation'
 const Webinars = ({ webinarvideo, spotlightvideo }) => {
   const router = useRouter()
 
+  console.log(router)
+
   useEffect(() => {
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
@@ -100,7 +102,7 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
       <Brand />
       <Container fluid className="wbg-main p-0">
         <Container className="text-center">
-          <p className="fs-1 bogle-medium text-white" >Webinars{pathname}</p>
+          <p className="fs-1 bogle-medium text-white" >Webinars</p>
           <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
           <p className="fs-3 text-white">A collection of webinars that define the Walmart Vriddhi story through the MSME spotlight and industry connect series</p>
         </Container>
