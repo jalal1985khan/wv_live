@@ -63,13 +63,21 @@ async function getWebinars() {
   return json
 }
 
+async function getSpotlight() {
+  const res = await fetch(`${configData.SERVER_URL}msme_spotlight?_embed&status=publish`)
+  const json = await res.json()
+  return json
+}
+
 
 export async function getServerSideProps() {
-  const webinarvideo = await getWebinars()
+  const webinarvideo = await getWebinars();
+  const spotlightvideo = await getSpotlight();
 
   return {
     props: {
       webinarvideo,
+      spotlightvideo,
     },
   }
 }
