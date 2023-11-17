@@ -1,5 +1,6 @@
 // next.config.js
 module.exports = {
+  compress: true,
   images: {
     domains: ['beta.walmartvriddhi.org','walmartvriddhi.vercel.app','walmartvriddhi.org'],
   },
