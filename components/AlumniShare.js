@@ -1,6 +1,7 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import Image from 'next/image'
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Image from 'next/image';
+import Link from 'next/link';
 import {
   TelegramShareButton,
   TelegramIcon,
@@ -20,7 +21,7 @@ function AlumniShare() {
 <Image src="/images/light.svg" class="card-img-top" alt="..." width={70} height={70} />
 </div>
               <div class="card-body">
-<a href="/alumni-details" class="btn alu-btn">Join the Alumni Network</a>
+<Link href="/alumni-details" class="btn alu-btn">Join the Alumni Network</Link>
 </div>
               
 </div>
