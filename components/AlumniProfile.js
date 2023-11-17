@@ -17,13 +17,15 @@ const SuccessStories = () => {
   const [acfIndustry, setselectedIndustry] = useState("");
   const [hideNext, setHideNext] = useState(false);
   const [showPre, setshowPre] = useState(false);
+  const [noPosts, setnoPost] = useState(false);
   
 
   const postsPerPage = '12';
   const [totalPages, setTotalPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(12); // Add this line
 
-  const API_ENDPOINT = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&search=`;
+  const API_ENDPOINT = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=78&search=`;
+  
 
   const fetchMovies = async () => {
     let url = `${API_ENDPOINT}${val}&per_page=${postsPerPage}&page=${totalPages}`;
@@ -54,7 +56,7 @@ const SuccessStories = () => {
   }, [page]);
 
   const fetchPosts = async () => {
-    let url = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&${acfSearch ? `&city=${acfSearch}` : ''}${acfIndustry ? `&industy=${acfIndustry}` : ''}&per_page=${postsPerPage}&page=${totalPages}`;
+    let url = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=78&${acfSearch ? `&city=${acfSearch}` : ''}${acfIndustry ? `&industy=${acfIndustry}` : ''}&per_page=${postsPerPage}&page=${totalPages}`;
 
     try {
       const response = await fetch(url);
@@ -73,6 +75,10 @@ const SuccessStories = () => {
       {
         setshowPre(true);
       }
+      if (data.length == '0')
+      {
+        setnoPost(true);
+        }
       
 
     } catch (error) {
@@ -147,8 +153,6 @@ const SuccessStories = () => {
     fetchPosts();
   }, [acfSearch, acfIndustry, page,totalPages]);
 
- 
-
 
   return (
     <div>
@@ -205,7 +209,7 @@ const SuccessStories = () => {
         </Row>
       </Container>
 
-      <Container className="mb-51">
+      <Container className="mb-5 height">
         {val ? (
           <Row>
           {movies.map((post, index) => (
@@ -241,12 +245,8 @@ const SuccessStories = () => {
         </Row>
         ) : (
           <Row className="col-51">
-              {profile.map((post, index) =>
-                
-                
-              (
-            
-            
+              {profile.map((post, index) => 
+              ( 
             <Col lg={4} key={index}>
                   <div className="card mb-3 ">
                     <div class="container profile">
@@ -283,34 +283,32 @@ const SuccessStories = () => {
           ))}
         </Row>
         )}
+        
+{
+          noPosts == true ?
+            (
+              <Container>
+                no profile found
+              </Container>
+)
+            : (
+              
+              <>
+                 <div className="d-flex justify-content-center mt-3">          
+               <div className="btn-group" role="group" aria-label="Basic example">
+               <Button
+                   onClick={() => handlePrev(profile.length)}
+                   disabled={showPre}>Prev</Button>
+                  <Button
+                   onClick={() => handleClick(profile.length)}
+                   disabled={hideNext}>Next</Button>
+               </div> </div></>
+              
 
-        {/* Pagination */}
-        <div className="d-flex justify-content-center mt-3">
-          
-          {/* {totalPages} */}
-          {/* {page} */}
-          {/* {postsPerPage} */}
-          {/* {totalPages} */}
+)
 
-          
-          <div class="btn-group" role="group" aria-label="Basic example">
-          <Button
-              onClick={() => handlePrev(profile.length)}
-              disabled={showPre}>Prev</Button>
-             <Button
-              onClick={() => handleClick(profile.length)}
-              disabled={hideNext}>Next</Button>
-</div>
-
-          
-          
-
-           
-          
-          
-
+}
        
-        </div>
       </Container>
     </div>
   );

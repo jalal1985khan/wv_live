@@ -8,12 +8,11 @@ import { useFormik } from "formik";
 import Select from "react-select";
 import csc from "country-state-city";
 import configData from "../config.json";
+import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 
 
 export default function App() {
-
-
-    const [loading, setLoading] = useState(false);
 
     const typeList = [
         { name: "Manufacturing" },
@@ -27,6 +26,29 @@ export default function App() {
         );
         setFromTypes(type.name);
     };
+
+    const sourceList = [
+        
+        { name: "Industry Association" },
+        { name: "State Government" },
+        { name: "NSIC" },
+        { name: "Online: Social Media / App / Online Ads" },
+        { name: "Offline: Advertisement / Vriddhi Centre" },
+        { name: "Service Providers" },
+        { name: "Referrals" },
+        { name: "Others (Please specify)"}
+    ];
+
+    const handleSourceTypes = (e) => {
+        const selectedSource = e.target.value;
+        setSelectedSource(selectedSource);
+        if (selectedSource === "Others (Please specify)") {
+            setOtherSource("");
+        }
+        //setFromTypes(type.name);
+    };
+
+    
 
     const sectorList = [
         { name: "Manufacturing" },
@@ -71,6 +93,7 @@ export default function App() {
     // state wise city function end here
 
     const [post, setPost] = React.useState(null);
+    const [errors, setErrors] = useState({});
     const [yourBusiness, setBusiness] = React.useState(null);
     const [yourType, setFromTypes] = React.useState(null);
     const [yourName, setName] = React.useState(null);
@@ -79,11 +102,21 @@ export default function App() {
     const [yourEmail, setEmail] = React.useState(null);
     const [yourState, setState] = React.useState(null);
     const [yourCity, setCity] = React.useState(null);
+    const [loading, setLoading] = useState(false);
+    const [selectedSource, setSelectedSource] = useState(""); // Track the selected source
+    const [otherSource, setOtherSource] = useState(""); // Track the value of the "Other" source input
+    
 
     const router = useRouter();
     const { utm_source, utm_medium, utm_campaign, utm_id } = router.query;
     const query = router.query;
-
+    const title = "Register with WalmartVriddhi - Walmart Vriddhi"
+    const desc = "Fill the form to be a part of the Walmart Vriddhi program and unlock your business growth!"
+    const Myimg ="/images/registration_banner.png"
+    console.log('utm_source:' + utm_source);
+    console.log('utm_medium:' + utm_medium);
+    console.log('utm_campaign:' + utm_campaign);
+    console.log('utm_id' + utm_id);
 
     const handleSubmit = event => {
         // 👇️ prevent page refresh
@@ -91,19 +124,30 @@ export default function App() {
 
     };
 
-
     function createPost() {
+        setErrors({});  
 
-        axios.post(`${configData.SERVER_FROM}contact-form-7/v1/contact-forms/23770/feedback`,
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(yourEmail)) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                yourEmail: 'Please enter a valid email address.',
+            }));
+            return;
+        }
+        axios.post(`${configData.SERVER_FROM}contact-form-7/v1/contact-forms/26551/feedback`,
             {
-                'your-business': { yourBusiness },
-                'business-type': { yourType },
-                'your-name': { yourName },
-                'business-sector': { yourSector },
-                'state': { yourState },
-                'city': { yourCity },
-                'your-phone': { yourPhone },
-                'your-email': { yourEmail },
+                'yourBusiness': { yourBusiness },
+                'yourType': { yourType },
+                'yourName': { yourName },
+                'yourSector': { yourSector },
+                'yourState': { yourState },
+                'yourCity': { yourCity },
+                'yourPhone': { yourPhone },
+                'yourEmail': { yourEmail },
+                'selectedSource': { selectedSource },
+                'otherSource': { otherSource },
                 'utm_source': query.utm_source,
                 'utm_medium': query.utm_medium,
                 'utm_campaign': query.utm_campaign,
@@ -122,8 +166,18 @@ export default function App() {
                     setLoading(true);
 
                 }
+                else if (msg == 'validation_failed') {
+                   
+                    const fieldErrors = {};
+                    const { status, invalid_fields } = response.data;
+                    invalid_fields.forEach((field) => {
+                        fieldErrors[field.field] = field.message;
+                    });
+                    setErrors(fieldErrors);
+                    console.log(fieldErrors);
+                }
 
-                console.log(response.data)
+                //console.log(response.data)
             });
 
 
@@ -131,26 +185,60 @@ export default function App() {
 
     return (
         <>
+<NextSeo
+    title={ title}
+    description={ desc}
+        canonical='https://www.walmartvriddhi.org/register-with-walmartvriddhi/'
+        openGraph={{
+          url: "https://www.walmartvriddhi.org/register-with-walmartvriddhi/",
+          title: title,
+          description: desc,
+          images: [
+            {
+              url: Myimg,
+              width: 800,
+              height: 600,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            {
+              url: Myimg,
+              width: 900,
+              height: 800,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            { url: Myimg },
+            { url: Myimg },
+          ],
+          siteName: {title},
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+    />
             <Header />
-           
             <Container className="reg-page p-0 " fluid >
                 <p className="fs-4  text-center pt-5">Fill the form to be a part of the Walmart Vriddhi program and unlock your business growth!</p>
                 <Container className="p-4 px-4 reg-wid">
                     <Row>
-                    <Col className="wbg-white d-sm-none" sm={5}>
-                            {/* <BackgroundImage
-                                src='./images/registration_banner.png'
-                                width="100%"
-                                height="100%"
+                        {/* <Col className="wbg-white d-sm-none" sm={5}>
+                            
+                            <Image
+                                src='/images/registration_banner.png'
+                                width="100"
+                                height="100"
                                 background='no-repeat'
                                 background-size='cover'
                                 isResponsive
                                 className="banner-img d-flex align-items-end"
                                 lazyLoad
-                            /> */}
+                            />
 
-                        </Col>
-                        <Col className="wbg-white p-4" sm={7} xs={12}>
+                        </Col> */}
+                        <Col className="wbg-white p-2 g-0" sm={6} xs={12}>
                             <h3 className="text-center">Register</h3>
                             <form
                                 onSubmit={handleSubmit}
@@ -161,7 +249,7 @@ export default function App() {
                                     <input
                                         //required
                                         type='text'
-                                        className="form-control"
+                                        className={`form-control ${errors && errors.yourBusiness ? 'is-invalid' : ''}`}
                                         id="yourBusiness"
                                         name='yourBusiness'
                                         placeholder="India Pvt Ltd"
@@ -169,14 +257,14 @@ export default function App() {
                                         onChange={event => setBusiness(event.target.value)}
                                     />
 
-
+                                {errors && errors.yourBusiness && <div className="invalid-feedback">{errors.yourBusiness}</div>}
                                 </div>
 
                                 <label className="form-label"><span className="errors">*</span>Business Type:</label>
 
                                 <select
                                     //required
-                                    className="form-select"
+                                    className={`form-control ${errors && errors.yourType ? 'is-invalid' : ''}`}
                                     aria-label="Default select example"
                                     id="yourType"
                                     name="yourType"
@@ -190,26 +278,27 @@ export default function App() {
                                     ))}
 
                                 </select>
+                                {errors && errors.yourType && <div className="invalid-feedback">{errors.yourType}</div>}
 
                                 <div className="mb-3 mt-3">
                                     <label htmlfor="yourName" className="form-label"><span className="errors">*</span>Your Name:</label>
                                     <input
                                         //required
                                         type='text'
-                                        className="form-control"
+                                        className={`form-control ${errors && errors.yourName ? 'is-invalid' : ''}`}
                                         id="yourName"
                                         name='yourName'
                                         placeholder="Ravi Kumar"
                                         value={yourName}
                                         onChange={event => setName(event.target.value)}
                                     />
-
+                                    {errors && errors.yourName && <div className="invalid-feedback">{errors.yourName}</div>}
                                 </div>
 
                                 <label className="form-label"><span className="errors">*</span>Business Sector:</label>
                                 <select
                                     //required
-                                    className="form-select"
+                                    className={`form-control ${errors && errors.yourSector ? 'is-invalid' : ''}`}
                                     aria-label="Default select example"
                                     name='yourSector'
                                     value={yourSector}
@@ -222,10 +311,11 @@ export default function App() {
                                         </option>
                                     ))}
                                 </select>
-
+                                {errors && errors.yourSector && <div className="invalid-feedback">{errors.yourSector}</div>}          
                                 <label className="form-label"><span className="errors">*</span>State:</label>
                                 <Select
                                     //required
+                                    className={`form-control ${errors && errors.yourState ? 'is-invalid' : ''}`}
                                     id='yourState'
                                     name='yourState'
                                     options={updatedStates(values.country ? values.country.value : null)}
@@ -234,12 +324,12 @@ export default function App() {
                                         setValues({ state: value, city: null }, false);
                                         setState(value.name, 'yourState');
                                     }}
-
                                 />
-
+                        {errors && errors.yourState && <div className="invalid-feedback">{errors.yourState}</div>}          
 
                                 <label className="form-label"><span className="errors">*</span>City:</label>
                                 <Select
+                                    className={`form-control ${errors && errors.yourCity ? 'is-invalid' : ''}`}
                                     id='yourCity'
                                     name='yourCity'
                                     options={updatedCities(values.state ? values.state.value : null)}
@@ -250,14 +340,14 @@ export default function App() {
                                     }}
 
                                 />
-
+                                {errors && errors.yourCity && <div className="invalid-feedback">{errors.yourCity}</div>}          
 
                                 <div className="mb-3 mt-3">
                                     <label htmlfor="yourPhone" className="form-label"><span className="errors">*</span>Your Phone:</label>
                                     <input
                                         //required
                                         type='tel'
-                                        className="form-control"
+                                        className={`form-control ${errors && errors.yourPhone ? 'is-invalid' : ''}`}
                                         id="yourPhone"
                                         name='yourPhone'
                                         placeholder="1234567890"
@@ -266,15 +356,15 @@ export default function App() {
 
                                     />
 
-
+                                {errors && errors.yourPhone && <div className="invalid-feedback">{errors.yourPhone}</div>}          
                                 </div>
 
                                 <div className="mb-3 mt-3">
                                     <label htmlfor="yourPhone" className="form-label"><span className="errors">*</span>Your Email:</label>
                                     <input
                                         //required
-                                        type='email'
-                                        className="form-control"
+                                        type='text'
+                                        className={`form-control ${errors && errors.yourEmail ? 'is-invalid' : ''}`}
                                         id="yourEmail"
                                         name='yourEmail'
                                         placeholder="test@test.com"
@@ -282,38 +372,73 @@ export default function App() {
                                         onChange={event => setEmail(event.target.value)}
 
                                     />
-
+                            {errors && errors.yourEmail && <div className="invalid-feedback">{errors.yourEmail}</div>}          
 
                                 </div>
+
+                                <div className="mb-3 mt-3">
+                                <label className="form-label"><span className="errors">*</span>How did you hear about us?</label>
+
+<select
+    //required
+    className={`form-control ${errors && errors.selectedSource ? 'is-invalid' : ''}`}
+    aria-label="Default select example"
+    id="selectedSource"
+    name="selectedSource"
+    value={selectedSource}
+    onChange={(e) => handleSourceTypes(e)}>
+    <option value="">Select option</option>
+    {sourceList.map((type, key) => (
+<option key={key} title={type.code} value={type.name}>
+{type.name}
+</option>
+    ))}
+
+                                    </select></div>
+                                
+
+                                    {selectedSource === "Others (Please specify)" && (
+                <div className="mb-3">
+                    <label htmlFor="otherSource" className="form-label">
+                        Specify Other Source:
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="otherSource"
+                        name="otherSource"
+                        placeholder="Specify Other Source"
+                        value={otherSource}
+                        onChange={(e) => setOtherSource(e.target.value)}
+                    />
+                </div>
+            )}
+
+
                                 <button type='submit' className='btn btn-primary register pb-4' onClick={createPost}>Submit</button>
                                 {loading && <h1 class="reg-success mt-4">{post}</h1>}
 
                             </form>
                         </Col>
 
-                        <Col className="wbg-white m-tm-none" sm={5}>
-                            {/* <BackgroundImage
-                                src='./images/registration_banner.png'
-                                width="100%"
-                                height="100%"
+                        <Col className="wbg-white m-tm-none p-0" sm={6}>
+                            
+                            <Image
+                                src='/images/registration_banner.png'
+                                width="100"
+                                height="100"
                                 background='no-repeat'
                                 background-size='cover'
                                 isResponsive
-                                className="banner-img d-flex align-items-end"
+                                className="banner-img d-flex align-items-end w-100 h-100"
                                 lazyLoad
-                            /> */}
+                            />
 
                         </Col>
                     </Row>
                 </Container>
             </Container>
-            <div>
-
-                <h2>utm_source: {utm_source}</h2>
-                <h2>Age: {utm_medium}</h2>
-                <h2>Title: {utm_campaign}</h2>
-                <h2>Title: {utm_id}</h2>
-            </div>
+            
 
             <Footer />
         </>

@@ -38,7 +38,10 @@ const alumniProfiles = () => {
     //console.log(urlPage)
     //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-    url = `${configData.SERVER_URL}msme_speaks?_embed&status[]=publish&per_page=${urlPage}`;
+    //url = `${configData.SERVER_URL}msme_speaks?_embed&status[]=publish&per_page=${urlPage}`;
+
+    url = `${configData.SERVER_URL}msme_speaks?_embed&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
+    //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -154,7 +157,7 @@ Walmart Vriddhi supplier development program has assisted over 25,000 MSMEs in I
 Introducing our graduates who successfully finished the program.</p>    
       </Container> 
       <Container>
-     <Profile/> 
+<Profile/> 
       </Container>      
 <Container>
 </Container>
@@ -170,7 +173,7 @@ Introducing our graduates who successfully finished the program.</p>
 <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
 <p className="fs-3">Hear from our graduates about their experience of the Walmart Vriddhi program and how it benefitted them.</p>
 <Video/>
-      </Container> 
+</Container> 
 
 <Container>
 <Container className="text-center">

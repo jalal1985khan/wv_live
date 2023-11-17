@@ -94,7 +94,7 @@ const SuccessStories = () => {
                   {error.show && <div className="error">{error.msg}</div>}
                 </Form>
 
-                <Link href="/registration">
+                <Link href="/register-with-walmartvriddhi">
                   <Button className="register" > Register</Button>
                 </Link>
 

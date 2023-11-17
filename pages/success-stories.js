@@ -15,9 +15,9 @@ const SuccessStories = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({});
   const [next, setNext] = useState();
-  const [total, setTotal] = useState();
-  const [end, setEnd] = useState(true);
-
+  const [total, setTotal] = useState(0);
+  const [end, setEnd] = useState(false);
+  
   
   const title = "Business Owner Training, Business Owner Training Programs, Sell Products Online in India";
   const desc = "The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here";
@@ -26,25 +26,25 @@ const SuccessStories = () => {
 
   const fetchMovies = async () => {
     setLoading(true);
+    
     let url = "";
     const urlPage = `${page}`;
     //console.log(urlPage)
     //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
+    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
+    //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
     try {
       const response = await fetch(url);
       const data = await response.json();
-      //console.log(data);
+      //console.log(data.length);
       setMovies(data);
-      setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
   const fetchNos = async () => {
-    setLoading(true);
     let cat = "";
     cat = `${configData.SERVER_URL}categories/12`;
 
@@ -60,28 +60,27 @@ const SuccessStories = () => {
     }
   };
 
-
-
-
   useEffect(() => {
     fetchMovies();
     fetchNos();
-  }, [page], [next]);
+  }, [page]);
 
 
-  const loadMore = () => {
-    setTotal(next.count)
-    //console.log(total)
-    const main = next.count;
+ const loadMore = () => {
+  //console.log("Total:", total);
+  //console.log("Next count:", next.count);
+  setTotal(next.count);
 
-    if (total == page) {
-      setEnd(false);
-    }
+  if (total >= next.count) {
+    console.log("Reached end of posts");
+    setEnd(false);
+  }
 
-    setPage((oldPage) => {
-      return oldPage + 2;
-    })
-  };
+  setPage((oldPage) => {
+    //console.log("Updating page:", oldPage + 2);
+    return oldPage + 2;
+  });
+};
 
   return (
     <div>

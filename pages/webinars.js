@@ -16,13 +16,10 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
   useEffect(() => {
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
-
     const tabs = $$(".tab-item");
     const panes = $$(".tab-pane");
-
     const tabActive = $(".tab-item.active");
     const line = $(".tabs .line");
-
     requestIdleCallback(function () {
       line.style.left = tabActive.offsetLeft + "px";
       line.style.width = tabActive.offsetWidth + "px";
@@ -249,7 +246,7 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
 export default Webinars
 
 async function getWebinars() {
-  const res = await fetch(`${configData.SERVER_URL}industry_connect?_embed&status=publish`)
+  const res = await fetch(`${configData.SERVER_URL}industry_connect?_embed&status=publish&production[]=78`)
   const json = await res.json()
 
 
@@ -257,7 +254,7 @@ async function getWebinars() {
 }
 
 async function getSpotlight() {
-  const res = await fetch(`${configData.SERVER_URL}msme_spotlight?_embed&status=publish`)
+  const res = await fetch(`${configData.SERVER_URL}msme_spotlight?_embed&status=publish&production[]=78`)
   const json = await res.json()
   return json
 }

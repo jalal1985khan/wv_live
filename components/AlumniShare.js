@@ -20,7 +20,7 @@ function AlumniShare() {
 <Image src="/images/light.svg" class="card-img-top" alt="..." width={70} height={70} />
 </div>
               <div class="card-body">
-<a href="#" class="btn alu-btn">Join the Alumni Network</a>
+<a href="/alumni-details" class="btn alu-btn">Join the Alumni Network</a>
 </div>
               
 </div>

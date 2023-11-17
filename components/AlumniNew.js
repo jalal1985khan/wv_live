@@ -41,7 +41,7 @@ function AlumniCarousel() {
       //console.log(urlPage)
       //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
       //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-      url = `${configData.SERVER_URL}posts?_embed&categories[]=13&status[]=publish&per_page=3`;
+      url = `${configData.SERVER_URL}posts?_embed&categories[]=13&status[]=publish&production[]=78&per_page=3`;
       try {
         const response = await fetch(url);
         const data = await response.json();
@@ -60,8 +60,7 @@ function AlumniCarousel() {
 
   return (
     <OwlCarousel className='owl-theme' loop margin={10} nav>
-
-{
+      {
             movies.map((post, index) => {
             //console.log(post);
                 return ( 
@@ -69,11 +68,11 @@ function AlumniCarousel() {
                     <Image
                     alt={post['title']['rendered']}
                     src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                    className="w-100 h-100"
+                    className="w-100 h-10"
                     width={260}
                     height={260}
                     />
-                    <h5>{post['title']['rendered']}</h5>
+                    <h5 className="mt-2">{post['title']['rendered']}</h5>
                     </div>                  
             )
             

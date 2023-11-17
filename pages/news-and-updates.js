@@ -18,7 +18,7 @@ const SuccessStories = ({ heroBannerpost }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({});
   const [next, setNext] = useState();
- const [total, setTotal] = useState();
+  const [total, setTotal] = useState();
   const [end, setEnd] = useState(true);
 
   const fetchPosts = async () => {
@@ -27,14 +27,19 @@ const SuccessStories = ({ heroBannerpost }) => {
     const urlPage = `${page}`;
     //console.log(urlPage)
     //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
-    url = `${configData.SERVER_URL}posts?_embed&categories[]=13&status[]=publish&per_page=${urlPage}`;
+    url = `${configData.SERVER_URL}posts?_embed&categories[]=13&status[]=publish&production[]=78&per_page=${urlPage}`;
 
     try {
       const response = await fetch(url);
       const data = await response.json();
-      //console.log(data);
+      //console.log(data.length);
       setMovies(data);
       setLoading(false);
+
+      console.log(total);
+      if (data.length <= 8) {
+        setEnd(false);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -52,13 +57,11 @@ const SuccessStories = ({ heroBannerpost }) => {
       setNext(cats);
       setLoading(false);
       
+      
     } catch (error) {
       console.log(error);
     }
   };
-
-
-
 
   useEffect(() => {
     fetchPosts();
@@ -66,40 +69,36 @@ const SuccessStories = ({ heroBannerpost }) => {
   }, [page],[next]);
 
 
-  const loadMore = () => {
-    setTotal(next.count)
-//console.log(total)
-//console.log(page)
-if(page >= total){
-setEnd(false);
-console.log('im end')
-}
-
-setPage((oldPage ) => {
-return oldPage + 3;
-})
+const loadMore = () => {
+    //console.log("Total:", total);
+    //console.log("Next count:", next.count);
+    setTotal(next.count);
+  
+    if (total >= next.count) {
+      console.log("Reached end of posts");
+      setEnd(false);
+    }
+  
+    setPage((oldPage) => {
+      //console.log("Updating page:", oldPage + 2);
+      return oldPage + 2;
+    });
   };
   
   return (
-    <>
-      
-      
-
- <Header/>
- 
+<>
+ <Header/> 
  <Container fluid style={{padding:0}} className="overflow-hidden">
 <Row>
 {
-            heroBannerpost.map((post, index) => {
-              console.log(post);
+              heroBannerpost.map((post, index) => {
+  //            console.log(post);
               var Myimg = post['acf']['inside_banner']['url'];
               var Mytitle = post['title']['rendered'];
 
   return (
-  
-
   <>
-    <NextSeo
+  <NextSeo
       title={Mytitle}
       description="News and updates  - Walmart Vriddhi Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets. Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize"
         canonical={pathname}
