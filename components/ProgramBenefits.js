@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 function ContainerFluidBreakpointExample() {
 
   return (
-    <Container className="wbg-gy text-center mx-auto py-4 my-4 " fluid>
+    <Container className="wbg-gy text-center mx-auto py-4 my-4" fluid>
       <Container className="d-none d-sm-block">
         <p className="fs-1 bogle-bold walmart-default">Program benefits</p>
         <LazyLoadImage
@@ -15,8 +15,8 @@ function ContainerFluidBreakpointExample() {
           
         />
 
-        <Row className="justify-content-md-center">
-          <Col className="col-md px-0" xs={12}>
+        <Row className="justify-content-md-center pt-4">
+          <Col className="col-md px-0 hover-card" xs={12}>
             <Card className="wbg-orange rounded-0" style={{ height: 310 }}>
 
               <Card.Body className='benefits'>
@@ -33,7 +33,7 @@ function ContainerFluidBreakpointExample() {
             </Card>
           </Col>
 
-          <Col className="col-md px-0" xs={12}>
+          <Col className="col-md px-0 hover-card" xs={12}>
             <Card className="wbg-yellow rounded-0" style={{ height: 310 }}>
 
               <Card.Body className='benefits'>
@@ -49,7 +49,7 @@ function ContainerFluidBreakpointExample() {
               </Card.Body>
             </Card>
           </Col>
-          <Col className="col-md px-0" xs={12}>
+          <Col className="col-md px-0 hover-card" xs={12}>
             <Card className="wbg-green rounded-0" style={{ height: 310 }}>
 
               <Card.Body className='benefits'>
@@ -61,12 +61,12 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>New Markets-Domestic & Exports</Card.Title>
+                <Card.Title className="text-white" style={{ height: 100 }}>New Domestic Markets</Card.Title>
               </Card.Body>
             </Card>
           </Col>
 
-          <Col className="col-md px-0" xs={12}>
+          <Col className="col-md px-0 hover-card" xs={12}>
             <Card className="wbg-blue rounded-0" style={{ height: 310 }}>
 
               <Card.Body className='benefits'>
@@ -83,7 +83,7 @@ function ContainerFluidBreakpointExample() {
             </Card>
           </Col>
 
-          <Col className="col-md px-0" xs={12}>
+          <Col className="col-md px-0 hover-card" xs={12}>
             <Card className="wbg-main rounded-0" style={{ height: 310 }}>
 
               <Card.Body className='benefits'>
@@ -159,16 +159,14 @@ function ContainerFluidBreakpointExample() {
           {/* second carosel slide end here */}
           <Carousel.Item>
             <Card className="wbg-green rounded-0" style={{ height: 310 }}>
-
               <Card.Body className='benefits'>
                 <LazyLoadImage
                   src='/images/benefits-step-3.webp'
                   alt=''
                   className="m-img"
                 />
-
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>New Markets-Domestic & Exports</Card.Title>
+                <Card.Title className="text-white" style={{ height: 100 }}>New Domestic Markets</Card.Title>
               </Card.Body>
             </Card>
 

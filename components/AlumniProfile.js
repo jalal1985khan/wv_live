@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Container, Form, InputGroup,  Row, Button } from "react-bootstrap";
+import { Card, Col, Container, Form, InputGroup, Row, Button } from "react-bootstrap";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import configData from "../config.json";
@@ -18,23 +18,43 @@ const SuccessStories = () => {
   const [hideNext, setHideNext] = useState(false);
   const [showPre, setshowPre] = useState(false);
   const [noPosts, setnoPost] = useState(false);
-  
-
-  const postsPerPage = '12';
   const [totalPages, setTotalPages] = useState(1);
-  const [currentPage, setCurrentPage] = useState(12); // Add this line
 
-  const API_ENDPOINT = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=78&search=`;
-  
+  const postsPerPage = '9';
+  const API_ENDPOINT = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=78&category_type[]=79&search=`;
+
+  const NUM_PAGES_DISPLAYED = 5;
+
+  const taxonomyName = "staging"; // Replace with your actual taxonomy name
+  const taxonomyUrl = `${configData.SERVER_URL}category_type/79`;
+const fetchTaxonomyCount = async () => {
+  try {
+    const response = await fetch(taxonomyUrl);
+    const data = await response.json();
+
+    if (response.ok) {
+      const termCount = data.count;
+      const pages =   parseInt( termCount / postsPerPage )
+
+      setTotalPages(pages);
+      //console.log(`Total Count of ${taxonomyName} Taxonomy Terms:`, pages);
+    } else {
+      console.error(`Failed to fetch taxonomy information. Status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error("Error fetching taxonomy information:", error);
+  }
+};
+
+
 
   const fetchMovies = async () => {
-    let url = `${API_ENDPOINT}${val}&per_page=${postsPerPage}&page=${totalPages}`;
+    let url = `${API_ENDPOINT}${val}&per_page=${postsPerPage}&page=${page}&category_type[]=79`;
 
     try {
       const response = await fetch(url);
       const data = await response.json();
       setMovies(data);
-      //console.log(data.length)
 
     } catch (error) {
       console.log(error);
@@ -49,37 +69,34 @@ const SuccessStories = () => {
     }
   }, [debouncedVal, page]);
 
-
   useEffect(() => {
     fetchCities();
     fetchPosts();
+    fetchTaxonomyCount();
   }, [page]);
 
   const fetchPosts = async () => {
-    let url = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=78&${acfSearch ? `&city=${acfSearch}` : ''}${acfIndustry ? `&industy=${acfIndustry}` : ''}&per_page=${postsPerPage}&page=${totalPages}`;
+    let url = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=78&category_type[]=79&${acfSearch ? `&city=${acfSearch}` : ''}${acfIndustry ? `&industy=${acfIndustry}` : ''}&per_page=${postsPerPage}&page=${page}`;
 
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
       setProfile(data);
+          // Update total pages calculation
+      
+      
       if (postsPerPage > data.length) {
-        console.log('less then');  
         setHideNext(true);
         setshowPre(false);
-      }
-      else {
+      } else {
         setHideNext(false);
       }
-      if (totalPages === 1)
-      {
+      if (page === 1) {
         setshowPre(true);
       }
-      if (data.length == '0')
-      {
+      if (data.length === 0) {
         setnoPost(true);
-        }
-      
+      }
 
     } catch (error) {
       console.log(error);
@@ -87,11 +104,11 @@ const SuccessStories = () => {
   };
 
   const fetchCities = async () => {
-    let url = `${configData.SERVER_URL}walmart_graduates?_embed&per_page=23`;
+    let url = `${configData.SERVER_URL}walmart_graduates?_embed&per_page=60`;
     try {
       const response = await fetch(url);
       const data = await response.json();
-
+      //console.log(data)
       const uniqueCities = data.reduce((accumulator, post) => {
         const existingCity = accumulator.find((city) => city.name === post['_embedded']['wp:term'][0][0]['name']);
         if (!existingCity) {
@@ -102,13 +119,9 @@ const SuccessStories = () => {
         }
         return accumulator;
       }, []);
-  
+
       setUniqueCities(uniqueCities);
-      
-
-
       // Extract unique industries
-
       const uniqueIndustry = data.reduce((accumulator, post) => {
         const existingIndustry = accumulator.find((industry) => industry.name === post['_embedded']['wp:term'][1][0]['name']);
         if (!existingIndustry) {
@@ -119,25 +132,17 @@ const SuccessStories = () => {
         }
         return accumulator;
       }, []);
-      
-      //console.log(uniqueIndustry); // Log the result to see if it contains the expected unique industries
-      
+
       setUniqueIndustries(uniqueIndustry);
-      
+
     } catch (error) {
       console.log(error);
     }
   };
 
-  function handleClick(length) {
-    setTotalPages(totalPages + 1);
-    
-  }
-
-  function handlePrev(length) {
-    setTotalPages(totalPages - 1);
-    
-  }
+  const handleNumberClick = (pageNumber) => {
+    setPage(pageNumber);
+  };
 
   const handleCategoryChange = (e) => {
     const selectedCategory = e.target.value;
@@ -151,13 +156,12 @@ const SuccessStories = () => {
 
   useEffect(() => {
     fetchPosts();
-  }, [acfSearch, acfIndustry, page,totalPages]);
-
+  }, [acfSearch, acfIndustry, page]);
 
   return (
-    <div>
+    <div className="alu-height">
       <Container fluid className="mb-5">
-      <Row>
+        <Row>
           <Col>
             <Form className="px-4 m-tm-none">
               <select
@@ -167,10 +171,9 @@ const SuccessStories = () => {
               >
                 <option value="">All</option>
                 {uniqueIndustry.map((industry, index) => (
-  <option key={index} value={industry.id}>
-    {industry.name}
-    
-  </option>
+                  <option key={index} value={industry.id}>
+                    {industry.name}
+                  </option>
                 ))}
               </select>
             </Form>
@@ -184,10 +187,10 @@ const SuccessStories = () => {
               >
                 <option value="">All</option>
                 {uniqueCities.map((city, index) => (
-  <option key={index} value={city.id}>
-    {city.name}
-  </option>
-))}
+                  <option key={index} value={city.id}>
+                    {city.name}
+                  </option>
+                ))}
               </select>
             </Form>
           </Col>
@@ -212,103 +215,97 @@ const SuccessStories = () => {
       <Container className="mb-5 height">
         {val ? (
           <Row>
-          {movies.map((post, index) => (
-            <Col lg={4} key={index}>
-              <div className="card mb-3 profile">
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <Image
-                      src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                      className="profile-img img-fluid rounded-start"
-                      alt="..."
-                      width={150}
-                      height={150}
-                    />
-                    <Container className="mt-3 info">
-                      <p className="fw-bold text-white fs-6">{post['acf']['business_category']}</p>
-                      <Row className="sharerow">
-                            <Col><Link href={post['slug']} className="btn know">Know More</Link></Col>
-                            <Col>{post['acf']['visit_the_website'] ? <Link href={post['acf']['visit_the_website']} className="btn know" target="_bank">Visit the website</Link> : ''}</Col>
-                      </Row>
-                    </Container>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h4 className="profile-title fw-bold">{post['title']['rendered']}</h4>
-                      <p className="card-text fs-4">{post['acf']['company_name_&_place']}</p>
+            {movies.map((post, index) => (
+              <Col lg={4} key={index}>
+                <div className="card mb-3 profile">
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <Image
+                        src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
+                        className="profile-img img-fluid rounded-start"
+                        alt="..."
+                        width={150}
+                        height={150}
+                      />
+                      <Container className="mt-3 info">
+                        <p className="fw-bold text-white fs-6">{post['acf']['business_category']}</p>
+                        <Row className="sharerow">
+                          <Col><Link href={post['slug']} className="btn know">Know More</Link></Col>
+                          <Col>{post['acf']['visit_the_website'] ? <Link href={post['acf']['visit_the_website']} className="btn know" target="_blank">Visit the website</Link> : ''}</Col>
+                        </Row>
+                      </Container>
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h4 className="profile-title fw-bold">{post['title']['rendered']}</h4>
+                        <p className="card-text fs-6">{post['acf']['company_name_&_place']}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Col>
-          ))}
-        </Row>
+              </Col>
+            ))}
+          </Row>
         ) : (
           <Row className="col-51">
-              {profile.map((post, index) => 
-              ( 
-            <Col lg={4} key={index}>
-                  <div className="card mb-3 ">
-                    <div class="container profile">
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <Image
-                      src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                      className="profile-img img-fluid rounded-start"
-                      alt="..."
-                      width={150}
-                      height={150}
-                    />
-                  
-                  <Container className="mt-3 info">
-    <p className="fw-bold text-white fs-6">{post['acf']['business_category']}</p>
-        <Row className="sharerow">
-          <Col><Link href={`/walmart_graduates/${post['slug']}`} className="btn know">Know More</Link></Col>
-                              <Col>
-                                {post['acf']['visit_the_website'] ? <Link href={post['acf']['visit_the_website']} className="btn know" target="_bank">Visit the website</Link> : ''}
-                              </Col>
-    </Row>    
-  </Container>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h4 className="profile-title fw-bold">{post['title']['rendered']}</h4>
-                      <p className="card-text fs-4">{post['acf']['company_name_&_place']}</p>
+            {profile.map((post, index) => (
+              <Col lg={4} key={index}>
+                <div className="card mb-3 ">
+                  <div className="container profile">
+                    <div className="row g-0">
+                      <div className="col-md-4">
+                        <Image
+                          src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
+                          className="profile-img img-fluid rounded-start"
+                          alt="..."
+                          width={150}
+                          height={150}
+                        />
+                        <Container className="mt-3 info">
+                          <p className="fw-bold text-white fs-6">{post['acf']['business_category']}</p>
+                          <Row className="sharerow">
+                            <Col><Link href={`/walmart_graduates/${post['slug']}`} className="btn know">Know More</Link></Col>
+                            <Col>
+                              {post['acf']['visit_the_website'] ? <Link href={post['acf']['visit_the_website']} className="btn know" target="_blank">Visit the website</Link> : ''}
+                            </Col>
+                          </Row>
+                        </Container>
+                      </div>
+                      <div className="col-md-8">
+                        <div className="card-body">
+                          <h4 className="profile-title fw-bold">{post['title']['rendered']}</h4>
+                          <p className="card-text fs-6">{post['acf']['company_name_&_place']}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                      </div>
-                      </div>
-              </div>
-            </Col>
-          ))}
-        </Row>
+                </div>
+              </Col>
+            ))}
+          </Row>
         )}
-        
-{
-          noPosts == true ?
-            (
-              <Container>
-                no profile found
-              </Container>
-)
-            : (
-              
-              <>
-                 <div className="d-flex justify-content-center mt-3">          
-               <div className="btn-group" role="group" aria-label="Basic example">
-               <Button
-                   onClick={() => handlePrev(profile.length)}
-                   disabled={showPre}>Prev</Button>
-                  <Button
-                   onClick={() => handleClick(profile.length)}
-                   disabled={hideNext}>Next</Button>
-               </div> </div></>
-              
 
-)
-
-}
-       
+        {noPosts ? (
+          <Container>
+            no profile found
+          </Container>
+        ) : (
+          <>
+  <div className="d-flex justify-content-center mt-3">
+  <div className="btn-group" role="group" aria-label="Basic example">
+    {[...Array(totalPages)].map((_, index) => (
+      <Button
+        key={index}
+        onClick={() => handleNumberClick(index + 1)}
+        variant={page === index + 1 ? 'primary' : 'secondary'}
+      >
+        {index + 1}
+      </Button>
+    ))}
+  </div>
+</div>
+          </>
+        )}
       </Container>
     </div>
   );

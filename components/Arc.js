@@ -91,40 +91,29 @@ const Arc = () => {
                 </Row>
                 <Row>
                     <Col className='zindex-7'>
-                        <Row>
-                            <Col className="step_03_text " sm={7}>
+                        <Row className="mt-5 text-center">
+                        <Col className="step_03_text">
                                 <p className={isStep3 ? 'slide-up bogle-medium fs-4 text-3':'bogle-medium fs-4 text-3'}>Market Connect</p>
                                 <p className={isStep3 ? 'slide-up':''}>{isStep3 ? 'On-board and transact on Flipkart Marketplace and Flipkart Wholesale':''}</p>
                             </Col>
-                            <Col className="d-flex justify-content-end"> 
+                        </Row>
+                        <Row className="text-center">
+                        
+                            <Col className=""> 
                             <LazyLoadImage
-                                src='/images/step_03.png'
+                                src='/images/arc-1.png'
                                 alt=''
                                 effect="blur"
                                 className={step_03}
                                 onMouseOver={handleStep3Over}
                                 onMouseOut={handleStep3Out}
                             /></Col>
-                        </Row> </Col>
-                    <Col >
-                        <Row>
-                            <Col className='zindex-6'>
-                                <LazyLoadImage
-                                    src='/images/step_04.png'
-                                    alt=''
-                                    effect="blur"
-                                    className={step_04}
-
-                                    onMouseOver={handleStep4Over}
-                                    onMouseOut={handleStep4Out}
-                                /></Col>
-                            <Col className="step_04_text" sm={7}>
-                                <p className={isStep4 ? 'slide-up bogle-medium fs-4 text-4':'bogle-medium fs-4 text-4'}>Personalized Mentoring</p>
-                                <p className={isStep4 ? 'slide-up':''}>{isStep4 ? 'Engage with experts for customized strategic & operational solutions ':''}</p></Col>
-                        </Row></Col>
+                        </Row>
+                    </Col>
+                    
                 </Row>
-                <Row>
-                    <Col >
+                <Row style={{marginTop: -6}}>
+                    <Col style={{marginTop: -103}}>
                         <Row>
                             <Col className="step_02_text" sm={7}>
                                 <p className={isStep2 ? 'slide-up bogle-medium fs-4 text-2':'bogle-medium fs-4 text-2'}>On-Demand Learning</p>
@@ -149,8 +138,8 @@ const Arc = () => {
                             className="circle_lady"
                         />
                     </Col>
-                    <Col  >
-                        <Row style={{height:140}}>
+                    <Col style={{marginTop: -108}}>
+                        <Row >
                             <Col className='zindex-5'>
                                 <LazyLoadImage
                                     src='/images/step_05.png'
@@ -162,12 +151,12 @@ const Arc = () => {
 
                                 /></Col>
                             <Col className="step_05_text" sm={7}>
-                                <p className={isStep5 ? 'slide-up bogle-medium fs-4 text-5':'bogle-medium fs-4 text-5'}>Export Readiness</p>
-                                <p className={isStep5 ? 'slide-up':''}>{isStep5 ? 'Get training to grow your exports with Walmart Global Sourcing & Marketplace':''}</p></Col>
+                                <p className={isStep5 ? 'slide-up bogle-medium fs-4 text-5':'bogle-medium fs-4 text-5'}>Personalized Mentoring</p>
+                                <p className={isStep5 ? 'slide-up':''}>{isStep5 ? 'Engage with experts for customized strategic & operational solutions':''}</p></Col>
                         </Row>
                     </Col>
                 </Row>
-                <Row>
+                <Row style={{marginTop: 16}}>
                     <Col >
                         <Row>
                             <Col className="step_01_text" sm={7}>

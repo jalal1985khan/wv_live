@@ -21,7 +21,7 @@ import { TbShare } from "react-icons/tb";
 
 const post = ({ data }) => {
   const pathname = usePathname()
-  //console.log(data);
+  console.log(data);
   return (
     <div>
           <Header />   

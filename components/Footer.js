@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import CookieConsent from "react-cookie-consent";
-
+import ScrollToTop from "react-scroll-to-top";
 
 
 function Footer() {
@@ -11,6 +11,7 @@ function Footer() {
 
         <>
             <Container fluid className="px-0">
+            <ScrollToTop smooth />
                 <Container className="wbg-main px-4" fluid>
                     <Row className="px-4">
                         <Col xs={2} className="px-4">
