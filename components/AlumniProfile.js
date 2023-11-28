@@ -307,6 +307,10 @@ const fetchTaxonomyCount = async () => {
           </>
         )}
       </Container>
+      <Container>
+<p className="fs-4 pb-5"><b>Disclaimer:</b> Information regarding profiles has been voluntarily shared by MSMEs who are responsible for the accuracy of data. In case of changes or edits required on any profile, MSMEs can reach out to us at contactus@walmartvriddhi.org</p>
+
+      </Container>
     </div>
   );
 };
