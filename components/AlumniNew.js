@@ -64,7 +64,7 @@ function AlumniCarousel() {
             movies.map((post, index) => {
             //console.log(post);
                 return ( 
-                  <Link class='item alu-items' key={post.id} href="">
+                  <Link class='item alu-items' key={post.id} href={post['acf']['source_url']}>
                     <Image
                     alt={post['title']['rendered']}
                     src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
