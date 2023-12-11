@@ -1525,7 +1525,13 @@ min-height:200px !important;
 .info{
 display: none;    
 }
-
+.cursor{
+cursor: pointer;    
+}
+.alu-items{
+text-decoration: none;
+color:#000;    
+}
 .profile{
 width:100%;
 position: relative;

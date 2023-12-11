@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Link from 'next/link'
 import dynamic from "next/dynamic";
 import Image from 'next/image';
 import configData from "../config.json";
@@ -47,7 +47,7 @@ function AlumniCarousel() {
         const data = await response.json();
         setMovies(data);
         //console.log('hello')
-        //console.log(data)
+        console.log(data)
 
       } catch (error) {
         console.log(error);
@@ -64,7 +64,7 @@ function AlumniCarousel() {
             movies.map((post, index) => {
             //console.log(post);
                 return ( 
-                  <div class='item' key={post.id}>
+                  <Link class='item alu-items' key={post.id} href="">
                     <Image
                     alt={post['title']['rendered']}
                     src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
@@ -72,8 +72,8 @@ function AlumniCarousel() {
                     width={260}
                     height={260}
                     />
-                    <h5 className="mt-2">{post['title']['rendered']}</h5>
-                    </div>                  
+                    <h5 className="mt-2" dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
+                    </Link>                  
             )
             
             

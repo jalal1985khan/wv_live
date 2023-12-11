@@ -8,9 +8,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import dynamic from "next/dynamic";
 import Image from 'next/image'
-
-
-
+import { Card, Button, Col, Row, Modal } from 'react-bootstrap';
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
     ssr: false,
@@ -44,7 +42,12 @@ function AlumniCarousel() {
 
     //const pathname = usePathname()
     const [movies, setMovies] = useState([]);
-    const [page, setPage] = useState(10);
+  const [page, setPage] = useState(10);
+  const [isOpen, setOpen] = useState(false)
+const handleClose = () => setProduct(false);
+const [currentProduct, setProduct] = useState(null);
+const [currentUrl, setUrl] = useState(null);
+const [currentTitle, setTitle] = useState(null);
 
     const fetchMovies = async () => {
         let url = "";
@@ -71,7 +74,19 @@ function AlumniCarousel() {
 
 
     return (
-     <>
+      <>
+        <Modal show={currentProduct} onHide={handleClose}
+                  closeTimeoutMS={300}
+                  isOpen={Boolean(currentProduct)}
+                  onRequestClose={() => setProduct(null)}
+                  size="lg"
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title dangerouslySetInnerHTML={{ __html: currentTitle }} />
+                  </Modal.Header>
+                  <Modal.Body>
+                    <iframe width="100%" height="400" src={currentUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></Modal.Body>
+                </Modal>
         <OwlCarousel  
                     nav
           // className="owl-theme"
@@ -93,9 +108,15 @@ function AlumniCarousel() {
                     <Image
                         alt={post['title']['rendered']}
                         src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                        className="w-100 h-100"
+                        className="w-100 h-100 cursor"
                         width={360}
                         height={360}
+                      
+                      onClick={() => {
+                        setProduct(post.id)
+                        setUrl(post['acf']['video_url'])
+                        setTitle(post['title']['rendered'])
+                      }}
             />
                   
                   </div>
