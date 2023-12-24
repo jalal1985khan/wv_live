@@ -54,7 +54,7 @@ return (
 <h2 className="text-white bogle-medium">{post['title']['rendered']}</h2>
 </Container>
 <Container>
-<div dangerouslySetInnerHTML={{__html:post['acf']['privacy_policy']}} className="fs-4"/>
+<div dangerouslySetInnerHTML={{__html:post['acf']['terms_of_use']}} className="fs-4"/>
 
 </Container>
 </>
