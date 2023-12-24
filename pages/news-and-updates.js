@@ -143,7 +143,7 @@ const loadMore = () => {
       className="banner-img d-flex align-items-end"
       
     /> 
-    <Container className="wbg-main px-4" >
+      <Container className="wbg-main px-4 news_b" style={{width:'80%',position:'absolute'}}>
       <Row >
         <Col sm={8} className="pt-3">
         <p className="text-white fs-5 bogle-medium">{post['title']['rendered']}</p>

@@ -8,9 +8,11 @@ import configData from "../config.json";
 import useDebounce from "../components/useDebounce";
 import { FaSistrix } from 'react-icons/fa';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'
 
 
 const SuccessStories = () => {
+  const pathname = usePathname()
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(10);
   const [loading, setLoading] = useState(false);
@@ -118,28 +120,28 @@ const SuccessStories = () => {
                   <ul className="navbar-nav">
 
                     <li className="nav-item">
-                      <Link href="/about-us" className="nav-link px-5 " aria-current="page" >About us</Link>
+                      <Link href="/about-us" className={pathname == "/about-us" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >About us</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/msme-growth-journey" className="nav-link px-5 " aria-current="page" >MSME growth journey</Link>
+                      <Link href="/msme-growth-journey" className={pathname == "/msme-growth-journey" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >MSME growth journey</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/success-stories" className="nav-link px-5" aria-current="page" >Success Stories</Link>
+                      <Link href="/success-stories" className={pathname == "/success-stories" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >Success Stories</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/alumni-profiles" className="nav-link px-5" aria-current="page" >Alumni Profiles</Link>
+                      <Link href="/alumni-profiles" className={pathname == "/alumni-profiles" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >Alumni Profiles</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/webinars" className="nav-link px-5" aria-current="page" >Webinars</Link>
+                      <Link href="/webinars" className={pathname == "/webinars" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >Webinars</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/news-and-updates" className="nav-link px-5" aria-current="page" >News and Updates</Link>
+                      <Link href="/news-and-updates" className={pathname == "/news-and-updates" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >News and Updates</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/contact-us" className="nav-link px-5" aria-current="page" >Contact</Link>
+                      <Link href="/contact-us" className= {pathname == "/contact-us" ? "active nav-link px-5" : "nav-link px-5"}  aria-current="page" >Contact us</Link>
                     </li>
                   </ul>
-
+                  
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

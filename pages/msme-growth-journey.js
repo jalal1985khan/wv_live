@@ -112,7 +112,7 @@ const Webinars = () => {
                 <Container className="text-center">
                     <p className="fs-1 bogle-medium text-white" >MSME Growth Journey</p>
                     <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
-                    <p className="fs-3 text-white">The Walmart Vriddhi program helps you address your business challenges and pursue your aspirations, wherever you are in your business growth journey. It aims to equip MSMEs to ‘Make-in-India’ as well as enable their offline and online growth by becoming part of local and global supply chains.</p>
+                    <p className="fs-3 text-white">The Walmart Vriddhi program helps you address your business challenges and pursue your aspirations, wherever you are in your business growth journey. It aims to equip MSMEs to ‘Make-in-India’ as well as enable their offline and online growth by becoming part of domestic supply chains.</p>
                 </Container>
                 <Container>
                     <div className="tabs">
@@ -138,9 +138,9 @@ const Webinars = () => {
                             <Row className='w-center'>
                                 <Container>
                                     <p className="fs-1 bogle-medium walmart-default mt-4" >Learning</p>
-                                    <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
+                                    <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" className="mb-5"/>
                                     <p className="fs-4">The Walmart Vriddhi learning program equips you with tailored support to help you unlock your growth potential. It provides you with interactive virtual learning experiences through the mobile app available on iOS and Android, in English, Hindi and Tamil.</p>
-                                    <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5">Business Fundamentals</div>
+                                    <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-5">Business Fundamentals</div>
                                     <p className="fs-4">The program helps you gain a foundational understanding of business management, with a special focus on the global shift towards eCommerce. Frameworks and established theories will guide you on how to modernise and expand your businesses.</p>
 
                                     <Row className="d-flex align-items-center px-2">
@@ -168,7 +168,7 @@ const Webinars = () => {
                                         <Col sm={6} className="fs-4 b-box-2">Basics of Finance</Col>
 
                                     </Row>
-                                    <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5">Advanced Business</div>
+                                    <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-5">Advanced Business</div>
                                     <p className="fs-4">The program helps you apply advanced business management tools and strategies to your business. It offers relevant case studies to assist you gain real-life experience of MSMEs and get a deep understanding of markets, consumers, and digital transformation tools.</p>
                                     <Image
                                         src='/images/advanced_banner.jpeg'
@@ -311,14 +311,14 @@ const Webinars = () => {
                                 <Container>
                                     <p className="fs-1 bogle-medium walmart-default mt-4" >Market Connect</p>
                                     <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
-                                    <p className="fs-4">Expand your business reach by capturing new markets and widening existing markets. Vriddhi offers you the opportunity to grow through the supply chains of Flipkart and Walmart and other major domestic and international companies.</p>
+                                    <p className="fs-4">Expand your business reach by capturing new markets and widening existing markets. Vriddhi offers you the opportunity to grow through the supply chains of Flipkart and Walmart and other major domestic companies.</p>
                                 </Container>
                             </Row>
                             <Container className="wbg_grey" fluid>
                                 <Row>
                                     <Container className='w-center'> <p className="fs-1 bogle-medium  mt-4" >Domestic</p>
                                         <Image src="/images/flipkart-1.png" width={180} height={70} alt="Industry Connect Series" />
-                                        <p className="fs-4 mb-4 pb-4">As a Walmart Vriddhi-certified seller, you would be eligible for onboarding as well as incubation support to take your business digital on Flipkart.</p>
+                                        <p className="fs-4 mb-4 pb-4" style={{width:'70%'}}>As a Walmart Vriddhi-certified seller, you would be eligible for onboarding as well as incubation support to take your business digital on Flipkart.</p>
 
 
                                         <Container className="wbg-blue-m pb-4 mt-4">
@@ -329,7 +329,7 @@ const Webinars = () => {
                                                     <Image
                                                         src='/images/sign_up.png'
                                                         alt=''
-                                                        width='65%'
+                                                        width='40%'
                                                         className=""
                                                      
 
@@ -339,7 +339,7 @@ const Webinars = () => {
                                                     <Image
                                                         src='/images/gstin.png'
                                                         alt=''
-                                                        width='65%'
+                                                        width='40%'
                                                         className=""
                                                         effect="blur"
 
@@ -348,7 +348,7 @@ const Webinars = () => {
                                                     <Image
                                                         src='../images/upload.png'
                                                         alt=''
-                                                        width='65%'
+                                                        width='40%'
                                                         className=""
                                                         effect="blur"
 
@@ -357,7 +357,7 @@ const Webinars = () => {
                                                     <Image
                                                         src='/images/products.png'
                                                         alt=''
-                                                        width='65%'
+                                                        width='40%'
                                                         className=""
                                                         
 
@@ -366,7 +366,7 @@ const Webinars = () => {
                                                     <Image
                                                         src='/images/new_orders.png'
                                                         alt=''
-                                                        width='65%'
+                                                        width='40%'
                                                         className=""
                                                         
 
@@ -411,58 +411,7 @@ const Webinars = () => {
 
                             </Container>
 
-                            <Container fluid className="wbg-light">
 
-                    <Container className="wbg-main mb-4 pb-4">
-                        <p className="fs-3 bogle-medium text-white py-4 pb-4 w-center">Exports</p>
-                        <Row>
-                            
-                            <Col>
-                            
-                                <Image
-                                    src='/images/walmart_marketplace.png'
-                                    alt=''
-                                    width='75%'
-                                    className="mx-4"
-                                    
-
-                                />
-                                <Card className="rounded-0 wbg-market text-white box-arw" style={{ height: 250 }}>
-
-                                    <Card.Body>
-                                        <Card.Title className="fs-4 bogle-medium">Walmart Marketplace</Card.Title>
-                                        
-                                        <Card.Text className="fs-5">
-                                            MSMEs like you, have the unique opportunity to reach over 120 million unique Walmart.com visitors each month. Outstanding ‘Make in India’ brands can expand their global networks, learn export best practices and diversify their product categories in concert with Walmart as they take on the world. The opportunity to easily access global consumers can be transformative for Indian sellers.
-                                        </Card.Text>
-
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col>
-                            <Image
-                                    src='/images/walmart_global_sourcing.png'
-                                    alt=''
-                                    width='75%'
-                                    className="mx-4"
-                                    
-
-                                />
-                                <Card className="rounded-0 wbg-global text-white box-arw" style={{ height: 250 }}>
-
-                                    <Card.Body>
-                                        <Card.Title className="fs-4 bogle-medium">Walmart Global Sourcing</Card.Title>
-                                        <Card.Text className="fs-5">
-                                            Learn how to qualify as a Walmart Global Sourcing supplier and take ‘Make in India’ products to the world as Walmart triples its exports from India to $10 billion annually by 2027.
-                                        </Card.Text>
-
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-
-                        </Row>
-                    </Container>
-                </Container>
                         </div>
 
 

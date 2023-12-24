@@ -81,7 +81,7 @@ const Arc = () => {
                 <Row>
                     <Col className="text-center">
 
-                        <p className="fs-1 bogle-medium walmart-default">6 simple steps for you, a giant leap for your business</p>
+                        <p className="fs-1 bogle-medium walmart-default">5 simple steps for you, a giant leap for your business</p>
                         <LazyLoadImage
                             src='/images/line-svg-png-2.png'
                             alt=''

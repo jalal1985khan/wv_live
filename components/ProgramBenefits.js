@@ -28,7 +28,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>Business Development Assistance to Go Digital</Card.Title>
+                <Card.Title className="text-white bogle-medium " style={{ height: 100 }}>Business Development Assistance to Go Digital</Card.Title>
               </Card.Body>
             </Card>
           </Col>
@@ -45,7 +45,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>Exclusive Pre-Launch Support to Grow on Flipkart</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>Exclusive Pre-Launch Support to Grow on Flipkart</Card.Title>
               </Card.Body>
             </Card>
           </Col>
@@ -61,7 +61,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>New Domestic Markets</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>New Domestic Markets</Card.Title>
               </Card.Body>
             </Card>
           </Col>
@@ -78,7 +78,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>Collaborate and Grow your MSME Network</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>Collaborate and Grow your MSME Network</Card.Title>
               </Card.Body>
             </Card>
           </Col>
@@ -95,7 +95,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>Personalized Mentoring Support with Industry Experts</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>Personalized Mentoring Support with Industry Experts</Card.Title>
               </Card.Body>
             </Card>
           </Col>
@@ -131,7 +131,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>Business Development Assistance to Go Digital</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>Business Development Assistance to Go Digital</Card.Title>
               </Card.Body>
             </Card>
 
@@ -150,7 +150,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>Exclusive Pre-Launch Support to Grow on Flipkart</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>Exclusive Pre-Launch Support to Grow on Flipkart</Card.Title>
               </Card.Body>
             </Card>
 
@@ -166,7 +166,7 @@ function ContainerFluidBreakpointExample() {
                   className="m-img"
                 />
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>New Domestic Markets</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>New Domestic Markets</Card.Title>
               </Card.Body>
             </Card>
 
@@ -184,7 +184,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>Collaborate and Grow your MSME Network</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>Collaborate and Grow your MSME Network</Card.Title>
               </Card.Body>
             </Card>
 
@@ -202,7 +202,7 @@ function ContainerFluidBreakpointExample() {
                 />
 
                 <hr />
-                <Card.Title className="text-white" style={{ height: 100 }}>Personalized Mentoring Support with Industry Experts</Card.Title>
+                <Card.Title className="text-white bogle-medium" style={{ height: 100 }}>Personalized Mentoring Support with Industry Experts</Card.Title>
               </Card.Body>
             </Card>
 

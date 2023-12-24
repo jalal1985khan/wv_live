@@ -64,7 +64,7 @@ function ContainerExample() {
     <Container>
     <Row>
         <Col className="text-center">
-        <p className="fs-1 bogle-bold walmart-default mt-4">About Walmart Vriddhi</p>
+        <p className="fs-1 bogle-medium walmart-default mt-4">About Walmart Vriddhi</p>
 <Image
               src='/images/line-svg-png-1.png'
               alt=''
@@ -82,7 +82,7 @@ function ContainerExample() {
     <Container className="wbg-main p-4">
     <Row>
         <Col className="text-center text-white">
-<p className="col-md-8 mx-auto text-center fs-4">Walmart and Flipkart have made a long-term commitment to transform India’s MSME ecosystem by empowering 50,000 MSMEs. We strive to play a catalytic role by supporting small businesses with growth opportunities to reach greater heights and new markets.</p>
+<p className="col-md-8 mx-auto text-center fs-4">Walmart Vriddhi is a supplier development program tailored to help MSMEs modernize, scale and meet their domestic ambitions. By doing this, Walmart Vriddhi is unlocking India’s entrepreneurial capacity and enabling MSMEs to thrive in the marketplace. The program also helps MSMEs with tools to potentially become a part of the supply chains of the Flipkart Marketplace, Flipkart Wholesale ecosystem or those of other domestic companies.</p>
 
         </Col>
       </Row> 
@@ -148,9 +148,9 @@ function ContainerExample() {
               className="img-fluid"
                   
                 />
-<p className="mb-5">Swasti, a member of the Catalyst family, was founded in 2004. Swasti co-designs demonstrable and scalable solution models for businesses in partnership with communities on the ground and influences policies nationally and internationally. Swasti is helping communities, governments, and partners shape safe, secure, healthy and more prosperous lives across the world through various initiatives that reach over 400,000 people.
+            <p className="mb-5" style={{color:'#E1E1E1'}}>Swasti, a member of the Catalyst family, was founded in 2004. Swasti co-designs demonstrable and scalable solution models for businesses in partnership with communities on the ground and influences policies nationally and internationally. Swasti is helping communities, governments, and partners shape safe, secure, healthy and more prosperous lives across the world through various initiatives that reach over 400,000 people.
 Over the past eight years, Walmart and Swasti have shared a meaningful partnership which now includes the Walmart Vriddhi program.</p>
-<Link href="https://swastihc.org/" target="_blank" className="ab-button mb-4 mt-5">Know more</Link>
+<Link href="https://swastihc.org/" target="_blank" className="ab-button mb-4 mt-5 bogle-medium">Know more</Link>
 </Col>
 <Col className="p-0 d-flex justify-content-end">
 

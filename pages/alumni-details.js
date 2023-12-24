@@ -6,6 +6,8 @@ import configData from "../config.json";
 import { NextSeo } from 'next-seo';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Form from 'react-bootstrap/Form';
+
 
 
 export default function App() {
@@ -253,8 +255,8 @@ export default function App() {
         }}
     />
             <Header />
-            <Container className="reg-page p-0 " fluid >
-                <p className="fs-4  text-center pt-5 fw-bold">Alumni Details</p>
+            <Container className=" p-0 " fluid >
+                <p className="fs-2  text-center pt-5 fw-bold bogle-bold walmart-default">Alumni Details</p>
                 <Container className="p-4 px-4 reg-wid">
 
 
@@ -263,9 +265,6 @@ export default function App() {
                 <form
                     onSubmit={handleSubmit}
                         style={{ margin: '20px' }}>
-                        
-                       
-
                     <Row>
                             <Col>
                             <div className="mb-3" >
@@ -332,7 +331,6 @@ export default function App() {
                                     {errors && errors.yourDesignation && <div className="invalid-feedback">{errors.yourDesignation}</div>}
                                 </div>
                             </Col>
-                       
                         </Row>
                         <Row>
                             <Col>
@@ -404,22 +402,19 @@ export default function App() {
                             <Col>
                             <div className="mb-3">
                                     <label htmlfor="ContactPoint" className="form-label"><span className="errors">*</span>Point of Contact:</label>
-                            <select
-                                    //required
-                                    className={`form-control ${errors && errors.yourContactPoint ? 'is-invalid' : ''}`}
-                                    aria-label="Default select example"
+                                    <Form.Select aria-label="Default select example" className={`form-control ${errors && errors.yourContactPoint ? 'is-invalid' : ''}`}
                                     id="ContactPoint"
                                     name="yourContactPoint"
                                     value={yourContactPoint}
-                                    onChange={(e) => handleFromTypes(e)}>
-                                    <option value="null">Point of Contact</option>
-                                    {typeList.map((type, key) => (
+                                    onChange={(e) => handleFromTypes(e)}
+                                    >
+      <option value="null">Point of Contact</option>
+      {typeList.map((type, key) => (
                                         <option key={key} title={type.code} value={type.name}>
                                             {type.name}
                                         </option>
                                     ))}
-
-                                    </select>
+    </Form.Select>
                                     {errors && errors.yourContactPoint && <div className="invalid-feedback">{errors.yourContactPoint}</div>}
                                 </div>
                             </Col>
@@ -575,11 +570,12 @@ export default function App() {
 </div>
                         
                         </Container>
+                        <Container className="text-center">
                         <button type='submit'
-                            className={`btn btn-primary register pb-4 ${!isCheckboxChecked ? 'disabled' : ''}`}
+                            className={`registers ${!isCheckboxChecked ? 'disabled' : ''}`}
                             onClick={createPost}
                             disabled={!isCheckboxChecked}
-                        >Submit</button>    
+                        >Submit</button>    </Container>
                         {loading && <h1 class="reg-success mt-4">{post}</h1>}
                         </form>
                 </Container>

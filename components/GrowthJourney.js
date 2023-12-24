@@ -49,8 +49,8 @@ function AutoLayoutExample() {
               className='p-4'
             />
             <Card.Body className="wbg-main text-white g-box-1">
-              <Card.Title>Grow your exports<br />
-                with Walmart</Card.Title>
+              <Card.Title>Grow your Network <br />
+              with Walmart Vriddhi</Card.Title>
             </Card.Body>
           </Card>
         </Col>
@@ -104,8 +104,7 @@ slide={true}
               className='p-4'
             />
             <Card.Body className="wbg-main text-white g-box">
-              <Card.Title>Grow your exports<br />
-                with Walmart</Card.Title>
+              <Card.Title>Grow your Network <br/>with Walmart Vriddhi</Card.Title>
             </Card.Body>
           </Card>
       </Carousel.Item>

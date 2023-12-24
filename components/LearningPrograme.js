@@ -25,13 +25,16 @@ function ContainerFluidBreakpointExample() {
       </Row>
       
       <Row>
-        <Col className="text-center" xs={12} sm={6}>
+        <Col className="text-center" xs={12} sm={5}>
           <p className="fs-2 bogle-medium walmart-default">DEVELOP</p>
           <p className="fs-5"> On-Demand Learning &<br />
             Personalized Mentoring for MSMEs</p>
 
-        </Col>
-        <Col className="text-center" xs={12} sm={6}>
+          </Col >
+          <Col className="text-center" xs={2} sm={2}>
+           <hr className="line_d"/>
+          </Col>
+        <Col className="text-center" xs={12} sm={5}>
           <p className="fs-2 bogle-medium walmart-secondary">CONNECT</p>
           <p className="fs-5">Market Access & Onboarding<br />
             Support with Flipkart Marketplace</p>

@@ -4,12 +4,17 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import CookieConsent from "react-cookie-consent";
 import ScrollToTop from "react-scroll-to-top";
-
+import { usePathname } from 'next/navigation'
+import NewsLetter from './NewsLetter'
+import Floating from '../components/FloatingMenu'
 
 function Footer() {
+    const pathname = usePathname()
     return (
 
         <>
+            <Floating/>
+            <NewsLetter/>
             <Container fluid className="px-0">
             <ScrollToTop smooth />
                 <Container className="wbg-main px-4" fluid>
@@ -32,20 +37,21 @@ function Footer() {
                             <p className="fs-2">SITEMAP</p>
                             <hr />
                             <ul className="fs-4 list-unstyled">
-                                <li className="f-text"><Link href="/about-us">About us</Link></li>
-                                <li className="f-text"><Link href="/msme-growth-journey">MSME growth journey</Link></li>
-                                <li className="f-text"><Link href="/success-stories">Success Stories</Link></li>
-                                <li className="f-text"><Link href="/webinars">Webinars</Link></li>
-                                <li className="f-text"><Link href="/news-and-updates">News and updates</Link></li>
-                                <li className="f-text"><Link href="/contact-us">Contact us</Link></li>
+                                <li className="f-text"><Link href="/about-us" className={pathname == "/about-us" ? "activef" : ""}>About us</Link></li>
+                                <li className="f-text"><Link href="/msme-growth-journey" className={pathname == "/msme-growth-journey" ? "activef" : ""}>MSME growth journey</Link></li>
+                                <li className="f-text"><Link href="/success-stories" className={pathname == "/success-stories" ? "activef" : ""}>Success Stories</Link></li>
+                                <li className="f-text"><Link href="/alumni-profiles" className={pathname == "/alumni-profiles" ? "activef" : ""}>Alumni Profiles</Link></li>
+                                <li className="f-text"><Link href="/webinars" className={pathname == "/webinars" ? "activef" : ""}>Webinars</Link></li>
+                                <li className="f-text"><Link href="/news-and-updates" className={pathname == "/news-and-updates" ? "activef" : ""}>News and updates</Link></li>
+                                <li className="f-text"><Link href="/contact-us" className={pathname == "/contact-us" ? "activef" : ""}>Contact us</Link></li>
                             </ul>
                         </Col>
                         <Col className="px-4 text-white" sm={3} xs={12}>
                             <p className="fs-2 ">PRIVACY POLICY</p>
                             <hr />
                             <ul className="fs-4 list-unstyled">
-                                <li className="f-text"><Link href="/privacy-policy">Privacy policy</Link></li>
-                                <li className="f-text"><Link href="/terms-of-use">Terms of use </Link></li>
+                                <li className="f-text"><Link href="/privacy-policy" className={pathname == "/privacy-policy" ? "activef" : ""}>Privacy policy</Link></li>
+                                <li className="f-text"><Link href="/terms-of-use" className={pathname == "/terms-of-use" ? "activef" : ""}>Terms of use </Link></li>
                             </ul>
                         </Col>
                         <Col className="px-4 text-white" sm={4}>
