@@ -76,7 +76,8 @@ export async function getServerSideProps(context){
     //const {id} = context.params;
 
     const res = await fetch(`${configData.SERVER_URL}pages?_embed&slug=terms-of-use`);
-    const data = await res.json();
+  const data = await res.json();
+  console.log(data)
     return {props:{data}}
     
     }
