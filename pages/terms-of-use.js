@@ -75,7 +75,7 @@ export default privacy
 export async function getServerSideProps(context){
     //const {id} = context.params;
 
-    const res = await fetch(`${configData.SERVER_URL}pages?_embed&slug=privacy-policy`);
+    const res = await fetch(`${configData.SERVER_URL}pages?_embed&slug=terms-of-use`);
     const data = await res.json();
     return {props:{data}}
     
