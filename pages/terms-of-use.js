@@ -50,7 +50,7 @@ const pathname = useRouter()
                     data.map((post, index) => {
                         //console.log(post)
                         return (
-                            <>
+                          <div key={index}>
                                 <Container className="wbg-main d-flex justify-content-center align-items-center" style={{ height: 150 }}>
                                     <h2 className="text-white bogle-medium">{post['title']['rendered']}</h2>
                                 </Container>
@@ -58,7 +58,7 @@ const pathname = useRouter()
                                     <div dangerouslySetInnerHTML={{ __html: post['acf']['terms_of_use'] }} className="fs-4" />
 
                                 </Container>
-                            </>
+                            </div>
                         )
 
 
