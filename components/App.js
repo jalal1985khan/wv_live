@@ -46,7 +46,7 @@ const App = () => {
                                 </Col>
                             </Row>
                         </Container>
-                        <hr></hr>
+                        <hr className="p_line"/>
                         <p className="fs-4">Download the App to begin your Walmart Vriddhi FREE learning
                             program. The app provides access to learning modules in English,
                             Hindi and Tamil.</p>
