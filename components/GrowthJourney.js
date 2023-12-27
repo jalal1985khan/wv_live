@@ -44,7 +44,7 @@ function AutoLayoutExample() {
         <Col className="col-md px-0">
           <Card className="border-0 rounded-0 wbg-gy">
             <LazyLoadImage
-              src='../images/exports-with-Walmart.png'
+              src='../images/India-Image.png'
               alt="walmart Vriddhi"
               className='p-4'
             />
@@ -98,7 +98,7 @@ slide={true}
       <Carousel.Item>
       <Card className="border-0 rounded-0 wbg-gy">
             <LazyLoadImage
-              src='/images/exports-with-Walmart.png'
+              src='/images/India-Image.png'
               alt="walmart Vriddhi"
               
               className='p-4'

@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Home = () => {
   return (
-   <Carousel>
+   <Carousel controls={false}>
 <Carousel.Item>
               <Image
           className="w-100 m-tm-none"
