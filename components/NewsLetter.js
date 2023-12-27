@@ -54,7 +54,7 @@ const NewsletterForm = () => {
   };
 
   return (
-    <Container fluid>
+    <Container fluid className='pt-5'>
       <Container className="newsletter mb-5">
         <Row className="new_l">
           <Col lg={5} sm={12}>
