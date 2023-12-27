@@ -41,7 +41,7 @@ const Home = () => {
     alt="walmart Vriddhi"
     effect="blur"
     />
-    <Row className="pb-5">
+    <Row className="pb-5 pt-4">
     {loading && <h2 className="loading">Loading...</h2>}
         <Carousel>
           {
