@@ -1346,6 +1346,13 @@ font-size: 22px;
 color:#fff;  
 float: inline-end;  
 }
+.tel_icon{
+        font-size: 46px;
+        border: 2px solid #FDBD01;
+        border-radius: 40px;
+        padding: 4px;
+        fill: #FDBD01;
+}
 .float_email{
     position: absolute;
     right: 0;

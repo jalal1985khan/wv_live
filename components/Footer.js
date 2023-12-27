@@ -7,6 +7,8 @@ import ScrollToTop from "react-scroll-to-top";
 import { usePathname } from 'next/navigation'
 import NewsLetter from './NewsLetter'
 import Floating from '../components/FloatingMenu'
+import { MdPhone } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
 
 function Footer() {
     const pathname = usePathname()
@@ -58,9 +60,9 @@ function Footer() {
                             <p className="fs-2">CONTACT US</p>
                             <hr />
                             <ul className="fs-4 list-unstyled">
-                                <li>For more information, contact us:</li>
-                                <li>contactus@walmartvriddhi.org</li>
-                                <li>+91 6361 056 533</li>
+                                <li className="pb-4">For more information, contact us:</li>
+                                <li className="pb-4"><MdOutlineEmail className="tel_icon"/> contactus@walmartvriddhi.org</li>
+                                <li><MdPhone className="tel_icon"/> +91 6361 056 533</li>
                             </ul>
                         </Col>
                         <Col sm={1}></Col>
