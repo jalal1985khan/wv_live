@@ -1658,6 +1658,7 @@ img.m-img {
     position: relative;
     width: 50%;
     height: 50%;
+    border-top: 2px solid!important;
 }
 .news_b{
     width: 90%;
