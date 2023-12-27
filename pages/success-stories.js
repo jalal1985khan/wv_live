@@ -130,12 +130,12 @@ const SuccessStories = () => {
         
       />
       <Brand />
-      <Container className="text-center">
+      <Container className="text-center wbg-light-gy">
         <p className="fs-1 bogle-medium walmart-default" >MSME Success Stories</p>
         <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="MSME Success Stories" />
         <p className="fs-3">We are proud to be part of business journeys that have turned into stories of inspiration and success. Take a look at some of our growth stories.</p>
       </Container>
-      <Container>
+      <Container className="wbg-light-gy">
         <Row>
 
           {
@@ -153,9 +153,9 @@ const SuccessStories = () => {
                     />
                     <Card.Body>
                       <Button variant="primary" className="pri-category mb-3">MSME SuperPower: {post['acf']['primary_category']}</Button>
-                      <Card.Title className="fs-3 bogle-medium mb-4" style={{ height: 58 }}>{post['title']['rendered']}</Card.Title>
-                      <h3 dangerouslySetInnerHTML={{ __html: post['acf']['author_name'] }} className="fs-4 authors"></h3>
-                      <h3 dangerouslySetInnerHTML={{ __html: post['acf']['author_designation'] }} className="fs-6 mb-3" style={{ height: 25 }}></h3>
+                      <Card.Title className="fs-3 bogle-medium mb-4" style={{ height: 58 }} dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
+                      <h3 dangerouslySetInnerHTML={{ __html: post['acf']['author_name'] }} className="fs-4 authors bogle-medium"></h3>
+                      <h3 dangerouslySetInnerHTML={{ __html: post['acf']['author_designation'] }} className="fs-7 mb-3" style={{ height: 25 }}></h3>
                       <div dangerouslySetInnerHTML={{ __html: post['excerpt']['rendered'] }} className="fs-5 mb-3 m-height" style={{ height: 200 }}></div>
                       <Link key={index} href={`/success-story/${post['slug']}`}>
                         <Button variant="primary" className="authors_btn fs-5">Know more</Button>

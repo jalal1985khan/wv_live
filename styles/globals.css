@@ -170,11 +170,18 @@ button.navbar-toggler.collapsed {
 .wbg-gy {
     background-color: #EAEAEA !important;
 }
-
+.wbg-light-gy{
+    background-color:#eaeaea1a !important;
+}
 img.card-img.img-contact {
     width: 15%;
 }
-
+.fs-7{
+    font-size: 18px;   
+}
+.newsletter .subscriber::placeholder{
+    color:#ffffff7d ;
+}
 .contact {
     height: 500px;
     background-size: cover;
