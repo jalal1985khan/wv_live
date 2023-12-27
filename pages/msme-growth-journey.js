@@ -118,15 +118,15 @@ const Webinars = () => {
                     <div className="tabs">
                         <div className="tab-item active" >
                             <Image src="/images/learning_ico.svg" alt="msme training Program online" className="img" />
-                            <span className="eael-tab-title">Learning</span>
+                            <span className="eael-tab-title bogle-medium walmart-default">Learning</span>
                         </div>
                         <div className="tab-item">
                             <Image src="/images/mentoring_ico.svg" alt="msme training Program online" className="img" />
-                            <span className="eael-tab-title">Personalized Mentoring</span>
+                            <span className="eael-tab-title bogle-medium walmart-default">Personalized Mentoring</span>
                         </div>
                         <div className="tab-item">
                             <Image src="/images/market_ico.svg" alt="msme training Program online" className="img" />
-                            <span className="eael-tab-title">Market Connect</span>
+                            <span className="eael-tab-title bogle-medium walmart-default">Market Connect</span>
                         </div>
 
                         <div className="line"></div>
@@ -139,9 +139,9 @@ const Webinars = () => {
                                 <Container>
                                     <p className="fs-1 bogle-medium walmart-default mt-4" >Learning</p>
                                     <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" className="mb-5"/>
-                                    <p className="fs-4">The Walmart Vriddhi learning program equips you with tailored support to help you unlock your growth potential. It provides you with interactive virtual learning experiences through the mobile app available on iOS and Android, in English, Hindi and Tamil.</p>
+                                    <p className="fs-4" style={{width:'80%'}}>The Walmart Vriddhi learning program equips you with tailored support to help you unlock your growth potential. It provides you with interactive virtual learning experiences<br/>through the mobile app available on iOS and Android, in English, Hindi and Tamil.</p>
                                     <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-5">Business Fundamentals</div>
-                                    <p className="fs-4">The program helps you gain a foundational understanding of business management, with a special focus on the global shift towards eCommerce. Frameworks and established theories will guide you on how to modernise and expand your businesses.</p>
+                                    <p className="fs-4" style={{width:'80%'}}>The program helps you gain a foundational understanding of business management, with a special focus on the global shift towards eCommerce. Frameworks and established theories will guide you on how to modernise and expand your businesses.</p>
 
                                     <Row className="d-flex align-items-center px-2">
                                         <Col sm={4} className=" fs-4 b-box-3" >Channel-Based Costing</Col>
@@ -169,7 +169,7 @@ const Webinars = () => {
 
                                     </Row>
                                     <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-5">Advanced Business</div>
-                                    <p className="fs-4">The program helps you apply advanced business management tools and strategies to your business. It offers relevant case studies to assist you gain real-life experience of MSMEs and get a deep understanding of markets, consumers, and digital transformation tools.</p>
+                                    <p className="fs-4">The program helps you apply advanced business management tools and strategies to your business. It offers relevant case studies to assist you gain real-life experience of MSMEs and get a deep understanding of markets,<br/>consumers, and digital transformation tools.</p>
                                     <Image
                                         src='/images/advanced_banner.jpeg'
                                         alt=''
