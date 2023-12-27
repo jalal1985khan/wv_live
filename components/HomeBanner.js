@@ -13,14 +13,14 @@ const Home = () => {
           src='/images/HomeBanner-1.jpeg'
           alt="walmart vridhi registartion"
           width={800}
-          height={610}  
+          height={710}  
               />
               <Image
                 className="w-100 d-sm-none"
                 src='/images/HomeMobileBanne-1.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
 
       </Carousel.Item>
@@ -30,14 +30,14 @@ const Home = () => {
                 src='/images/HomeBanner-2.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
               <Image
                 className="w-100 d-sm-none"
                 src='/images/HomeMobileBanner-2.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
       </Carousel.Item>
       <Carousel.Item>
@@ -46,14 +46,14 @@ const Home = () => {
                 src='/images/HomeBanner-3.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
               <Image
                 className="w-100 d-sm-none"
                 src='/images/HomeMobileBanner-3.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
       </Carousel.Item>
       <Carousel.Item>
@@ -62,14 +62,14 @@ const Home = () => {
                 src='/images/HomeBanner-4.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
               <Image
                 className="w-100 d-sm-none"
                 src='/images/HomeMobileBanner-4.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
       </Carousel.Item>
       <Carousel.Item>
@@ -78,14 +78,14 @@ const Home = () => {
                 src='/images/HomeBanner-5.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
               <Image
                 className="w-100 d-sm-none"
                 src='/images/HomeMobileBanner-5.jpeg'
           alt="walmart vridhi"
           width={800}
-          height={610}
+          height={710}
               />
             </Carousel.Item> 
        </Carousel>
