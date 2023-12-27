@@ -79,7 +79,9 @@ button.register.btn.btn-primary {
 button.navbar-toggler.collapsed {
     border: 0px solid #2F6EB5;
 }
-
+.lh-2{
+ line-height: 38px;   
+}
 .walmart-default {
     color: #2F6EB5;
 }

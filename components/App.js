@@ -21,7 +21,7 @@ const App = () => {
 
                     </Col>
                     <Col>
-                        <p className="fs-1 bogle-medium m-center walmart-default">Download the<br/> Walmart Vriddhi App</p>
+                        <p className="fs-1 bogle-medium m-center walmart-default lh-2">Download the<br/> Walmart Vriddhi App</p>
                         <p className="fs-4 m-center">#GrowKaro with one of the best learning programs for
                             MSMEs in the country!</p>
                         <Container>
