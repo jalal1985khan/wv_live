@@ -1343,7 +1343,8 @@ span.right {
 }
 .newsletter .n_text{
 font-size: 22px;
-color:#fff;    
+color:#fff;  
+float: inline-end;  
 }
 .float_email{
     position: absolute;

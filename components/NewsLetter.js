@@ -60,7 +60,7 @@ const NewsletterForm = () => {
           <Col lg={5} sm={12}>
             <p className="n_text bogle-medium">Subscribe to the Walmart Vriddhi newsletter</p>
           </Col>
-          <Col lg={3} sm={12}>
+          <Col lg={4} sm={12}>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                 <Form.Control
