@@ -1653,6 +1653,11 @@ img.m-img {
  min-height:400px;
  height:100%;   
 }
+.b_line{
+color:white !important;
+border: 1px solid;
+}
+
 .line_d{
     transform: rotate(90deg);
     position: relative;
