@@ -50,10 +50,10 @@ data.map((post,index)=>{
 console.log(post)
 return (
 <>
-<Container className="wbg-main d-flex justify-content-center align-items-center" style={{height:150}}>
-<h2 className="text-white bogle-medium">{post['title']['rendered']}</h2>
+<Container className="wbg-main d-flex  align-items-center" style={{height:150}}>
+<h2 className="text-white bogle-medium text-right px-5">{post['title']['rendered']}</h2>
 </Container>
-<Container>
+<Container className="px-5">
 <div dangerouslySetInnerHTML={{__html:post['acf']['privacy_policy']}} className="fs-4"/>
 
 </Container>

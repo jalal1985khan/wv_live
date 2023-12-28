@@ -8,7 +8,8 @@ import Footer from '../components/Footer';
 import Moment from 'react-moment';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
+import date from 'date-and-time';
 
 
 const SuccessStories = ({ heroBannerpost }) => { 
@@ -20,6 +21,8 @@ const SuccessStories = ({ heroBannerpost }) => {
   const [next, setNext] = useState();
   const [total, setTotal] = useState();
   const [end, setEnd] = useState(true);
+  const date = require('date-and-time');
+  const now = new Date();
 
   const fetchPosts = async () => {
     setLoading(true);
@@ -94,7 +97,8 @@ const loadMore = () => {
               heroBannerpost.map((post, index) => {
   //            console.log(post);
               var Myimg = post['acf']['inside_banner']['url'];
-              var Mytitle = post['title']['rendered'];
+                var Mytitle = post['title']['rendered'];
+                var PostDate = post['date'];
 
   return (
   <>
@@ -146,8 +150,12 @@ const loadMore = () => {
       <Container className="wbg-main px-4 news_b" style={{width:'80%',position:'absolute'}}>
       <Row >
         <Col sm={8} className="pt-3">
-        <p className="text-white fs-5 bogle-medium">{post['title']['rendered']}</p>
-        <p><Moment className="datetime" aria-hidden={true}>{post.date}</Moment></p>
+        <p className="text-white fs-5 bogle-medium" dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
+            <p>
+              {
+                date.format(new Date(post.date), 'MMMM DD, YYYY')
+              }
+            </p>
         </Col >
         <Col sm={3} className="d-flex align-items-center">
         <Link key={index} href={`${post['acf']['source_url']}`} target="_blank">
@@ -164,8 +172,9 @@ const loadMore = () => {
 </Row>
 </Container>
 <Brand/>
-<Container>
-<Row>
+      <Container style={{ background: '#dee2e6' }} fluid >
+        <Container >
+<Row className="pt-5">
 
 {
     
@@ -181,13 +190,20 @@ return (
         className="news-img"
         width={600}
         height={250}
-                  />
-      <Card.Body>
+      />
+      
+	<div class="ribbon-wrapper">
+		<div class="ribbon-edge-topleft"></div>
+		</div>
+ 
+      <Card.Body className=" new-card">
       <h3 dangerouslySetInnerHTML={{__html:post['acf']['source']}} className="fs-6 authors bogle-medium"></h3>
-      <h3 className="fs-6 authors"><Moment className="datetime" aria-hidden={true}>{post.date}</Moment></h3>
-        <Card.Title className="fs-5 bogle-medium mb-4" style={{height:80}}>{post['title']['rendered']}</Card.Title>
+      <h3 className="fs-6 walmart-secondary bogle-medium">{
+                date.format(new Date(post.date), 'MMMM DD, YYYY')
+              }</h3>
+        <Card.Title className="fs-5 bogle-medium mb-4" style={{height:80}} dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
         <Link key={index} href={`${post['acf']['source_url']}`} target="_blank">
-        <Button variant="primary" className="authors_btn fs-5">Read more</Button>
+        <Button variant="primary" className="news_btn fs-5">Read more</Button>
             </Link>
       </Card.Body>
     </Card>
@@ -197,11 +213,12 @@ return (
 
 
 })}
-</Row>
+          </Row>
+          </Container>
 </Container>
 
 
-<section className="section text-center mb-3">
+<section className="section text-center mb-3 pb-5" style={{ background: '#dee2e6' }} >
   {loading && <h2 className="loading">Loading...</h2>}
   <div className="loadmodediv">
     {end && 

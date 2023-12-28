@@ -110,11 +110,11 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
           <div className="tabs">
             <div className="tab-item active" >
               <Image src="../images/settings.svg" alt="msme training Program online" className="img" />
-              <span className="eael-tab-title">Industry Connect Series</span>
+              <span className="eael-tab-title walmart-default bogle-medium">Industry Connect Series</span>
             </div>
             <div className="tab-item">
               <Image src="../images/peoples.svg" alt="msme training Program online" className="img" />
-              <span className="eael-tab-title">MSME Spotlight Series</span>
+              <span className="eael-tab-title walmart-default bogle-medium">MSME Spotlight Series</span>
             </div>
 
             <div className="line"></div>
@@ -122,10 +122,12 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
         </Container>
 
         <Container fluid className='wbg_grey'>
+          
           <div className="tab-content">
             <div className="tab-pane active"  >
+              
               <Row className='w-center'>
-                <p className="fs-1 bogle-medium " >Webinars</p>
+                <p className="fs-1 bogle-medium pt-5 walmart-default" >Webinars</p>
                 <Modal
                   show={currentProduct}
                   onHide={handleClose}
@@ -144,7 +146,9 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
 
                   webinarvideo.map((web, index) => {
                     return (
-                      <Col md={4} className='  py-3' key={index}>
+                      
+                      <Col md={4} className='py-3' key={index}>
+                      
                         <Card className="webinar_post" >
                           <Image
                             src={web['_embedded']['wp:featuredmedia'][0]['source_url']}
@@ -158,9 +162,9 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                             }}
                           />
                           <Card.Body>
-                            <Card.Title className="fs-3 bogle-medium" style={{ height: 65 }} dangerouslySetInnerHTML={{ __html: web['title']['rendered'] }} />
+                            <Card.Title className="fs-3 bogle-medium walmart-default pt-2" style={{ height: 112 }} dangerouslySetInnerHTML={{ __html: web['title']['rendered'] }} />
                             <div dangerouslySetInnerHTML={{ __html: web['acf']['short_decription'] }} style={{ height: 180 }} />
-                            <div style={{ height: 220 }}>
+                            <div style={{ height: 230 }}>
                               <Button variant="primary" className="pri-category mb-3" >{web['acf']['category']}</Button>
                               <h3 className="fs-5 bogle-medium mb-3">{web['acf']['expert_name']}</h3>
                               <h3 className="fs-6 mb-3">{web['acf']['expert_designation']}</h3>
@@ -169,14 +173,17 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                             </div >
                           </Card.Body>
                         </Card>
-                      </Col>
+                        </Col>
+                        
                     )
                   })}</Row>
-            </div>
+                
+              </div>
+              
             {/* 2nd tab starts here  */}
             <div className="tab-pane" >
               <Row className='w-center'>
-                <p className="fs-1 bogle-medium " >Webinars</p>
+                <p className="fs-1 bogle-medium walmart-default pt-5 " >Webinars</p>
                 <Modal show={currentProduct} onHide={handleClose}
                   closeTimeoutMS={300}
                   isOpen={Boolean(currentProduct)}
@@ -211,9 +218,9 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                             }}
                           />
                           <Card.Body>
-                            <Card.Title className="fs-3 bogle-medium" style={{ height: 65 }} dangerouslySetInnerHTML={{ __html: spot['title']['rendered'] }} />
+                            <Card.Title className="fs-3 bogle-medium walmart-default" style={{ height: 110 }} dangerouslySetInnerHTML={{ __html: spot['title']['rendered'] }} />
                             <div dangerouslySetInnerHTML={{ __html: spot['acf']['short_decription'] }} style={{ height: 180 }} />
-                            <div style={{ height: 220 }}>
+                            <div style={{ height: 190 }}>
                               <Button variant="primary" className="pri-category mb-3" >{spot['acf']['category']}</Button>
                               <h3 className="fs-5 bogle-medium mb-3">{spot['acf']['expert_name']}</h3>
                               <h3 className="fs-6 mb-3">{spot['acf']['expert_designation']}</h3>

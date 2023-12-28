@@ -91,7 +91,7 @@ button.navbar-toggler.collapsed {
 }
 
 .walmart-secondary {
-    color: #76BC21;
+    color: #76BC21 !important;
 }
 
 .img-ico {
@@ -386,6 +386,90 @@ button#button-addon2 {
     border: 2px solid #2F6EB5 !important;
 }
 
+
+.news_btn {
+    padding: 11px;
+    border-radius: 30px !important;
+    width: 150px;
+    height: 50px;
+    background-color: #fff !important;
+    color: #2F6EB5 !important;
+    font-weight: 500;
+    border: 2px solid #2F6EB5 !important;
+}
+
+.news_btn:hover {
+    border-radius: 30px;
+    width: 150px;
+    height: 50px;
+    color: #fff !important;
+    background-color: #2F6EB5 !important;
+    border: 2px solid #2F6EB5 !important;
+}
+
+.ribbon-wrapper {
+	position: relative;z-index:998;
+}
+  .ribbon-front {
+	background-color: #cc3333;	height: 50px;
+	width: 240px;
+	position: relative;
+	left:-10px;
+	z-index: 2; font:20px/50px bold Verdana, Geneva, sans-serif; color:#f8f8f8; text-align:center;text-shadow: 0px 1px 2px #cc6666;
+}
+
+  .ribbon-front,
+  .ribbon-back-left,
+  .ribbon-back-right
+{
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+	position: absolute;
+	z-index: 1;
+	border-style:solid;
+	height:0px;
+	width:0px;
+}
+
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+	top: 50px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-bottomleft {
+	left: -1px;
+	border-color: transparent #ffbf00 transparent transparent;
+}
+
+  .ribbon-edge-topleft {
+    top: -15px;
+    border-width: 15px 18px 0 0;
+}
+.new-card{
+border-top: 3px solid #ffbf00;  
+border-top-right-radius:0px !important;  
+}
+.news-card {
+    border-top-right-radius: 27px !important;
+    background: #ffffff00;
+    border: 0px solid red !important;
+}
+ 
+
+  
+
+
+  
+
 .success_post {
     height: 600px;
     background-size: cover;
@@ -497,7 +581,7 @@ button#button-addon2 {
 }
 
 .webinar_post {
-    width: 408px;
+    width: 100%;
     text-align: start;
 }
 
@@ -713,12 +797,14 @@ span.errors {
     border-radius: 30px !important;
 }
 
-.news-card {
-    border-top-right-radius: 27px !important;
-}
+
 
 .news-img {
-    width: 100%
+    width: 100%;
+    background: #dee2e6 !important;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 17px;
 }
 
 .carousel-control-next-icon,

@@ -149,7 +149,8 @@ const alumniProfiles = () => {
 <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
 <p className="fs-3">
 Walmart Vriddhi supplier development program has assisted over 25,000 MSMEs in India to help them enhance their domestic capabilities and participate in the global economy.</p>
-</Container>
+      </Container>
+      <Container fluid className='wbg-gy pt-5'>
 <Container className="text-center">
 <p className="fs-1 bogle-medium " >Meet the Walmart Vriddhi Graduates</p>
 <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
@@ -158,30 +159,32 @@ Introducing our graduates who successfully finished the program.</p>
       </Container> 
       <Container>
 <Profile/> 
-      </Container>      
+        </Container>   
+        </Container>  
 <Container>
 </Container>
 <Container className="text-center wbg-main" fluid>
-<Container>
+<Container className='pt-5'>
 <p className="fs-1 bogle-medium text-white" >Program Beneficiaries</p>
 <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
 <Carousel/>
 </Container>
 </Container>
-<Container className="text-center">
+<Container className="text-center pt-5">
 <p className="fs-1 bogle-medium walmart-default" >MSME Speaks</p>
 <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
-<p className="fs-3">Hear from our graduates about their experience of the Walmart Vriddhi program and how it benefitted them.</p>
+<p className="fs-4">Hear from our graduates about their experience of the Walmart Vriddhi program and how it benefitted them.</p>
 <Video/>
 </Container> 
 
-<Container>
+<Container fluid className='wbg-gy pt-5 pb-5 mt-5'>
 <Container className="text-center">
 <p className="fs-1 bogle-medium walmart-default" >Alumni Achievements</p>
 <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
 <p className="fs-3">A collection of events that define the journey of Walmart Vriddhi graduates.</p>
 </Container>        
-<News/>
+<Container>
+        <News /></Container>
       </Container> 
 <Container className="text-center wbg-main " fluid>
 <p className="fs-1 bogle-medium text-white mt-5" >Alumni Corner</p>

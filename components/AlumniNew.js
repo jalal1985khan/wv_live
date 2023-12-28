@@ -12,13 +12,14 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
       loop: true,
       margin: 10,
       nav: false,
-      dots:true,
+    dots: true,
+    dotsClass: 'mydots',
       //stagePadding: 50,
       //stageOuterClass:'owl-stage-outer',
-      navText: [
-        '<span class="left"><</span>',
-        '<span class="right">></span>'
-    ],
+    //   navText: [
+    //     '<span class="left"><</span>',
+    //     '<span class="right">></span>'
+    // ],
     responsive: {
       0: {
         items: 2
@@ -41,7 +42,7 @@ function AlumniCarousel() {
       //console.log(urlPage)
       //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
       //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-      url = `${configData.SERVER_URL}posts?_embed&categories[]=13&status[]=publish&production[]=78&per_page=3`;
+      url = `${configData.SERVER_URL}posts?_embed&categories[]=27&status[]=publish&production[]=78&per_page=12`;
       try {
         const response = await fetch(url);
         const data = await response.json();
