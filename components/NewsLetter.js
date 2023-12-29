@@ -54,8 +54,8 @@ const NewsletterForm = () => {
   };
 
   return (
-    <Container fluid className='pt-5'>
-      <Container className="newsletter mb-5">
+    <Container fluid className='pt-5 g-0'>
+      <Container className="newsletter mb-5 m-center">
         <Row className="new_l">
           <Col lg={5} sm={12}>
             <p className="n_text bogle-medium">Subscribe to the Walmart Vriddhi newsletter</p>
@@ -80,7 +80,7 @@ const NewsletterForm = () => {
               </Form.Group>
             </Form>
           </Col>
-          <Col lg={2} sm={12}>
+          <Col lg={2} sm={12} className='m-center'>
             <Button variant="outline-primary subs-btn" onClick={handleSubmit}>
               Join us
             </Button>

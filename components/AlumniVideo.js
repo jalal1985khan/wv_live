@@ -18,7 +18,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
       loop: true,
       margin: 10,
       nav: true,
-      dots:false,
+    dots: false,
       //stagePadding: 50,
       //stageOuterClass:'owl-stage-outer',
       navText: [
@@ -27,7 +27,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
     ],
     responsive: {
       0: {
-        items: 2
+        items: 1
       },
       600: {
         items: 3
@@ -94,7 +94,8 @@ const [currentTitle, setTitle] = useState(null);
           autoplay={true}
           margin={10}
           {...options}
-          className="owl-theme owl-loaded"
+          className="owl-theme owl-loaded hie"
+          navContainerClass="video-nav owl-nav"
             >
                 
                 {

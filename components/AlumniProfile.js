@@ -253,7 +253,7 @@ const fetchTaxonomyCount = async () => {
                 <div className="card mb-3 ">
                   <div className="container profile">
                     <div className="row g-0">
-                      <div className="col-md-4">
+                      <div className="col-md-4 m-center">
                         <Image
                           src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
                           className="profile-img img-fluid rounded-start"
@@ -265,13 +265,14 @@ const fetchTaxonomyCount = async () => {
                           <p className="fw-bold text-white fs-6">{post['acf']['business_category']}</p>
                           <Row className="sharerow">
                             <Col><Link href={`/walmart_graduates/${post['slug']}`} className="btn know">Know More</Link></Col>
+                            {post['acf']['visit_the_website'] ? 
                             <Col>
-                              {post['acf']['visit_the_website'] ? <Link href={post['acf']['visit_the_website']} className="btn know" target="_blank">Visit the website</Link> : ''}
-                            </Col>
+                              <Link href={post['acf']['visit_the_website']} className="btn know" target="_blank">Visit the website</Link> 
+                            </Col>: ''}
                           </Row>
                         </Container>
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 m-center">
                         <div className="card-body">
                           <h4 className="profile-title fw-bold">{post['title']['rendered']}</h4>
                           <p className="card-text fs-6">{post['acf']['company_name_&_place']}</p>

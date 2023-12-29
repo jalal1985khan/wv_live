@@ -12,8 +12,8 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
       loop: true,
       margin: 10,
       nav: false,
-    dots: true,
-    dotsClass: 'mydots',
+      dots: true,
+    
       //stagePadding: 50,
       //stageOuterClass:'owl-stage-outer',
     //   navText: [
@@ -22,10 +22,10 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
     // ],
     responsive: {
       0: {
-        items: 2
+        items: 1
       },
       600: {
-        items: 3
+        items: 2
       },
       1000: {
         items: 3
@@ -60,7 +60,7 @@ function AlumniCarousel() {
     },[]);
 
   return (
-    <OwlCarousel className='owl-theme' loop margin={10} nav>
+    <OwlCarousel className='owl-theme' loop margin={10} {...options}>
       {
             movies.map((post, index) => {
             //console.log(post);

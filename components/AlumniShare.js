@@ -13,10 +13,11 @@ import {
 
 function AlumniShare() {
   return (
-      <Container className="mt-3">
+    <Container fluid >
+      
           <Row>
-              <Col className="d-flex justify-content-end">              
-<div class="card wbg-main border-0" style={{width:300}} >
+<Col className="d-flex justify-content-end">              
+<div class="card wbg-main border-0 alumni-box">
 <div className="alu-share">
 <Image src="/images/light.svg" class="card-img-top" alt="..." width={70} height={70} />
 </div>
@@ -27,7 +28,7 @@ function AlumniShare() {
 </div>
 </Col>
 <Col>
-<div class="card wbg-main border-0" style={{ width: 300 }}>
+<div class="card wbg-main border-0 alumni-box">
 <div className="alu-share">
               <Image src="/images/users.svg" class="card-img-top" alt="..." width={70} height={70} />
 </div>            
@@ -71,7 +72,8 @@ function AlumniShare() {
 
           </Row>
 
-    </Container>
+    
+      </Container>
   )
 }
 

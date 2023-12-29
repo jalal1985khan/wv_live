@@ -53,7 +53,7 @@ return (
 <Container className="wbg-main d-flex  align-items-center" style={{height:150}}>
 <h2 className="text-white bogle-medium text-right px-5">{post['title']['rendered']}</h2>
 </Container>
-<Container className="px-5">
+<Container className="px-5 m-break">
 <div dangerouslySetInnerHTML={{__html:post['acf']['terms_of_use']}} className="fs-4"/>
 
 </Container>

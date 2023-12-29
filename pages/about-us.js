@@ -132,7 +132,7 @@ function ContainerExample() {
 </Row>
 </Container>
 <Container className="pb-5">
-<Row className="align-items-center about-section text-white fs-5"> 
+<Row className="align-items-center about-section text-white fs-5 m-padding-bottom"> 
 <Col xs={12} sm={6}>
 <Image
                   src="/images/white-logo-swasti.png"

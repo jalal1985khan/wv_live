@@ -136,7 +136,8 @@ const loadMore = () => {
           cardType: 'summary_large_image',
         }}
     />
-
+      <Container fluid>
+        <Row className="d-flex flex-column"><Col>
 <Image
       src={post['acf']['inside_banner']}
       width="800"
@@ -144,12 +145,13 @@ const loadMore = () => {
       background='no-repeat'
       background-size= 'cover'
       alt={post['title']['rendered']}
-      className="banner-img d-flex align-items-end"
+      className="banner-img d-flex align-items-end w-100"
       
-    /> 
-      <Container className="wbg-main px-4 news_b" style={{width:'80%',position:'absolute'}}>
+          /> </Col>
+          <Col>
+          <Container className="wbg-main px-4 news_b">
       <Row >
-        <Col sm={8} className="pt-3">
+          <Col sm={8} lg={8} className="pt-3">
         <p className="text-white fs-5 bogle-medium" dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
             <p>
               {
@@ -157,13 +159,19 @@ const loadMore = () => {
               }
             </p>
         </Col >
-        <Col sm={3} className="d-flex align-items-center">
+          <Col sm={3} lg={3} className="d-flex align-items-center">
         <Link key={index} href={`${post['acf']['source_url']}`} target="_blank">
             <Button className="news-btn">Know more</Button></Link>
         </Col>
       </Row>  
     </Container>
-    
+          </Col>
+          
+
+
+        
+     </Row>
+    </Container>
 </>
 )
 

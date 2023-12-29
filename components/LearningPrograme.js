@@ -31,7 +31,7 @@ function ContainerFluidBreakpointExample() {
             Personalized Mentoring for MSMEs</p>
 
           </Col >
-          <Col className="text-center" xs={2} sm={2}>
+          <Col className="text-center" xs={12} sm={2} lg={2}>
            <hr className="line_d"/>
           </Col>
         <Col className="text-center" xs={12} sm={5}>
