@@ -1555,6 +1555,19 @@ width:300px;
 }
 
 @media only screen and (max-width: 600px) {
+    .float_phone:hover{
+        position: absolute;
+        right: 0;
+        width: 384px !important;
+        background: #FAB221;
+        height: 52px;
+        top: 57%;
+        display: flex;
+        align-items: center;
+        font-size: 22px; 
+        overflow: hidden;
+    }
+
     .float_email:hover {
         position: absolute;
         right: 0;
