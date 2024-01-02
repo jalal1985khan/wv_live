@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import configData from '../config.json';
 import Image from 'next/image';
+import Link from 'next/link'
 
 const Example = () => {
   const [show, setShow] = useState(false);
@@ -18,7 +19,8 @@ const Example = () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      setMovies(data);
+        setMovies(data);
+        console.log(data)
       if (data.length === 1) {
         setShow(true);
       }
@@ -28,6 +30,10 @@ const Example = () => {
   };
 
   useEffect(() => {
+    // Fetch movies on initial load
+    fetchMovies();
+
+    // Check if the modal counter is less than 3
     const storedCounter = localStorage.getItem('modalCounter') || 0;
     const counter = parseInt(storedCounter, 10);
 
@@ -37,16 +43,16 @@ const Example = () => {
       // Increment the counter
       setModalCounter(counter + 1);
     }
-  }, []);
+  }, []); // Dependency array is empty to ensure it runs only once on mount
+
+  
 
   useEffect(() => {
     // Update the local storage when the modal counter changes
     localStorage.setItem('modalCounter', modalCounter);
   }, [modalCounter]);
 
-  useEffect(() => {
-    fetchMovies();
-  }, []); // Fetch movies on initial load
+
 
   return (
     <>
@@ -57,7 +63,8 @@ const Example = () => {
               <Modal.Title>{post.title.rendered}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Image src={post.acf.modal_popup.url} width={200} height={200} className="img-fluid w-100" />
+            <Link href={post.acf.pop_url}><Image src={post.acf.modal_popup.url} width={200} height={200} className="img-fluid w-100" /></Link>
+                    
             </Modal.Body>
           </div>
         ))}
