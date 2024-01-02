@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import configData from '../config.json';
 import Image from 'next/image';
-import Link from 'next/link'
+import Link from 'next/link';
 
 const Example = () => {
   const [show, setShow] = useState(false);
@@ -11,6 +11,7 @@ const Example = () => {
   const [modalCounter, setModalCounter] = useState(0);
 
   const closeModal = () => {
+    setModalCounter((prevCounter) => prevCounter + 1);
     setShow(false);
   };
 
@@ -23,6 +24,9 @@ const Example = () => {
         console.log(data)
       if (data.length === 1) {
         setShow(true);
+      }
+      if (data.length === 0) {
+        setShow(false);
       }
     } catch (error) {
       console.log(error);
@@ -40,31 +44,25 @@ const Example = () => {
     if (counter < 3) {
       // Open the modal
       setShow(true);
-      // Increment the counter
-      setModalCounter(counter + 1);
     }
   }, []); // Dependency array is empty to ensure it runs only once on mount
-
-  
 
   useEffect(() => {
     // Update the local storage when the modal counter changes
     localStorage.setItem('modalCounter', modalCounter);
   }, [modalCounter]);
 
-
-
   return (
     <>
       <Modal show={show} onHide={closeModal} animation={false} size="lg" centered>
-        {movies.map((post) => (
+        {movies.slice(0, 1).map((post) => (
           <div key={post.id}>
             <Modal.Header closeButton className="wbg-main pop-modal">
               <Modal.Title>{post.title.rendered}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <Link href={post.acf.pop_url}><Image src={post.acf.modal_popup.url} width={200} height={200} className="img-fluid w-100" /></Link>
-                    
+              <button type="button" className="btn-close pop-close" aria-label="Close" onClick={closeModal}></button>
+              <Link href={post.acf.pop_url}><Image src={post.acf.modal_popup.url} width={200} height={200} className="img-fluid w-100" /></Link>
             </Modal.Body>
           </div>
         ))}
