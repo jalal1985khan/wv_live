@@ -51,9 +51,98 @@ export default function App() {
     
 
     const sectorList = [
-        { name: "Manufacturing" },
-        { name: "Trading" },
-        { name: "Services" }
+        { name: "Accessories" },
+        { name: "Air Conditioners" },
+        { name: "Atta Flour" },
+        { name: "Auto Accessories" },
+        { name: "Baby Care" },
+        { name: "Baby's Clothing" },
+        { name: "Ballerinas" },
+        { name: "Beauty And Grooming" },
+        { name: "Biscuits" },
+        { name: "Bottom Wear" },
+        { name: "Breakfast Cereal And Foods" },
+        { name: "Camera" },
+        { name: "Chocolates And Toffees" },
+        { name: "Cleaning Supplies" },
+        { name: "Computer Accessories" },
+        { name: "Computer Peripherals" },
+        { name: "Dairy" },
+        { name: "Dal And Pulses" },
+        { name: "Desktop Pcs" },
+        { name: "Diy Furnishing" },
+        { name: "Dry Fruits" },
+        { name: "Ethnic Bottoms" },
+        { name: "Ethnic Wear" },
+        { name: "Exercise Fitness" },
+        { name: "Fabrics" },
+        { name: "Festive Decor And Lights" },
+        { name: "Food Essentials" },
+        { name: "Footwear" },
+        { name: "Frozen Non-Veg" },
+        { name: "Frozen Veg" },
+        { name: "Fruits And Vegetables" },
+        { name: "Furnishing" },
+        { name: "Furniture" },
+        { name: "Girls' Clothing" },
+        { name: "Health And Nutrition" },
+        { name: "Healthcare" },
+        { name: "Healthcare Appliances" },
+        { name: "Home Decor" },
+        { name: "Home Improvement" },
+        { name: "Home Lighting" },
+        { name: "Indian Sweets" },
+        { name: "Industry And Scientific Tools" },
+        { name: "Infant Footwear" },
+        { name: "Jam" },
+        { name: "Jewelry" },
+        { name: "Juices And Fruit Drinks" },
+        { name: "Khadi" },
+        { name: "Kids' Watches" },
+        { name: "Kids' Footwear" },
+        { name: "Kids' Winter" },
+        { name: "Kitchen Appliances" },
+        { name: "Kitchen Storage" },
+        { name: "Kitchen" },
+        { name: "Lingerie And Sleepwear" },
+        { name: "Masala And Spices" },
+        { name: "Medical Supplies" },
+        { name: "Men's Grooming" },
+        { name: "Mobile Accessories" },
+        { name: "Mobiles" },
+        { name: "Music" },
+        { name: "Namkeen" },
+        { name: "Network Components" },
+        { name: "Noodles" },
+        { name: "Oil And Ghee" },
+        { name: "Others" },
+        { name: "Party Dresses" },
+        { name: "Pet Suppliers" },
+        { name: "Rain Coats" },
+        { name: "Rice And Rice Products" },
+        { name: "School Supplies" },
+        { name: "Shoes" },
+        { name: "Small Home Appliances" },
+        { name: "Smart Home Automation" },
+        { name: "Smart Watches" },
+        { name: "Smart Wearable Tech" },
+        { name: "Soft Drinks And Soda" },
+        { name: "Speakers" },
+        { name: "Sports" },
+        { name: "Sports Wear" },
+        { name: "Stationery" },
+        { name: "Sugar And Gud" },
+        { name: "Suits" },
+        { name: "Tableware And Dinnerware" },
+        { name: "Tea And Coffee" },
+        { name: "Television" },
+        { name: "Tie" },
+        { name: "Top Wear" },
+        { name: "Toys" },
+        { name: "Underwear And Loungewear" },
+        { name: "Watches" },
+        { name: "Winter Wear" },
+        { name: "Women Western & Maternity Wear" },
     ];
 
     const handleFromSectors = (e) => {
@@ -260,7 +349,7 @@ export default function App() {
                                 {errors && errors.yourBusiness && <div className="invalid-feedback">{errors.yourBusiness}</div>}
                                 </div>
 
-                                <label className="form-label"><span className="errors">*</span>Business Type:</label>
+                                <label className="form-label"><span className="errors">*</span>Enterprise:</label>
 
                                 <select
                                     //required
@@ -270,7 +359,7 @@ export default function App() {
                                     name="yourType"
                                     value={yourType}
                                     onChange={(e) => handleFromTypes(e)}>
-                                    <option value="">Select Business Type</option>
+                                    <option value="">Select Type</option>
                                     {typeList.map((type, key) => (
                                         <option key={key} title={type.code} value={type.name}>
                                             {type.name}
@@ -295,7 +384,7 @@ export default function App() {
                                     {errors && errors.yourName && <div className="invalid-feedback">{errors.yourName}</div>}
                                 </div>
 
-                                <label className="form-label"><span className="errors">*</span>Business Sector:</label>
+                                <label className="form-label"><span className="errors">*</span>Business:</label>
                                 <select
                                     //required
                                     className={`form-control ${errors && errors.yourSector ? 'is-invalid' : ''}`}
@@ -304,7 +393,7 @@ export default function App() {
                                     value={yourSector}
                                     //onChange={event => setSector(event.target.value)}
                                     onChange={(e) => handleFromSectors(e)}>
-                                    <option value="" selected>Select Business Sector</option>
+                                    
                                     {sectorList.map((sector, key) => (
                                         <option key={key} title={sector.code} value={sector.name}>
                                             {sector.name}
@@ -312,7 +401,7 @@ export default function App() {
                                     ))}
                                 </select>
                                 {errors && errors.yourSector && <div className="invalid-feedback">{errors.yourSector}</div>}          
-                                <label className="form-label"><span className="errors">*</span>State:</label>
+                                <label className="form-label mt-2"><span className="errors">*</span>State:</label>
                                 <Select
                                     //required
                                     className={`form-control ${errors && errors.yourState ? 'is-invalid' : ''}`}
@@ -327,7 +416,7 @@ export default function App() {
                                 />
                         {errors && errors.yourState && <div className="invalid-feedback">{errors.yourState}</div>}          
 
-                                <label className="form-label"><span className="errors">*</span>City:</label>
+                                <label className="form-label mt-2"><span className="errors">*</span>City:</label>
                                 <Select
                                     className={`form-control ${errors && errors.yourCity ? 'is-invalid' : ''}`}
                                     id='yourCity'
