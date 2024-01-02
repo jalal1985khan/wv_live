@@ -105,7 +105,7 @@ const Arc = () => {
                                 alt=''
                                 effect="blur"
                                 className={step_03}
-                                onMouseOver={handleStep3Over}
+                                 onMouseOver={handleStep3Over}
                                 onMouseOut={handleStep3Out}
                             /></Col>
                         </Row>
@@ -156,7 +156,7 @@ const Arc = () => {
                         </Row>
                     </Col>
                 </Row>
-                <Row style={{marginTop: 16}}>
+                <Row style={{marginTop: -200}}>
                     <Col >
                         <Row>
                             <Col className="step_01_text" sm={7}>

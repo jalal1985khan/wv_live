@@ -162,9 +162,9 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                             }}
                           />
                           <Card.Body>
-                            <Card.Title className="fs-3 bogle-medium walmart-default pt-2" style={{ height: 112 }} dangerouslySetInnerHTML={{ __html: web['title']['rendered'] }} />
-                            <div dangerouslySetInnerHTML={{ __html: web['acf']['short_decription'] }} style={{ height: 180 }} />
-                            <div style={{ height: 230 }}>
+                            <Card.Title className="fs-3 bogle-medium walmart-default pt-2" style={{ minHeight: 112 }} dangerouslySetInnerHTML={{ __html: web['title']['rendered'] }} />
+                            <div dangerouslySetInnerHTML={{ __html: web['acf']['short_decription'] }} style={{ minHeight: 180 }} />
+                            <div style={{ minHeight: 230 }}>
                               <Button variant="primary" className="pri-category mb-3" >{web['acf']['category']}</Button>
                               <h3 className="fs-5 bogle-medium mb-3">{web['acf']['expert_name']}</h3>
                               <h3 className="fs-6 mb-3">{web['acf']['expert_designation']}</h3>
@@ -218,9 +218,9 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                             }}
                           />
                           <Card.Body>
-                            <Card.Title className="fs-3 bogle-medium walmart-default" style={{ height: 110 }} dangerouslySetInnerHTML={{ __html: spot['title']['rendered'] }} />
-                            <div dangerouslySetInnerHTML={{ __html: spot['acf']['short_decription'] }} style={{ height: 180 }} />
-                            <div style={{ height: 190 }}>
+                            <Card.Title className="fs-3 bogle-medium walmart-default" style={{ minHeight: 110 }} dangerouslySetInnerHTML={{ __html: spot['title']['rendered'] }} />
+                            <div dangerouslySetInnerHTML={{ __html: spot['acf']['short_decription'] }} style={{ minHeight: 180 }} />
+                            <div style={{ minHeight: 190 }}>
                               <Button variant="primary" className="pri-category mb-3" >{spot['acf']['category']}</Button>
                               <h3 className="fs-5 bogle-medium mb-3">{spot['acf']['expert_name']}</h3>
                               <h3 className="fs-6 mb-3">{spot['acf']['expert_designation']}</h3>

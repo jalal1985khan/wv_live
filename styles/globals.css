@@ -226,12 +226,17 @@ img.ab-image {
     float: right;
 }
 
+.input-group{
+    display: flex;
+    flex-wrap: nowrap !important;    
+}
+
 .navbar-toggler-icon {
     display: inline-block;
     width: 1.9em !important;
     height: 1.9em !important;
     vertical-align: middle;
-    background-image: url(images/toggle.svg) !important;
+    background-image: url(/images/toggle.svg) !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -348,7 +353,7 @@ button#button-addon2 {
 }
 
 .story_post {
-    width: 624px;
+    min-width: 624px;
 }
 
 .pri-category {
@@ -391,7 +396,7 @@ button#button-addon2 {
     padding: 11px;
     border-radius: 30px !important;
     width: 150px;
-    height: 50px;
+    min-height: 50px;
     background-color: #fff !important;
     color: #2F6EB5 !important;
     font-weight: 500;
@@ -1027,14 +1032,14 @@ border-bottom: 2px solid #F9B222;
 }
 
 .h-box-5 {
-    height: 240px;
+    height: 203px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     /* width: 100% !important; */
     margin: 2px !important;
     color: #fff;
-    width: 19.6% !important;
+    /* width: 19.6% !important; */
     align-items: center;
 }
 
@@ -1127,7 +1132,8 @@ display: none;
 
 .border-box:hover:after {
     width: 100%;
-    margin-left: -308px;
+    left: 0%;
+    right:0%;
 }
 
 .box-arw:before {
@@ -1173,20 +1179,28 @@ img.step_05 {
 }
 
 img.circle_lady {
-    position: absolute;
+    /* position: absolute; */
     /* right: -172px; */
-    left: -170px;
+    /* left: -170px; */
+    right: 38%;
+left: 38%;
     margin-top: -21px;
 }
 
-img.step_06 {
+/* img.step_06 {
     margin-top: -45px;
     margin-left: -53px;
+} */
+img.step_06 {
+    margin-top: -24px;
+    margin-left: -56px;
 }
 
 img.step_01 {
-    margin-top: -46px;
-    margin-right: -55px;
+    /* margin-top: -46px;
+    margin-right: -55px; */
+    margin-top: -26px;
+    margin-right: -54px;
 }
 
 .step_03_text {
@@ -1216,7 +1230,7 @@ img.step_01 {
 }
 
 .step_06_text {
-    width: 64% !important;
+    width: 64% ;
     align-self: center;
     overflow: hidden;
     text-align: center;
@@ -1435,13 +1449,15 @@ span.right {
 }
 .newsletter{
  background-color: #78BF23;
- height:90px;
+
+    height: auto;
+    padding-bottom: 13px;
  
 }
 .newsletter .n_text{
 font-size: 22px;
 color:#fff;  
-float: inline-end;  
+/* float: inline-end;   */
 }
 .tel_icon{
         font-size: 46px;
@@ -1484,9 +1500,11 @@ color:#fff;
     background: #FAB221;
     height: 52px;
     top: 50%;
+    bottom: 50%;
     display: flex;
     align-items: center;
     font-size: 22px; 
+    overflow: hidden;
 }
 .float_phone{
     position: absolute;
@@ -1494,7 +1512,8 @@ color:#fff;
     width: 67px !important;
     background: #FAB221;
     height: 52px;
-    top: 57%;
+    top: 63%;
+    bottom: 63%;
     display: flex;
     align-items: center;
     font-size: 22px; 
@@ -1513,10 +1532,12 @@ color:#fff;
     width: 384px !important;
     background: #FAB221;
     height: 52px;
-    top: 57%;
+    top: 63%;
+    bottom: 63%;
     display: flex;
     align-items: center;
     font-size: 22px; 
+    overflow: hidden;
 }
 .new_l{
     padding-top: 23px;
@@ -1566,7 +1587,39 @@ width:300px;
     left: 100%;
     bottom: 100%;
 }
+@media only screen and (max-width: 1400px) {
+    img.circle_lady{
+        margin-top: -21px;
+        position: inherit;
+    }
+    img.step_05 {
+        margin-top: 4px;
+        margin-left: -22.3px;
+    }
+    img.step_02 {
+        margin-top: 4px;
+        margin-left: -173px;
+        position: absolute;
+    }
+    img.step_06 {
+        margin-top: -26px;
+        margin-left: -25px;
+    }
+    img.step_01 {
+        margin-top: -25px;
+        margin-left: -132px;
+        /* position: absolute; */
+    }
+    .step_05_text {
+        width: 100% !important;
+        margin-top: -409px !important;
+        margin-left: 76px;
+        align-self: center;
+        overflow: hidden;
+        text-align: center;
+    }
 
+}
 
 @media only screen and (max-width: 600px) {
     .float_phone:hover{

@@ -29,11 +29,11 @@ const Webinars = () => {
         const tabActive = $(".tab-item.active");
         const line = $(".tabs .line");
 
-        requestIdleCallback(function () {
-            line.style.left = tabActive.offsetLeft + "px";
-            line.style.width = tabActive.offsetWidth + "px";
+        // requestIdleCallback(function () {
+        //     line.style.left = tabActive.offsetLeft + "px";
+        //     line.style.width = tabActive.offsetWidth + "px";
 
-        });
+        // });
 
         tabs.forEach((tab, index) => {
             const pane = panes[index];
@@ -143,27 +143,27 @@ const Webinars = () => {
                                     <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-5">Business Fundamentals</div>
                                     <p className="fs-4" style={{width:'80%'}}>The program helps you gain a foundational understanding of business management, with a special focus on the global shift towards eCommerce. Frameworks and established theories will guide you on how to modernise and expand your businesses.</p>
 
-                                    <Row className="d-flex align-items-center px-2">
-                                        <Col sm={4} className=" fs-4 b-box-3" >Channel-Based Costing</Col>
-                                        <Col sm={4} className="fs-4 b-box-3">Introduction to Supply Chain</Col>
-                                        <Col sm={4} className="fs-4 b-box-3">Pitch and Customer Value Proposition</Col>
+                                    <Row className="d-flex flex-nowrap align-items-center px-2">
+                                        <Col sm={4} lg={4} xs={4} className=" fs-4 b-box-3" >Channel-Based Costing</Col>
+                                        <Col sm={4} lg={4} xs={4} className="fs-4 b-box-3">Introduction to Supply Chain</Col>
+                                        <Col sm={4} lg={4} xs={4} className="fs-4 b-box-3">Pitch and Customer Value Proposition</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center px-2">
+                                    <Row className="d-flex flex-nowrap align-items-center px-2">
                                         <Col sm={4} className="fs-4 b-box-3">Digital Enablement</Col>
                                         <Col sm={4} className="fs-4 b-box-3">MSME Response to Covid-19</Col>
                                         <Col sm={4} className="fs-4 b-box-3">Raising Capital and Leveraging Support</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center px-2">
+                                    <Row className="d-flex flex-nowrap align-items-center px-2">
                                         <Col sm={4} className="fs-4 b-box-3">Innovation</Col>
                                         <Col sm={4} className="fs-4 b-box-3">Trade Promotions and Visual Merchandising</Col>
                                         <Col sm={4} className="fs-4 b-box-3">Workforce Motivation</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center px-2">
+                                    <Row className="d-flex flex-nowrap align-items-center px-2">
                                         <Col sm={4} className="fs-4 b-box-3">Way Forward Strategy</Col>
                                         <Col sm={4} className="fs-4 b-box-3">Cost Competitiveness</Col>
                                         <Col sm={4} className="fs-4 b-box-3">Risk and Legal Responsible Sourcing</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center px-1">
+                                    <Row className="d-flex flex-nowrap align-items-center px-1">
                                         <Col sm={6} className="fs-4 b-box-2">Marketing</Col>
                                         <Col sm={6} className="fs-4 b-box-2">Basics of Finance</Col>
 
@@ -178,34 +178,34 @@ const Webinars = () => {
                                      
                                     />
 
-                                    <Row className="d-flex align-items-center">
+                                    <Row className="d-flex flex-nowrap align-items-center">
                                         <Col sm={4} className=" fs-4 a-box-3" >Success Factors for B2B eCommerce</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Supply Chain Management - Elements and Digitization</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Market Intelligence</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center">
+                                    <Row className="d-flex flex-nowrap align-items-center">
                                         <Col sm={4} className="fs-4 a-box-3">Risk and Legal Responsible Sourcing</Col>
                                         <Col sm={4} className="fs-4 a-box-3">LEAN Manufacturing</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Success Factors for B2C eCommerce</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center">
+                                    <Row className="d-flex flex-nowrap align-items-center">
                                         <Col sm={4} className="fs-4 a-box-3">Digital Enablement</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Business Case</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Product Development</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center">
+                                    <Row className="d-flex flex-nowrap align-items-center">
                                         
                                         <Col sm={4} className="fs-4 a-box-3">Advanced Marketing</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Data-Based Performance Management</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Demand Forecasting</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center">
+                                    <Row className="d-flex flex-nowrap align-items-center">
                                         
                                         <Col sm={4} className="fs-4 a-box-3">Procurement</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Managing your Finances</Col>
                                         <Col sm={4} className="fs-4 a-box-3">Advanced Financing</Col>
                                     </Row>
-                                    <Row className="d-flex align-items-center">
+                                    <Row className="d-flex flex-nowrap align-items-center">
                                         
                                         <Col sm={12} className="fs-4 a-box-5">Women in Business</Col>
 
@@ -321,11 +321,11 @@ const Webinars = () => {
                                         <p className="fs-4 mb-4 pb-4" style={{width:'70%'}}>As a Walmart Vriddhi-certified seller, you would be eligible for onboarding as well as incubation support to take your business digital on Flipkart.</p>
 
 
-                                        <Container className="wbg-blue-m pb-4 mt-4">
+                                        <Container className="wbg-blue-m pb-4 mt-4 pb-5">
                                             <div className="onboard fs-3 bogle-medium walmart-border-right walmart-border-left">Onboarding</div>
                                             <p className="fs-3 bogle-medium text-white py-4 pb-4">Get handholding support to register and start selling on Flipkart.</p>
-                                            <Row className="d-flex align-items-center">
-                                                <Col sm={2} className="fs-4 h-box-5">
+                                            <Row className="d-flex align-items-center justify-content-around">
+                                            <Col sm={2} xs={12} lg={2} className="fs-4 h-box-5">
                                                     <Image
                                                         src='/images/sign_up.png'
                                                         alt=''
@@ -335,7 +335,7 @@ const Webinars = () => {
 
                                                     />
                                                     <p style={{ height: 107 }}>Sign up as a seller on Flipkart</p></Col>
-                                                <Col sm={2} className="fs-4 h-box-5">
+                                                    <Col sm={2} xs={12} lg={2} className="fs-4 h-box-5">
                                                     <Image
                                                         src='/images/gstin.png'
                                                         alt=''
@@ -344,7 +344,7 @@ const Webinars = () => {
                                                         effect="blur"
 
                                                     /><p style={{ height: 107 }}>Update GSTIN in Seller Dashboard</p></Col>
-                                                <Col sm={2} className="fs-4 h-box-5">
+                                                <Col sm={2} xs={12} lg={2} className="fs-4 h-box-5">
                                                     <Image
                                                         src='../images/upload.png'
                                                         alt=''
@@ -353,7 +353,7 @@ const Webinars = () => {
                                                         effect="blur"
 
                                                     /><p style={{ height: 107 }}>Upload one listing on Flipkart</p></Col>
-                                                <Col sm={2} className="fs-4 h-box-5">
+                                                <Col sm={2} xs={12} lg={2} className="fs-4 h-box-5">
                                                     <Image
                                                         src='/images/products.png'
                                                         alt=''
@@ -362,7 +362,7 @@ const Webinars = () => {
                                                         
 
                                                     /><p style={{ height: 107 }}>Select brand and vertical approval when listing products</p></Col>
-                                                <Col sm={2} className="fs-4 h-box-5">
+                                                <Col sm={2} xs={12} lg={2} className="fs-4 h-box-5">
                                                     <Image
                                                         src='/images/new_orders.png'
                                                         alt=''
@@ -375,25 +375,25 @@ const Webinars = () => {
                                         </Container>
 
 
-                                        <Container className="wbg-footer pb-4">
+                                        <Container className="wbg-footer pb-4 pt-5">
                                             <div className="onboard fs-3 bogle-medium walmart-border-right walmart-border-left">Incubation</div>
                                             <p className="fs-3 bogle-medium text-white py-4 pb-4">Get a dedicated account manager to help you manage your business efficiently and get maximum customers on Flipkart.</p>
                                             <Container>
-                                                <Row className="d-flex align-items-center">
+                                                <Row className="d-flex flex-nowrap align-items-center">
                                                     <Col sm={6} className="fs-4 s-box text-white border-box">
                                                         <p>Support to select the right products through knowledge of ‘Best Selling’ and ‘New and Trending’. </p></Col>
 
                                                     <Col sm={6} className="fs-4 s-box text-white border-box">
                                                         <p>Guidance on pricing the products based on available information.</p></Col>
                                                 </Row>
-                                                <Row className="d-flex align-items-center mt-4">
+                                                <Row className="d-flex flex-nowrap align-items-center mt-4">
 
                                                     <Col sm={6} className="fs-4 s-box text-white border-box">
                                                         <p>Support to monitor business performance and connect with an Account Manager at least 4 times a week.</p></Col>
                                                     <Col sm={6} className="fs-4 s-box text-white border-box">
                                                         <p>Assistance with keyword selection and advertising services to increase visibility.</p></Col>
                                                 </Row>
-                                                <Row className="d-flex align-items-center mt-4">
+                                                <Row className="d-flex flex-nowrap align-items-center mt-4">
 
                                                     <Col sm={6} className="fs-4 s-box text-white border-box">
                                                         <p>Help to improve business metrics and avail programs (Flipkart Fulfillment, Smart Fulfillment, Sunday Working and Express Working)</p></Col>

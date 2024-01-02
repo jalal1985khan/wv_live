@@ -60,6 +60,10 @@ const SuccessStories = () => {
   return (
     <div>
 
+    
+
+
+
       {[false].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-0 overflow-hidden">
           <Container fluid>
@@ -76,8 +80,7 @@ const SuccessStories = () => {
 
               </Navbar.Brand>
             </Link>
-            <Navbar className="ms-auto px-4 m-btn">
-              <Nav className="me-auto">
+            <Nav className="ms-auto d-flex flex-row flex-nowrap">
                 <Form className="px-4 m-tm-none"
                   onSubmit={(e) => e.preventDefault()}>
                   <InputGroup className="">
@@ -102,7 +105,8 @@ const SuccessStories = () => {
                   <Button className="register" > Register</Button>
                 </Link>
 
-              </Nav></Navbar>
+              </Nav>
+
 
             {/* Toggle busston start from here */}
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

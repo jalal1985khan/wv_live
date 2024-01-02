@@ -55,7 +55,8 @@ function AutoLayoutExample() {
           </Card>
         </Col>
       </Row>
-      </Container>
+        </Container>
+        
 
 
 <Container className="d-sm-none pb-4">
