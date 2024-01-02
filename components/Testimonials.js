@@ -46,7 +46,7 @@ const Home = () => {
         <Carousel>
           {
             movies.map((post) => {
-               console.log(post)
+              //  console.log(post)
               return (
                 <Carousel.Item key={post.id}>
                   <Container className="md-flex">

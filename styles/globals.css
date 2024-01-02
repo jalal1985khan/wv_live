@@ -1556,6 +1556,10 @@ width:300px;
 .css-13cymwt-control{
     border:0px !important;
 }
+.pop-modal {
+    border-radius: 0px !important;
+    color: #fff !important;
+}
 
 @media only screen and (max-width: 600px) {
     .float_phone:hover{

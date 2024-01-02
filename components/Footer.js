@@ -9,12 +9,14 @@ import NewsLetter from './NewsLetter'
 import Floating from '../components/FloatingMenu'
 import { MdPhone } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
+import Popups from '../components/PopUps'
 
 function Footer() {
     const pathname = usePathname()
     return (
 
         <>
+            <Popups/>
             <Floating/>
             <NewsLetter/>
             <Container fluid className="px-0">
