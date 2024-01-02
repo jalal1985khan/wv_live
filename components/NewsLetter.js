@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+//import sendEmail from './sendEmail'; // Import the sendEmail function
 
 const NewsletterForm = () => {
   const [email, setEmail] = useState('');
@@ -22,11 +23,12 @@ const NewsletterForm = () => {
     }
 
     try {
+      // Save contact
       const response = await fetch('https://api.sendgrid.com/v3/marketing/contacts', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer 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`, // Replace with your SendGrid API key
+          Authorization: `Bearer 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`, // Replace with your SendGrid API key
         },
         body: JSON.stringify({
           list_ids: ['ff61f48a-8aa5-4fc4-9d9d-3a8563f252f7'], // Replace with your SendGrid contact list ID
@@ -35,13 +37,18 @@ const NewsletterForm = () => {
       });
 
       if (response.ok) {
-        // Add any success handling here
-        console.log('Contact saved successfully');
-        setIsSent(true)
+        // Contact saved successfully, now send email
+        const templateId = 'd-928effde4f674ad8b95ea8d8020051d5'; // Replace with your SendGrid template ID
+        const dynamicTemplateData = { /* Add your template variables here */ };
+
+        await sendEmail(email, 'Your Email Subject', templateId, dynamicTemplateData);
+        
+        // Set state to indicate successful subscription
+        setIsSent(true);
       } else {
         // Add error handling here
         console.error('Failed to save contact');
-        setIsSent(false)
+        setIsSent(false);
       }
     } catch (error) {
       console.error('Error saving contact:', error);
@@ -71,12 +78,11 @@ const NewsletterForm = () => {
                   onChange={handleEmailChange}
                 />
                 {isSent ? 'Subscribed successfully' : (
-                <>
-                {!isValidEmail && <Form.Text className="text-danger">Invalid email format</Form.Text>}
+                  <>
+                    {!isValidEmail && <Form.Text className="text-danger">Invalid email format</Form.Text>}
                     {!isNotEmpty && <Form.Text className="text-danger">Email cannot be empty</Form.Text>}
                   </>
-                )
-              }
+                )}
               </Form.Group>
             </Form>
           </Col>
