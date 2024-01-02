@@ -56,7 +56,7 @@ const Example = () => {
 
   return (
     <>
-      <Modal show={show} onHide={closeModal} animation={false} size="lg">
+      <Modal show={show} onHide={closeModal} animation={false} size="lg" centered>
         {movies.map((post) => (
           <div key={post.id}>
             <Modal.Header closeButton className="wbg-main pop-modal">
