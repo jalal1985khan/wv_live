@@ -26,7 +26,7 @@ const NewsletterForm = () => {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer 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`, // Replace with your SendGrid API key
+          Authorization: `Bearer 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`, // Replace with your SendGrid API key
         },
         body: JSON.stringify({
           list_ids: ['ff61f48a-8aa5-4fc4-9d9d-3a8563f252f7'], // Replace with your SendGrid contact list ID
