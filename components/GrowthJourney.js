@@ -12,15 +12,13 @@ function AutoLayoutExample() {
       </Container>
       <Container fluid className="p-0 d-none d-sm-block">
       <Row className="align-items-end">
-        <Col className="col-sm px-0" >
+          <Col className="col-sm px-0" sm={4} >
           <Card className="border-0 rounded-0 wbg-gy">
             <LazyLoadImage
               src='/images/flipkart.png'
               alt="walmart Vriddhi Flipkart"
-              
               className='p-4'
             />
-
             <Card.Body className="wbg-main text-white">
               <Card.Title>Grow domestically with<br />
                 Flipkart incubation support</Card.Title>
@@ -28,7 +26,7 @@ function AutoLayoutExample() {
           </Card>
 
         </Col>
-        <Col className="col-sm px-0">
+        <Col className="col-sm px-0" sm={4}>
           <Card className="border-0 rounded-0 wbg-gy">
             <LazyLoadImage
               src='/images/advisory-support.png'
@@ -41,7 +39,7 @@ function AutoLayoutExample() {
             </Card.Body>
           </Card>
         </Col>
-        <Col className="col-md px-0">
+        <Col className="col-md px-0" sm={4}>
           <Card className="border-0 rounded-0 wbg-gy">
             <LazyLoadImage
               src='../images/India-Image.png'
