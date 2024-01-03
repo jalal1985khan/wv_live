@@ -10,7 +10,7 @@ const Home = () => {
 <Carousel.Item>
               <Image
           className="w-100 m-tm-none h-100"
-          src='/images/HomeBanner-1.jpeg'
+          src='/images/Banner_01.png'
           alt="walmart vridhi registartion"
           width={900}
           height={710}  
@@ -27,7 +27,7 @@ const Home = () => {
       <Carousel.Item>
               <Image
                 className="w-100 m-tm-none h-100"
-                src='/images/HomeBanner-2.jpeg'
+                src='/images/Banner_02.png'
           alt="walmart vridhi"
           width={900}
           height={710}
@@ -43,7 +43,7 @@ const Home = () => {
       <Carousel.Item>
               <Image
                 className="w-100 m-tm-none h-100"
-                src='/images/HomeBanner-3.jpeg'
+                src='/images/Banner_03.png'
           alt="walmart vridhi"
           width={900}
           height={710}
@@ -59,7 +59,7 @@ const Home = () => {
       <Carousel.Item>
               <Image
                 className="w-100 m-tm-none h-100"
-                src='/images/HomeBanner-4.jpeg'
+                src='/images/Banner_04.png'
           alt="walmart vridhi"
           width={900}
           height={710}
@@ -75,7 +75,7 @@ const Home = () => {
       <Carousel.Item>
               <Image
                 className="w-100 m-tm-none h-100"
-                src='/images/HomeBanner-5.jpeg'
+                src='/images/Banner_05.png'
           alt="walmart vridhi"
           width={900}
           height={710}
