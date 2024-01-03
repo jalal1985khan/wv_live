@@ -29,7 +29,7 @@ const SuccessStories = () => {
     
     let url = "";
     const urlPage = `${page}`;
-    console.log(urlPage + 'page length')
+    //console.log(urlPage + 'page length')
     //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
@@ -66,7 +66,8 @@ const SuccessStories = () => {
 
 
   const loadMore = () => {
-    if (page * 2 >= total) {
+    console.log(page)
+    if (page >= total) {
       //console.log("Reached end of posts");
       setEnd(true);
       return;
@@ -74,7 +75,7 @@ const SuccessStories = () => {
 
     setPage((oldPage) => {
       //console.log("Updating page:", oldPage + 2);
-      return oldPage + 2;
+      return oldPage + 10;
     });
   };
 
