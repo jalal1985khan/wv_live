@@ -32,8 +32,8 @@ const SuccessStories = () => {
     console.log(urlPage + 'page length')
     //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=49`; //Staging Enviroment
-    //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
+    //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
+    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -67,13 +67,13 @@ const SuccessStories = () => {
 
   const loadMore = () => {
     if (page * 2 >= total) {
-      console.log("Reached end of posts");
+      //console.log("Reached end of posts");
       setEnd(true);
       return;
     }
 
     setPage((oldPage) => {
-      console.log("Updating page:", oldPage + 2);
+      //console.log("Updating page:", oldPage + 2);
       return oldPage + 2;
     });
   };
