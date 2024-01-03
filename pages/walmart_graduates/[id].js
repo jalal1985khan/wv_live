@@ -136,14 +136,14 @@ Share Profile <TbShare className="s-share" />
           {post['acf']['gallery'] && post['acf']['gallery'][0] && post['acf']['gallery'][1]['full_image_url'] ? (
   <Image src={post['acf']['gallery'][0]['full_image_url']} width={400} height={300} />
 ) : ''}
-            <Image src={post['acf']['gallery'][0]['full_image_url']} width={400} height={300} />
+            
             
             </Col>
           <Col>
           {post['acf']['gallery'] && post['acf']['gallery'][1] && post['acf']['gallery'][1]['full_image_url'] ? (
   <Image src={post['acf']['gallery'][1]['full_image_url']} width={400} height={300} />
 ) : ''}
-            <Image src={post['acf']['gallery'][1]['full_image_url']} width={400} height={300} /></Col>
+            </Col>
                     
           <Col>
           {post['acf']['gallery'] && post['acf']['gallery'][2] && post['acf']['gallery'][2]['full_image_url'] ? (
