@@ -29,15 +29,15 @@ const SuccessStories = () => {
     
     let url = "";
     const urlPage = `${page}`;
-    //console.log(urlPage)
+    console.log(urlPage + 'page length')
     //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
+    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=49`; //Staging Enviroment
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data.length + 'hello');
+      //console.log(data.length + 'hello');
       setMovies(data);
     } catch (error) {
       console.log(error);
@@ -52,6 +52,7 @@ const SuccessStories = () => {
       const cats = await response.json();
       setTotal(cats.count); // Set total count here
       setNext(cats);
+      //console.log(cats.count)
       setLoading(false);
     } catch (error) {
       console.log(error);

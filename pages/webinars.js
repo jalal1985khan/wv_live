@@ -162,8 +162,8 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                             }}
                           />
                           <Card.Body>
-                            <Card.Title className="fs-3 bogle-medium walmart-default pt-2" style={{ minHeight: 112 }} dangerouslySetInnerHTML={{ __html: web['title']['rendered'] }} />
-                            <div dangerouslySetInnerHTML={{ __html: web['acf']['short_decription'] }} style={{ minHeight: 180 }} />
+                            <Card.Title className="fs-4 bogle-medium walmart-default pt-2" style={{ minHeight: 112 }} dangerouslySetInnerHTML={{ __html: web['title']['rendered'] }} />
+                            <div dangerouslySetInnerHTML={{ __html: web['acf']['short_decription'] }} style={{ minHeight: 195 }} />
                             <div style={{ minHeight: 230 }}>
                               <Button variant="primary" className="pri-category mb-3" >{web['acf']['category']}</Button>
                               <h3 className="fs-5 bogle-medium mb-3">{web['acf']['expert_name']}</h3>

@@ -167,14 +167,24 @@ const SuccessStories = () => {
             {
   
               movies.map((post, index) => {
-                // console.log(post);
+                console.log(post);
+                if (post['categories'][0] === 12) {
+                  const type = '/success-stories'; 
+                }
+
+                if (post['categories'][0] === 13) {
+                  const type = '/news-and-updates'; 
+                }
+
                 return (
-                  <Link key={index} href={`/success-story/${post['slug']}`} className="search-text" target="_blank">
+                  <Link key={index} href={`${type}/${post['slug']}`} className="search-text" target="_blank">
                     <Row className="py-3">
-                      <Col sm={4}> <Image
+                      <Col sm={4}>
+                        <Image
                         src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
                         alt={post['title']['rendered']}
-                        
+                        width={100}
+                        height={100}
                         className="search-img"
                       /></Col>
                       <Col className="d-flex justify-content-center align-items-center"><span className="fs-5" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} /></Col>
