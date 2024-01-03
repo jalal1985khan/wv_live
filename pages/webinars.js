@@ -251,13 +251,13 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
 export default Webinars
 
 async function getWebinars() {
-  const res = await fetch(`${configData.SERVER_URL}industry_connect?_embed&status=publish&production[]=78`)
+  const res = await fetch(`${configData.SERVER_URL}industry_connect?_embed&status=publish&production[]=77`)
   const json = await res.json()
   return json
 }
 
 async function getSpotlight() {
-  const res = await fetch(`${configData.SERVER_URL}msme_spotlight?_embed&status=publish&production[]=78`)
+  const res = await fetch(`${configData.SERVER_URL}msme_spotlight?_embed&status=publish&production[]=77`)
   const json = await res.json()
   return json
 }

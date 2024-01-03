@@ -21,7 +21,7 @@ const SuccessStories = () => {
   const [totalPages, setTotalPages] = useState(1);
 
   const postsPerPage = '9';
-  const API_ENDPOINT = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=78&category_type[]=79&search=`;
+  const API_ENDPOINT = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=77&category_type[]=79&search=`;
 
   const NUM_PAGES_DISPLAYED = 5;
 
@@ -76,7 +76,7 @@ const fetchTaxonomyCount = async () => {
   }, [page]);
 
   const fetchPosts = async () => {
-    let url = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=78&category_type[]=79&${acfSearch ? `&city=${acfSearch}` : ''}${acfIndustry ? `&industy=${acfIndustry}` : ''}&per_page=${postsPerPage}&page=${page}`;
+    let url = `${configData.SERVER_URL}walmart_graduates?_embed&categories[]=27&production[]=77&category_type[]=79&${acfSearch ? `&city=${acfSearch}` : ''}${acfIndustry ? `&industy=${acfIndustry}` : ''}&per_page=${postsPerPage}&page=${page}`;
 
     try {
       const response = await fetch(url);

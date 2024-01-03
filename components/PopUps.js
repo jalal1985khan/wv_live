@@ -16,7 +16,7 @@ const Example = () => {
   };
 
   const fetchMovies = async () => {
-    let url = `${configData.SERVER_URL}modal_popup?_embed&production[]=78`;
+    let url = `${configData.SERVER_URL}modal_popup?_embed&production[]=77`;
     try {
       const response = await fetch(url);
       const data = await response.json();

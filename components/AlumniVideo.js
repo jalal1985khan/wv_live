@@ -55,7 +55,7 @@ const [currentTitle, setTitle] = useState(null);
         //console.log(urlPage)
         //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
         //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-      url = `${configData.SERVER_URL}msme_speaks?_embed&status[]=publish&production[]=78&per_page=${urlPage}`;//Staging Enviroment
+      url = `${configData.SERVER_URL}msme_speaks?_embed&status[]=publish&production[]=77&per_page=${urlPage}`;//Staging Enviroment
       //url = `${configData.SERVER_URL}msme_speaks?_embed&status[]=publish&production[]=77&per_page=${urlPage}`;//Live Enviroment
     
         try {
