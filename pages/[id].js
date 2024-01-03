@@ -19,8 +19,8 @@ const post = ({ data }) => {
          <>
             <Container fluid className="g-0">
               <Row className="g-0">
-                <Col style={{ background: '#306FC7' }} className="d-flex flex-column justify-content-center">
-                  <div dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} className="text-white" />
+                <Col style={{ background: '#306FC7' }} className="d-flex flex-column justify-content-center px-2">
+                  <div dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} className="text-white blog-head" />
                 </Col>
                 <Col>
                   <Image

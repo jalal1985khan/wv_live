@@ -190,6 +190,13 @@ img.card-img.img-contact {
 .about-section {
     background-color: #EC0D6E;
 }
+.blog-head{
+    padding: 10px;
+}
+
+.blog-head h1{
+    font-size: 38px;
+}
 
 .ab-button {
     background-color: white !important;
