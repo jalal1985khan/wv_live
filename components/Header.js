@@ -168,6 +168,8 @@ const SuccessStories = () => {
   
               movies.map((post, index) => {
                 console.log(post);
+              
+                {post['categories'][0]}
                 if (post['categories'][0] === 12) {
                   const type = '/success-stories'; 
                 }
@@ -177,7 +179,7 @@ const SuccessStories = () => {
                 }
 
                 return (
-                  <Link key={index} href={`${type}/${post['slug']}`} className="search-text" target="_blank">
+                  <Link key={index} href={`/${post['slug']}`} className="search-text" target="_blank">
                     <Row className="py-3">
                       <Col sm={4}>
                         <Image

@@ -14,11 +14,11 @@ const post = ({ data }) => {
   return (
     <div>
       <Header />
-      <div className='grid grid-cols-3 gap-5 w-full'>
+      <div className='grid grid-cols-3 gap-5 w-full g-0'>
         {data.map((post, index) => (
          <>
-            <Container fluid>
-              <Row>
+            <Container fluid className="g-0">
+              <Row className="g-0">
                 <Col style={{ background: '#306FC7' }} className="d-flex flex-column justify-content-center">
                   <div dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} className="text-white" />
                 </Col>
