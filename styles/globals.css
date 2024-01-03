@@ -1381,11 +1381,19 @@ h5 strong {
     width:700px !important;
     text-align: center;
     color: #0071CE;
-    font-family: "Bogle Bold", Sans-serif;
+    font-family: "Bogle Bold";
     font-size: 27px !important;
     font-weight: 900;
     line-height: 1.3em;    
 }
+
+.heading p{
+    text-align: center;
+    color: #0071CE;
+    line-height: 1.3em; 
+    font-family: BOGLEBOLD;   
+}
+
 .justify{
 justify-content: center;    
 }

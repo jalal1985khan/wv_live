@@ -89,8 +89,9 @@ return (
       </Row>
 </Container>
 
-<Container className="wbg-main" fluid>
-<Container>
+<Container className="wbg-main pb-5" fluid>
+      <Container>
+        
 <Row>
 <Col sm={1}><Image src="/images/commas_2.png" alt="Walmart Vriddhi" /></Col>
 <p className="text-white fs-3 bogle-medium">{post['acf']['heading-1']}</p>
@@ -102,7 +103,7 @@ return (
         <Col><div dangerouslySetInnerHTML={{__html:post['acf']['cloumn-3_heading-1']}}  className="text-white fs-5 bogle-medium"></div></Col>
       </Row>
 
-<Container className="wbg-white">
+<Container className="wbg-white mb-5">
 <Row>
 <Col className="mt-3"><p className="fs-3 bogle-medium">{post['acf']['heading-2']}</p></Col>
 <Col lg={12}><div dangerouslySetInnerHTML={{__html:post['acf']['descheading-2']}} className=" fs-5 bogle-medium p-3"></div></Col>
@@ -115,14 +116,15 @@ return (
 <Col xs={12}  lg={6}><Image src={post['acf']['product-image-right']['url']} alt="Walmart Vriddhi" width={300} height={300} className="w-100"/></Col>
         
 </Row>
-<Row className="p-3">
-<div dangerouslySetInnerHTML={{__html:post['acf']['description_below_images']}} className="fs-4 bogle-medium walmart-default"></div> 
+          <Row className="p-3">
+
+<div dangerouslySetInnerHTML={{__html:post['acf']['description_below_images']}} className="fs-5 bogle-medium "></div> 
 </Row>
 <Row className="p-3 justify" >
 <div dangerouslySetInnerHTML={{__html:post['acf']['paragraph_heading-1']}} className="heading"></div> 
 </Row>
 <Row className="p-3">
-<div dangerouslySetInnerHTML={{__html:post['acf']['paragraph_end']}} className="fs-4 bogle-medium"></div> 
+<div dangerouslySetInnerHTML={{__html:post['acf']['paragraph_end']}} className="fs-5 bogle-medium"></div> 
 </Row>
   </Container>      
   
