@@ -2032,6 +2032,29 @@ position: absolute;
 .profile-img{
 width:200px;
 }
+
+.profiles{
+    width:100%;
+    position: relative;
+    }
+    .profiles:hover{
+        background-color: #1570CD;
+        height: auto !important;
+        color:#fff;
+        position: absolute;
+        width: 28.3%;
+        z-index: 999;
+        border-radius: 6px;  
+        min-height: 260px;  
+        }
+    .profiles:hover .info{
+    display: block; 
+    position: absolute;
+        }
+    .profile-img{
+    width:200px;
+    }
+
 .know{
 color:#1570CD !important;
 background: #fff !important;

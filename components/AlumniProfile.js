@@ -217,7 +217,7 @@ const fetchTaxonomyCount = async () => {
           <Row>
             {movies.map((post, index) => (
               <Col lg={4} key={index}>
-                <div className="card mb-3 profile">
+                <div className="card mb-3 profiles">
                   <div className="row g-0">
                     <div className="col-md-4">
                       <Image
