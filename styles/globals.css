@@ -45,7 +45,7 @@
 }
 
 .bogle-r-italic p {
-    font-family: BOGLEITALIC;
+    font-family: BOGLEITALIC !important;
     font-size: 23px;
 }
 
