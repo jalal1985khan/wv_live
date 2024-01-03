@@ -209,7 +209,7 @@ return (
       <h3 className="fs-6 walmart-secondary bogle-medium">{
                 date.format(new Date(post.date), 'MMMM DD, YYYY')
               }</h3>
-        <Card.Title className="fs-5 bogle-medium mb-4" style={{minHeight:80}} dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
+        <Card.Title className="fs-5 bogle-medium mb-4" style={{minHeight:80, height:95}} dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
         <Link key={index} href={`${post['acf']['source_url']}`} target="_blank">
         <Button variant="primary" className="news_btn fs-5">Read more</Button>
             </Link>

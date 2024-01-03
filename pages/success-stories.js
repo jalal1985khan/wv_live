@@ -29,10 +29,10 @@ const SuccessStories = () => {
     
     let url = "";
     const urlPage = `${page}`;
-    console.log(urlPage)
+    //console.log(urlPage)
     //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=42`; //Staging Enviroment
+    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
     try {
       const response = await fetch(url);
