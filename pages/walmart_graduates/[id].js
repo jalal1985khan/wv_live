@@ -132,9 +132,24 @@ Share Profile <TbShare className="s-share" />
             <Container>
                 <h4 className="fs-3 fw-bold mb-4">Gallery</h4>
                 <Row>
-                    <Col><Image src={post['acf']['gallery'][0]['full_image_url']} width={400} height={300} /></Col>
-                    <Col><Image src={post['acf']['gallery'][1]['full_image_url']} width={400} height={300} /></Col>
-                    <Col><Image src={post['acf']['gallery'][2]['full_image_url']} width={400} height={300} /></Col>
+          <Col>
+          {post['acf']['gallery'] && post['acf']['gallery'][0] && post['acf']['gallery'][1]['full_image_url'] ? (
+  <Image src={post['acf']['gallery'][0]['full_image_url']} width={400} height={300} />
+) : ''}
+            <Image src={post['acf']['gallery'][0]['full_image_url']} width={400} height={300} />
+            
+            </Col>
+          <Col>
+          {post['acf']['gallery'] && post['acf']['gallery'][1] && post['acf']['gallery'][1]['full_image_url'] ? (
+  <Image src={post['acf']['gallery'][1]['full_image_url']} width={400} height={300} />
+) : ''}
+            <Image src={post['acf']['gallery'][1]['full_image_url']} width={400} height={300} /></Col>
+                    
+          <Col>
+          {post['acf']['gallery'] && post['acf']['gallery'][2] && post['acf']['gallery'][2]['full_image_url'] ? (
+  <Image src={post['acf']['gallery'][2]['full_image_url']} width={400} height={300} />
+) : ''}
+            </Col>
                 </Row>
             </Container>
             <hr />
