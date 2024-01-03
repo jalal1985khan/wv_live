@@ -133,7 +133,7 @@ Share Profile <TbShare className="s-share" />
                 <h4 className="fs-3 fw-bold mb-4">Gallery</h4>
                 <Row>
           <Col>
-          {post['acf']['gallery'] && post['acf']['gallery'][0] && post['acf']['gallery'][1]['full_image_url'] ? (
+          {post['acf']['gallery'] && post['acf']['gallery'][0] && post['acf']['gallery'][0]['full_image_url'] ? (
   <Image src={post['acf']['gallery'][0]['full_image_url']} width={400} height={300} />
 ) : ''}
             
