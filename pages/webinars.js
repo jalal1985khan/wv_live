@@ -21,11 +21,11 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
     const panes = $$(".tab-pane");
     const tabActive = $(".tab-item.active");
     const line = $(".tabs .line");
-    requestIdleCallback(function () {
-      line.style.left = tabActive.offsetLeft + "px";
-      line.style.width = tabActive.offsetWidth + "px";
+    // requestIdleCallback(function () {
+    //   line.style.left = tabActive.offsetLeft + "px";
+    //   line.style.width = tabActive.offsetWidth + "px";
 
-    });
+    //});
 
     tabs.forEach((tab, index) => {
       const pane = panes[index];
