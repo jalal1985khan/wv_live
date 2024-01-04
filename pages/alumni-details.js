@@ -150,13 +150,7 @@ export default function App() {
         setErrors({});  
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (!emailRegex.test(yourEmail)) {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                yourEmail: 'Please enter a valid email address.',
-            }));
-            return;
-        }
+      
 
         axios.post(`${configData.SERVER_FROM}contact-form-7/v1/contact-forms/26552/feedback`,
             {

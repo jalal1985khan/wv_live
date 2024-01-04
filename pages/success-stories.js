@@ -10,19 +10,36 @@ import { usePathname } from 'next/navigation'
 import { RotatingLines } from 'react-loader-spinner'
 
 
+
 const title ="Business Owner Training, Business Owner Training Programs, Sell Products Online in India";
 const desc ="The MSME spotlight and industry connect series is a collection of webinars that define Walmart Vriddhi’s MSME business training programs Learn more about these webinars here";
 const banner ="/images/success_banner.jpeg";
 const url = "https://www.walmartvriddhi.org/success-stories/";
 
-
-const SuccessStories = ({ heroBannerpost, initialNewsPosts }) => {
+const visiblePosts = '6';
+const SuccessStories = ({ initialNewsPosts }) => {
   const pathname = usePathname();
   const [newsPosts, setNewsPosts] = useState(initialNewsPosts);
   const [visiblePosts, setVisiblePosts] = useState(6); // Initial number of posts to display
 
+
+  const fetchNos = async () => {
+    let cat = `${configData.SERVER_URL}categories/12`;
+
+    try {
+      const response = await fetch(cat);
+      const cats = await response.json();
+      //setTotal(cats.count); // Set total count here
+      //setNext(cats);
+      console.log(cats.count)
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const loadMorePosts = () => {
-    setVisiblePosts((prev) => prev + 6); // Increase the number of posts to display on each click
+    setVisiblePosts( visiblePosts + 6); // Increase the number of posts to display on each click
   };
 
   return (
@@ -132,7 +149,7 @@ export default SuccessStories;
 
 
 async function getNews() {
-  const res = await fetch(`${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=100`);
+  const res = await fetch(`${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${visiblePosts}`);
   const json = await res.json();
   return json;
 }

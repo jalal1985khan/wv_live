@@ -82,6 +82,7 @@ const SuccessStories = ({ heroBannerpost, initialNewsPosts }) => {
                             <p className="text-white fs-5 bogle-medium" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} />
                             <p className="text-white">
                               {date.format(new Date(post.date), 'MMMM DD, YYYY')}
+                      
                             </p>
                           </Col>
                           <Col sm={3} lg={3} className="d-flex align-items-center">
