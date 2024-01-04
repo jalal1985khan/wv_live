@@ -112,6 +112,19 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
       <Container fluid className="wbg-main p-0">
         <Container className="text-center">
           <p className="fs-2 bogle-medium text-white pt-3">Webinars</p>
+          <Modal
+                  show={currentProduct}
+                  onHide={handleClose}
+                  closeTimeoutMS={300}
+                  isOpen={Boolean(currentProduct)}
+                  onRequestClose={() => setProduct(null)}
+                  size="lg"
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title dangerouslySetInnerHTML={{ __html: currentTitle }} />
+                  </Modal.Header>
+                  <Modal.Body><iframe width="100%" height="400" src={currentUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></Modal.Body>
+                </Modal>
           <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
           <p className="fs-3 text-white w-60">
             A collection of webinars that define the Walmart Vriddhi story through
