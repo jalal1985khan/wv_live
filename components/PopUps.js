@@ -22,6 +22,7 @@ const Example = () => {
       const data = await response.json();
         setMovies(data);
         console.log(data)
+	setShow(false);
       if (data.length === 1) {
         setShow(true);
       }
@@ -61,7 +62,9 @@ const Example = () => {
               <Modal.Title>{post.title.rendered}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <button type="button" className="btn-close pop-close" aria-label="Close" onClick={closeModal}></button>
+              <button type="button" className="btn-close pop-close" aria-label="Close" onClick={closeModal}>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>                
+</button>
               <Link href={post.acf.pop_url}><Image src={post.acf.modal_popup.url} width={200} height={200} className="img-fluid w-100" /></Link>
             </Modal.Body>
           </div>

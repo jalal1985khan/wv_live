@@ -76,7 +76,7 @@ return (
     </Container>
     
 <Container className="text-center mx-auto">
-<h1 className="fs-2 bogle-medium walmart-default">{post['title']['rendered']}</h1>
+<h1 className="fs-2 bogle-medium walmart-default" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }}   />
 <Image src={post['acf']['author_profile']['url']} alt="Walmart Vriddhi"/>
 <h3 className="fs-2 bogle-medium">{post['acf']['author_name']}</h3>
 <p className="fs-5">{post['acf']['author_designation']}</p>
