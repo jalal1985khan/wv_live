@@ -181,7 +181,7 @@ const SuccessStories = () => {
           ) : (
               
             <Button variant="primary" className="authors_btn fs-5" onClick={loadMore} disabled={loading ? false : true}>
-               
+               Load more
             </Button>
             
             
