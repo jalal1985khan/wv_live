@@ -35,7 +35,7 @@ const Home = () => {
   return (
 
     <Container className="wbg-yellow text-center" fluid>
-    <p className="fs-1 bogle-bold ">Proud owners who keep adding to the India story</p>
+    <p className="fs-2 bogle-bold ">Proud owners who keep adding to the India story</p>
     <LazyLoadImage 
     src="./images/line-svg-png-1.png" 
     alt="walmart Vriddhi"
