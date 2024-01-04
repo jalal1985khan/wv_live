@@ -68,15 +68,15 @@ return (
 <Container fluid key={post.id} className="success_post" style={{ backgroundImage: `url(${post['_embedded']['wp:featuredmedia'][0]['source_url']})`}}>
 </Container>
 <Brand/>
-<Container className="pt-4">
+<Container className="pt-4 pb-4">
 <Row>
-<Col className="pri_cat"><p className='bogle-bold fs-5'>MSME SuperPower:</p></Col>
+<Col className="pri_cat"><p className='bogle-bold fs-5 margin-center'>MSME SuperPower:</p></Col>
 <Col className="pri_ico"><Image src={post['acf']['primary_category_icon']['url']} className="primary_cat" alt={post['title']['rendered']}/></Col>
 </Row>
     </Container>
     
 <Container className="text-center mx-auto">
-<h1 className="fs-2 bogle-medium walmart-default" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }}   />
+<h1 className="fs-2 bogle-medium walmart-default pb-4" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }}   />
 <Image src={post['acf']['author_profile']['url']} alt="Walmart Vriddhi"/>
 <h3 className="fs-2 bogle-medium">{post['acf']['author_name']}</h3>
 <p className="fs-5">{post['acf']['author_designation']}</p>
@@ -105,11 +105,11 @@ return (
 
 <Container className="wbg-white mb-5">
 <Row>
-<Col className="mt-3"><p className="fs-3 bogle-medium">{post['acf']['heading-2']}</p></Col>
+<Col className="mt-3 mx-3"><p className="fs-2 bogle-medium">{post['acf']['heading-2']}</p></Col>
 <Col lg={12}><div dangerouslySetInnerHTML={{__html:post['acf']['descheading-2']}} className=" fs-5 bogle-medium p-3"></div></Col>
 </Row>
 <Row className="wbg_grey m-3">
-<Col><div dangerouslySetInnerHTML={{__html:post['acf']['paragraph-heading']}} className=" fs-5 bogle-medium p-3 walmart-default"></div></Col>
+<Col><div dangerouslySetInnerHTML={{__html:post['acf']['paragraph-heading']}} className=" fs-6 bogle-italic p-3 walmart-default"></div></Col>
 </Row> 
 <Row className="p-3">
             <Col xs={12} lg={6}><Image src={post['acf']['product-image-left']['url']} alt="Walmart Vriddhi" width={300} height={300} className="w-100" /></Col>
@@ -118,13 +118,13 @@ return (
 </Row>
           <Row className="p-3">
 
-<div dangerouslySetInnerHTML={{__html:post['acf']['description_below_images']}} className="fs-5 bogle-medium "></div> 
+<div dangerouslySetInnerHTML={{__html:post['acf']['description_below_images']}} className="fs-5 bogle-medium h-bold"></div> 
 </Row>
 <Row className="p-3 justify" >
 <div dangerouslySetInnerHTML={{__html:post['acf']['paragraph_heading-1']}} className="heading"></div> 
 </Row>
 <Row className="p-3">
-<div dangerouslySetInnerHTML={{__html:post['acf']['paragraph_end']}} className="fs-5 bogle-medium"></div> 
+<div dangerouslySetInnerHTML={{__html:post['acf']['paragraph_end']}} className="fs-5 bogle-medium h-bold"></div> 
 </Row>
   </Container>      
   

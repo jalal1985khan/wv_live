@@ -9,6 +9,11 @@ import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoFacebook } from "react-icons/io5";
+import { FaXTwitter } from "react-icons/fa6";
+import { AiFillLinkedin } from "react-icons/ai";
+
 import {
     TelegramShareButton,
     TelegramIcon,
@@ -81,7 +86,7 @@ return (
                     </div>
                     <div className="col-md-9 profile-stat">
                     <div className="card-body text-white">
-                      <h4 className="profile-title fw-bold">{post['title']['rendered']}</h4>
+                      <h4 className="profile-title bogle-medium">{post['title']['rendered']}</h4>
                       <p className="card-text fs-5">{post['acf']['company_name_&_place']}</p>
                     </div>
                   </div>
@@ -125,8 +130,8 @@ Share Profile <TbShare className="s-share" />
 </Container>
 <Container>
 <Container>
-                <p className="fs-3 fw-bold mt-4">Business Category: {post['acf']['business_category']}</p>
-                <p dangerouslySetInnerHTML={{ __html: post['acf']['description_2'] }} className="fs-4"></p>
+<p className="fs-5 fw-bold mt-4 walmart-default">Business Category: <span className="bogle-medium">{post['acf']['business_category']}</span></p>
+<p dangerouslySetInnerHTML={{ __html: post['acf']['description_2'] }} className="fs-5"></p>
             </Container>
             <hr />
             <Container>
@@ -152,12 +157,38 @@ Share Profile <TbShare className="s-share" />
             </Col>
                 </Row>
             </Container>
-            <hr />
+            <hr className=""/>
             <Container className="mb-5 mt-5">
-                <Link className="profile-btn" href="/alumni-profiles">Go Back </Link>
-                <Link className="profile-btn mx-5" href={post['acf']['visit_the_website']} target="_blank">Vist the webiste</Link>
+        <Link className="profile-btn" href="/alumni-profiles">Go Back </Link>
+        {post['acf']['visit_the_website'] ? <Link href={post['acf']['visit_the_website']} className="profile-btn mx-5" target="_blank">Visit the website</Link> : ''}
             </Container>
-</Container>
+    </Container>
+    <Container fluid style={{ background: '#3591ED' }}>
+      <Container>
+        <Row style={{'height':60}}>
+          <Col lg={2} sm={12} className="d-flex align-items-center justify-content-end fs-4 bogle-medium text-white">Follow me on:</Col>
+          <Col lg={10} sm={12} className="d-flex align-items-center fs-4 bogle-medium text-white">
+            <Row>
+            {post['acf']['facebook'] ?<Col className="d-flex align-items-center">
+                  <Link href={post['acf']['facebook']} target='_blank'>
+                    <div className="bg-circle"><IoLogoFacebook size={28} fill='#1471CE' /></div></Link> 
+              </Col>: ''}
+              {post['acf']['twiter'] ?<Col>
+                  <Link href={post['acf']['twiter']} target='_blank'>
+                    <div className="bg-circle"><FaXTwitter size={28} fill='#1471CE' /></div></Link> 
+              </Col>: ''}
+              {post['acf']['instagram'] ?<Col>
+                  <Link href={post['acf']['instagram']} target='_blank'>
+                    <div className="bg-circle"><IoLogoInstagram size={28} fill='#1471CE' /></div></Link> 
+              </Col>: ''}
+              {post['acf']['linkedin'] ?<Col>                
+                  <Link href={post['acf']['linkedin']} target='_blank'>
+                    <div className="bg-circle"><AiFillLinkedin size={28} fill='#1471CE' /></div></Link> 
+              </Col>: ''}
+            </Row>
+          </Col>
+      </Row></Container>
+    </Container>
 <Footer/>
 </>
 )

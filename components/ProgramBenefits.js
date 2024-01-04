@@ -1,5 +1,6 @@
-import { Container, Row, Col, Card, Image, Carousel } from 'react-bootstrap';
+import { Container, Row, Col, Card,  Carousel } from 'react-bootstrap';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Image from 'next/image'
 
 
 function ContainerFluidBreakpointExample() {
@@ -7,13 +8,14 @@ function ContainerFluidBreakpointExample() {
   return (
     <Container className="wbg-gy text-center mx-auto py-4 my-4" fluid>
       <Container className="d-none d-sm-block">
-        <p className="fs-1 bogle-bold walmart-default">Program benefits</p>
-        <LazyLoadImage
-          src='/images/line-svg-png-1.png'
-          alt=''
-         
-          
-        />
+        <p className="fs-2 bogle-medium walmart-default">Program benefits</p>
+        <Image
+              src='/images/line-svg-png-1.png'
+              alt='walmart vriddhi'
+              width={100}
+              height={20}
+              className='mb-1'
+          />
 
         <Row className="justify-content-md-center pt-4">
           <Col className="col-md px-0 hover-card" xs={12}>

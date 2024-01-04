@@ -16,8 +16,8 @@ function Footer() {
     return (
 
         <>
-            <Popups/>
-            <Floating/>
+            {/* <Popups/> */}
+            <Floating/> 
             <NewsLetter/>
             <Container fluid className="px-0">
             <ScrollToTop smooth />
@@ -38,7 +38,7 @@ function Footer() {
                     <Row className="pt-4">
                         <Col sm={1}></Col>
                         <Col className="px-4 text-white" sm={3} xs={12}>
-                            <p className="fs-2">SITEMAP</p>
+                            <p className="fs-3 bogle-medium">Sitemap</p>
                             <hr />
                             <ul className="fs-4 list-unstyled">
                                 <li className="f-text"><Link href="/about-us" className={pathname == "/about-us" ? "activef" : ""}>About us</Link></li>
@@ -51,7 +51,7 @@ function Footer() {
                             </ul>
                         </Col>
                         <Col className="px-4 text-white" sm={3} xs={12}>
-                            <p className="fs-2 ">PRIVACY POLICY</p>
+                        <p className="fs-3 bogle-medium">Privacy Policy</p>
                             <hr />
                             <ul className="fs-4 list-unstyled">
                                 <li className="f-text"><Link href="/privacy-policy" className={pathname == "/privacy-policy" ? "activef" : ""}>Privacy policy</Link></li>
@@ -59,12 +59,12 @@ function Footer() {
                             </ul>
                         </Col>
                         <Col className="px-4 text-white" sm={4}>
-                            <p className="fs-2">CONTACT US</p>
+                        <p className="fs-3 bogle-medium">Contact Us</p>
                             <hr />
                             <ul className="fs-4 list-unstyled">
                                 <li className="pb-4">For more information, contact us:</li>
-                                <li className="pb-4"><MdOutlineEmail className="tel_icon"/> contactus@walmartvriddhi.org</li>
-                                <li><MdPhone className="tel_icon"/> +91 6361 056 533</li>
+                                <li className="pb-4 f-text"><Link href="mailto:contactus@walmartvriddhi.org"><MdOutlineEmail className="tel_icon"/> contactus@walmartvriddhi.org</Link></li>
+                                <li className='f-text'><Link href="tel:+91 6361 056 533"><MdPhone className="tel_icon"/> +91 6361 056 533</Link></li>
                             </ul>
                         </Col>
                         <Col sm={1}></Col>

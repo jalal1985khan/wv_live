@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Image from 'next/image'
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
@@ -12,9 +12,12 @@ function ContainerFluidBreakpointExample() {
         <Col className="text-center">
           <p className="fs-1 mfs-1 bogle-medium walmart-default">Grow your business with<br />
             the Walmart Vriddhi Learning Program</p>
-          <LazyLoadImage
-            src='/images/line-svg-png-1.png'
-            alt=''
+          <Image
+              src='/images/line-svg-png-1.png'
+              alt='walmart vriddhi'
+              width={100}
+              height={20}
+              className='mb-3'
           />
           <p className="col-md-9 mx-auto text-center fs-4 ">Walmart Vriddhi is a supplier development program that aims to work with 50,000
             Micro, Small and Medium Enterprises (MSMEs) in India to expand their domestic

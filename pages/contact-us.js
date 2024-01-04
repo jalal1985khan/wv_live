@@ -23,12 +23,12 @@ function ContainerExample() {
     <Container>
     <Row>
         <Col className="text-center">
-        <p className="fs-1 bogle-bold walmart-default mt-4">To learn more about the program and be part of our growth journey;</p>
+        <p className="fs-2 bogle-medium walmart-default mt-4 pt-4">To learn more about the program and be part of our growth journey;</p>
         </Col>
       </Row> 
 
       <Row>
-        <Col className="text-center">
+        <Col className="text-center ">
         <Card className="align-items-center rounded-0 border-0 ">
         <Image
                   src='/images/call_us.png'
@@ -40,13 +40,13 @@ function ContainerExample() {
      
       <Card.Body>
         <Card.Title>call us on</Card.Title>
-        <Card.Text className="bogle-bold fs-3">
+        <Card.Text className="bogle-medium fs-3">
         +91 6361 056 533
         </Card.Text>
       </Card.Body>
     </Card>
         </Col>
-        <Col className="text-center">
+        <Col className="text-center d-flex justify-content-start">
         <Card className="align-items-center rounded-0 border-0 bogle-bold">
         <Image
                   src='/images/email_icon.png'
@@ -56,7 +56,7 @@ function ContainerExample() {
                 />
       <Card.Body>
         <Card.Title>email us at</Card.Title>
-        <Card.Text className="bogle-bold fs-3">
+        <Card.Text className="bogle-medium fs-3">
         contactus@walmartvriddhi.org
         </Card.Text>
       </Card.Body>

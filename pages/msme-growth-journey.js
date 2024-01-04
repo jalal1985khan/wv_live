@@ -3,9 +3,10 @@ import { Container } from 'react-bootstrap';
 import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
 import Footer from '../components/Footer';
-import { Card, Col, Row, Image } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 
 
@@ -100,32 +101,32 @@ const Webinars = () => {
            
             <Image
                 src={banner}
-                width="100%"
+                width="900"
                 height="620"
                 background='no-repeat'
                 background-size='cover'
-                className="banner-img"
+                className="banner-img w-100"
                 
             />
             <Brand />
             <Container fluid className="wbg-main p-0 overflow-hidden">
                 <Container className="text-center">
-                    <p className="fs-1 bogle-medium text-white" >MSME Growth Journey</p>
+                    <p className="fs-2 bogle-medium text-white pt-3" >MSME Growth Journey</p>
                     <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
                     <p className="fs-3 text-white">The Walmart Vriddhi program helps you address your business challenges and pursue your aspirations, wherever you are in your business growth journey. It aims to equip MSMEs to ‘Make-in-India’ as well as enable their offline and online growth by becoming part of domestic supply chains.</p>
                 </Container>
                 <Container>
                     <div className="tabs">
                         <div className="tab-item active" >
-                            <Image src="/images/learning_ico.svg" alt="msme training Program online" className="img" />
+                            <Image src="/images/learning_ico.svg" alt="msme training Program online" className="img img-fluid" width={100} height={100} />
                             <span className="eael-tab-title bogle-medium walmart-default">Learning</span>
                         </div>
                         <div className="tab-item">
-                            <Image src="/images/mentoring_ico.svg" alt="msme training Program online" className="img" />
+                            <Image src="/images/mentoring_ico.svg" alt="msme training Program online" className="img img-fluid" width={100} height={100} />
                             <span className="eael-tab-title bogle-medium walmart-default">Personalized Mentoring</span>
                         </div>
                         <div className="tab-item">
-                            <Image src="/images/market_ico.svg" alt="msme training Program online" className="img" />
+                            <Image src="/images/market_ico.svg" alt="msme training Program online" className="img img-fluid" width={100} height={100} />
                             <span className="eael-tab-title bogle-medium walmart-default">Market Connect</span>
                         </div>
 
@@ -137,10 +138,10 @@ const Webinars = () => {
                         <div className="tab-pane active"  >
                             <Row className='w-center'>
                                 <Container>
-                                    <p className="fs-1 bogle-medium walmart-default mt-4" >Learning</p>
+                                    <p className="fs-2 bogle-medium walmart-default mt-4" >Learning</p>
                                     <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" className="mb-5"/>
                                     <p className="fs-4" style={{width:'80%'}}>The Walmart Vriddhi learning program equips you with tailored support to help you unlock your growth potential. It provides you with interactive virtual learning experiences<br/>through the mobile app available on iOS and Android, in English, Hindi and Tamil.</p>
-                                    <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-5">Business Fundamentals</div>
+                                    <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-4">Business Fundamentals</div>
                                     <p className="fs-4" style={{width:'80%'}}>The program helps you gain a foundational understanding of business management, with a special focus on the global shift towards eCommerce. Frameworks and established theories will guide you on how to modernise and expand your businesses.</p>
 
                                     <Row className="d-flex flex-nowrap align-items-center px-2">
@@ -168,13 +169,14 @@ const Webinars = () => {
                                         <Col sm={6} className="fs-4 b-box-2">Basics of Finance</Col>
 
                                     </Row>
-                                    <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-5">Advanced Business</div>
-                                    <p className="fs-4">The program helps you apply advanced business management tools and strategies to your business. It offers relevant case studies to assist you gain real-life experience of MSMEs and get a deep understanding of markets,<br/>consumers, and digital transformation tools.</p>
+                                    <div className="banner-ribbon arrow-bottom fs-3 bogle-medium mt-5 mb-4">Advanced Business</div>
+                                    <p className="fs-4 pb-3">The program helps you apply advanced business management tools and strategies to your business. It offers relevant case studies to assist you gain real-life experience of MSMEs and get a deep understanding of markets,<br/>consumers, and digital transformation tools.</p>
                                     <Image
                                         src='/images/advanced_banner.jpeg'
-                                        alt=''
-                                        width='100%'
-                                        className=""
+                                        alt='advanced business walmart'
+                                        width={700}
+                                        height={100}
+                                        className="w-100 h-auto"
                                      
                                     />
 
@@ -223,7 +225,7 @@ const Webinars = () => {
                         <div className="tab-pane" >
                             <Row className='w-center'>
                                 <Container>
-                                    <p className="fs-1 bogle-medium walmart-default mt-4" >Personalized Mentoring</p>
+                                    <p className="fs-2 bogle-medium walmart-default mt-4" >Personalized Mentoring</p>
                                     <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
                                     <p className="fs-4">One-to-one mentoring support to help you handle business challenges and make the most of opportunities.</p>
                                     <p className="fs-4">Mentors act as strategy experts to guide Vriddhi entrepreneurs on their transformational journey to help them identify the key action points and take their business forward to the next level.</p>
@@ -234,7 +236,8 @@ const Webinars = () => {
                                                 <Image
                                                     src='/images/opportunities.svg'
                                                     alt=''
-                                                    width='55%'
+                                                    width='100'
+                                                    height={100}
                                                     className=""
                                                     
 
@@ -248,8 +251,9 @@ const Webinars = () => {
                                             <div className="card-box">
                                                 <Image
                                                     src='../images/identify.svg'
-                                                    alt=''
-                                                    width='55%'
+                                                    alt='opportunities'
+                                                    width='100'
+                                                    height={100}
                                                     className=""
                                                  
 
@@ -262,7 +266,8 @@ const Webinars = () => {
                                                 <Image
                                                     src='../images/actionable.svg'
                                                     alt=''
-                                                    width='55%'
+                                                    width='100'
+                                                    height={100}
                                                     className=""
                                                     
 
@@ -272,25 +277,27 @@ const Webinars = () => {
                                         </Col>
                                     </Row>
                                     <Row className="d-flex align-items-center">
-                                        <Col sm={4} className=" fs-5 p-box-4" ><p>Duration of Personalized Mentoring:</p><p className="bogle-medium walmart-default fs-2">100 days</p></Col>
-                                        <Col sm={2} className="fs-5 p-box-4"><p>Number of sessions:</p><p className="bogle-medium walmart-default fs-2">6</p></Col>
-                                        <Col sm={2} className="fs-5 p-box-4"><p>Duration of sessions:</p><p className="bogle-medium walmart-default fs-2">60-90 minutes</p></Col>
-                                        <Col sm={4} className="fs-5 p-box-4"><p>Medium:</p><p className="bogle-medium walmart-default fs-2">Virtual meetings</p></Col>
+                                        <Col sm={4} className=" fs-5 p-box-4" ><p>Duration of <br/>Personalized Mentoring:</p><p className="bogle-medium walmart-default fs-2">100 days</p></Col>
+                                        <Col sm={2} className="fs-5 p-box-4"><p><br/>Number of sessions:</p><p className="bogle-medium walmart-default fs-2">6</p></Col>
+                                        <Col sm={2} className="fs-5 p-box-4"><p><br/>Duration of sessions:</p><p className="bogle-medium walmart-default fs-2">60-90 minutes</p></Col>
+                                        <Col sm={4} className="fs-5 p-box-4"><p><br/>Medium:</p><p className="bogle-medium walmart-default fs-2">Virtual meetings</p></Col>
                                     </Row>
                                     <p className="fs-3 bogle-medium walmart-default mt-4">Mentors: Average industry experience of 30 years</p>
                                     <Image
-                                        src='../images/mentor_exp.png'
-                                        alt=''
-                                        width='90%'
-                                        className=""
+                                        src='/images/mentor_exp.png'
+                                        alt='mentor experts walmart'
+                                        width={800}
+                                        height={600}
+                                        className="w-70 h-auto"
                                      
 
                                     />
                                     <Image
-                                        src='../images/msme_growth_banner.png'
+                                        src='/images/msme_growth_banner.png'
                                         alt=''
-                                        width='100%'
-                                        className="my-3"
+                                        width={1000}
+                                        height={200}
+                                        className="my-3 w-100 h-auto"
                                      
 
                                     />
@@ -309,15 +316,15 @@ const Webinars = () => {
                         <div className="tab-pane" >
                             <Row className='w-center'>
                                 <Container>
-                                    <p className="fs-1 bogle-medium walmart-default mt-4" >Market Connect</p>
+                                    <p className="fs-2 bogle-medium walmart-default mt-4" >Market Connect</p>
                                     <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Industry Connect Series" />
                                     <p className="fs-4">Expand your business reach by capturing new markets and widening existing markets. Vriddhi offers you the opportunity to grow through the supply chains of Flipkart and Walmart and other major domestic companies.</p>
                                 </Container>
                             </Row>
                             <Container className="wbg_grey" fluid>
                                 <Row>
-                                    <Container className='w-center'> <p className="fs-1 bogle-medium  mt-4" >Domestic</p>
-                                        <Image src="/images/flipkart-1.png" width={180} height={70} alt="Industry Connect Series" />
+                                    <Container className='w-center'> <p className="fs-2 bogle-medium  mt-4" >Domestic</p>
+                                        <Image src="/images/flipkart-1.png" width={180} height={70} alt="Industry Connect Series" className="img-fluid"/>
                                         <p className="fs-4 mb-4 pb-4" style={{width:'70%'}}>As a Walmart Vriddhi-certified seller, you would be eligible for onboarding as well as incubation support to take your business digital on Flipkart.</p>
 
 
@@ -329,7 +336,8 @@ const Webinars = () => {
                                                     <Image
                                                         src='/images/sign_up.png'
                                                         alt=''
-                                                        width='40%'
+                                                        width='90'
+                                                        height={90}
                                                         className=""
                                                      
 
@@ -339,17 +347,19 @@ const Webinars = () => {
                                                     <Image
                                                         src='/images/gstin.png'
                                                         alt=''
-                                                        width='40%'
-                                                        className=""
+                                                        width={90}
+                                                        height={90}
+                                                        className="w-50"
                                                         effect="blur"
 
                                                     /><p style={{ height: 107 }}>Update GSTIN in Seller Dashboard</p></Col>
                                                 <Col sm={2} xs={12} lg={2} className="fs-4 h-box-5">
                                                     <Image
-                                                        src='../images/upload.png'
+                                                        src='/images/upload.png'
                                                         alt=''
-                                                        width='40%'
-                                                        className=""
+                                                        width={90}
+                                                        height={90}
+                                                        className="w-50"
                                                         effect="blur"
 
                                                     /><p style={{ height: 107 }}>Upload one listing on Flipkart</p></Col>
@@ -357,7 +367,8 @@ const Webinars = () => {
                                                     <Image
                                                         src='/images/products.png'
                                                         alt=''
-                                                        width='40%'
+                                                        width={90}
+                                                        height={90}
                                                         className=""
                                                         
 
@@ -366,7 +377,8 @@ const Webinars = () => {
                                                     <Image
                                                         src='/images/new_orders.png'
                                                         alt=''
-                                                        width='40%'
+                                                        width={100}
+                                                        height={100}
                                                         className=""
                                                         
 
@@ -375,7 +387,7 @@ const Webinars = () => {
                                         </Container>
 
 
-                                        <Container className="wbg-footer pb-4 pt-5">
+                                        <Container className="wbg-footer pb-4">
                                             <div className="onboard fs-3 bogle-medium walmart-border-right walmart-border-left">Incubation</div>
                                             <p className="fs-3 bogle-medium text-white py-4 pb-4">Get a dedicated account manager to help you manage your business efficiently and get maximum customers on Flipkart.</p>
                                             <Container>

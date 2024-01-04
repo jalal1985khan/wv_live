@@ -237,7 +237,7 @@ const fetchTaxonomyCount = async () => {
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h4 className="profile-title fw-bold">{post['title']['rendered']}</h4>
+                      <h4 className="profile-title bogle-medium fs-5">{post['title']['rendered']}</h4>
                         <p className="card-text fs-6">{post['acf']['company_name_&_place']}</p>
                       </div>
                     </div>
@@ -274,7 +274,7 @@ const fetchTaxonomyCount = async () => {
                       </div>
                       <div className="col-md-8 m-center">
                         <div className="card-body">
-                          <h4 className="profile-title fw-bold">{post['title']['rendered']}</h4>
+                          <h4 className="profile-title bogle-medium fs-5">{post['title']['rendered']}</h4>
                           <p className="card-text fs-6">{post['acf']['company_name_&_place']}</p>
                         </div>
                       </div>

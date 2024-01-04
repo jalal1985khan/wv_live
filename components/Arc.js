@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, Row, Col} from 'react-bootstrap';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import Image from 'next/image'
 
 const Arc = () => {
 
@@ -81,12 +82,14 @@ const Arc = () => {
                 <Row>
                     <Col className="text-center">
 
-                        <p className="fs-1 bogle-medium walmart-default">5 simple steps for you, a giant leap for your business</p>
-                        <LazyLoadImage
-                            src='/images/line-svg-png-2.png'
-                            alt=''
-                            effect="blur"
-                        />
+                        <p className="fs-2 bogle-medium walmart-default">5 simple steps for you, a giant leap for your business</p>
+                        <Image
+              src='/images/line-svg-png-1.png'
+              alt='walmart vriddhi'
+              width={100}
+              height={20}
+              className='mb-1'
+          />
                     </Col>
                 </Row>
                 <Row>

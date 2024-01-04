@@ -266,9 +266,9 @@ export default function App() {
                     onSubmit={handleSubmit}
                         style={{ margin: '20px' }}>
                     <Row>
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3" >
-                                    <label className="form-label"><span className="errors">*</span>Full Name:</label>
+                                    <label className="form-label">Full Name:</label>
                                     <input
                                         //required
                                         type='text'
@@ -282,9 +282,9 @@ export default function App() {
    {errors && errors.FullName && <div className="invalid-feedback">{errors.FullName}</div>}
                                 </div>
                             </Col>                
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3" >
-                                    <label className="form-label"><span className="errors">*</span>WV Program ID:</label>
+                                    <label className="form-label">WV Program ID:</label>
                                     <input
                                         //required
                                         type='text'
@@ -298,9 +298,9 @@ export default function App() {
                                     {errors && errors.WVProgramID && <div className="invalid-feedback">{errors.WVProgramID}</div>}
                                 </div>
                             </Col>
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3">
-                                    <label htmlfor="yourPhone" className="form-label"><span className="errors">*</span>Your Email:</label>
+                                    <label htmlfor="yourPhone" className="form-label">Your Email:</label>
                                     <input
                                         //required
                                         type='email'
@@ -315,9 +315,9 @@ export default function App() {
                                 </div>
                             </Col>
 
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3">
-                                    <label htmlfor="Designation" className="form-label"><span className="errors">*</span>Designation:</label>
+                                    <label htmlfor="Designation" className="form-label">Designation:</label>
                                     <input
                                         //required
                                         type='text'
@@ -333,9 +333,9 @@ export default function App() {
                             </Col>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3">
-                                    <label htmlfor="CompanyName" className="form-label"><span className="errors">*</span>CompanyName:</label>
+                                    <label htmlfor="CompanyName" className="form-label">CompanyName:</label>
                                     <input
                                         //required
                                         type='text'
@@ -349,9 +349,9 @@ export default function App() {
                                     {errors && errors.yourCompanyName && <div className="invalid-feedback">{errors.yourCompanyName}</div>}
                                 </div> 
                             </Col>
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3">
-                                    <label htmlfor="Location" className="form-label"><span className="errors">*</span>Location:</label>
+                                    <label htmlfor="Location" className="form-label">Location:</label>
                                     <input
                                         //required
                                         type='text'
@@ -365,9 +365,9 @@ export default function App() {
                                     {errors && errors.yourLocation && <div className="invalid-feedback">{errors.yourLocation}</div>}
                                 </div> 
                             </Col>
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3">
-                                    <label htmlfor="BusinessCategory" className="form-label"><span className="errors">*</span>Business Category:</label>
+                                    <label htmlfor="BusinessCategory" className="form-label">Business Category:</label>
                                     <input
                                         //required
                                         type='text'
@@ -381,9 +381,9 @@ export default function App() {
                                     {errors && errors.yourBusinessCategory && <div className="invalid-feedback">{errors.yourBusinessCategory}</div>}
                                 </div> 
                             </Col>
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3">
-                                    <label htmlfor="LinkProfile" className="form-label"><span className="errors">*</span>Business Images:</label>
+                                    <label htmlfor="LinkProfile" className="form-label">Business Images:</label>
                                     <input
                                         //required
                                         type='text'
@@ -399,7 +399,7 @@ export default function App() {
                             </Col>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3">
                                     <label htmlfor="ContactPoint" className="form-label"><span className="errors">*</span>Point of Contact:</label>
                                     <Form.Select aria-label="Default select example" className={`form-control ${errors && errors.yourContactPoint ? 'is-invalid' : ''}`}
@@ -418,9 +418,9 @@ export default function App() {
                                     {errors && errors.yourContactPoint && <div className="invalid-feedback">{errors.yourContactPoint}</div>}
                                 </div>
                             </Col>
-                            <Col>
+                            <Col sm={12} lg={3}>
                             <div className="mb-3">
-                                    <label htmlfor="ProfileImage" className="form-label"><span className="errors">*</span>Profile Image(up to 3MB):</label>
+                                    <label htmlfor="ProfileImage" className="form-label">Profile Image(up to 3MB):</label>
                                     <input
                                         //required
                                         type="file"
@@ -435,9 +435,9 @@ export default function App() {
                                     {errors && errors.yourProfileImage && <div className="invalid-feedback">{errors.yourProfileImage}</div>}
                                 </div>
                             </Col>
-                            <Col sm={6}>
+                            <Col sm={6} lg={6}>
                             <div className="mb-3">
-                                    <label htmlfor="ProductImage" className="form-label"><span className="errors">*</span>Product Image (up to 3 images, maximum size of 7MB):</label>
+                                    <label htmlfor="ProductImage" className="form-label">Product Image (up to 3 images, maximum size of 7MB):</label>
                                     <input
                                         //required
                                         type="file"
@@ -456,7 +456,7 @@ export default function App() {
                         <Row>
                             <Col>
                             <div className="mb-3">
-                                    <label htmlfor="AboutBusiness" className="form-label"><span className="errors">*</span>About the Business:</label>
+                                    <label htmlfor="AboutBusiness" className="form-label">About the Business:</label>
                                     <textarea
                                         //required
                                         type="text"
@@ -474,7 +474,7 @@ export default function App() {
                         <Row>
                             <Col>
                             <div className="mb-3">
-                                    <label htmlfor="WebsiteLink" className="form-label"><span className="errors">*</span>Add Website Link:</label>
+                                    <label htmlfor="WebsiteLink" className="form-label">Add Website Link:</label>
                                     <input
                                         //required
                                         type="text"
@@ -493,7 +493,7 @@ export default function App() {
                         <Row>
                             <Col>
                             <div className="mb-3">
-                                    <label htmlfor="Facebook" className="form-label"><span className="errors">*</span>Facebook:</label>
+                                    <label htmlfor="Facebook" className="form-label">Facebook:</label>
                                     <input
                                         //required
                                         type="text"
@@ -510,7 +510,7 @@ export default function App() {
                             </Col>
                             <Col>
                             <div className="mb-3">
-                                    <label htmlfor="Twitter" className="form-label"><span className="errors">*</span>Twitter:</label>
+                                    <label htmlfor="Twitter" className="form-label">Twitter:</label>
                                     <input
                                         //required
                                         type="text"
@@ -528,7 +528,7 @@ export default function App() {
                         <Row>
                             <Col>
                             <div className="mb-3">
-                                    <label htmlfor="Instagram" className="form-label"><span className="errors">*</span>Instagram:</label>
+                                    <label htmlfor="Instagram" className="form-label">Instagram:</label>
                                     <input
                                         //required
                                         type="text"
@@ -544,7 +544,7 @@ export default function App() {
                             </Col>
                             <Col>
                             <div className="mb-3">
-                                    <label htmlfor="Linkedin" className="form-label"><span className="errors">*</span>Linkedin:</label>
+                                    <label htmlfor="Linkedin" className="form-label">Linkedin:</label>
                                     <input
                                         //required
                                         type="text"

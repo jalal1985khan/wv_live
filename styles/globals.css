@@ -43,6 +43,9 @@
 .bogle-regular {
     font-family: BOGLEREGULAR;
 }
+.bogle-italic {
+    font-family: BOGLEBOLDITALIC !important;
+}
 
 .bogle-r-italic p {
     font-family: BOGLEITALIC !important;
@@ -75,6 +78,11 @@ button.register.btn.btn-primary {
 }
 
 .navbar-toggler-icon {}
+
+.margin-center {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
 button.navbar-toggler.collapsed {
     border: 0px solid #2F6EB5;
@@ -294,6 +302,8 @@ img.ab-image {
 .card:hover .card-hover {
     bottom: 0px !important;
     padding: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .reg-page {
@@ -842,12 +852,13 @@ span.errors {
     cursor: pointer;
 }
 
+
 .banner-ribbon {
     width: 320px;
     height: 50px;
     background-color: #78BE20;
     color: #fff;
-    padding: 0px;
+    padding: 2px;
     position: relative;
     margin: 0px;
     /* float: left; */
@@ -1005,6 +1016,18 @@ span.errors {
     background-color: #FDBD01 !important;
     color: #000 !important;
 }
+.lh-0{
+    line-height: 2px;
+}
+.bg-circle{
+    background: #fff;
+    border-radius: 31px;
+    height: 41px;
+    width: 41px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 0px;
+}
 
 .profile-stat{
     display: flex;
@@ -1012,15 +1035,15 @@ span.errors {
     padding-left: 23px !important;
 }
 .profile-btn{
-        padding: 8px;
-        border-radius: 10px;
+        padding: 10px;
+        border-radius: 25px;
         color: #fff;
         background: #1471CE;
         text-decoration: none;
 }
 .profile-btn:hover{
-    padding: 8px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 25px;
     color: #fff;
     background: #1471CE;
     text-decoration: none;
@@ -1257,6 +1280,15 @@ img.step_01 {
     overflow: hidden;
     text-align: center;
 }
+.h-bold h2{
+    font-family: BOGLEBOLD;   
+}
+.h-bold h3{
+    font-family: BOGLEBOLD;   
+}
+.h-bold h4{
+    font-family: BOGLEBOLD;   
+}
 
 .fade-in {
     opacity: 0.4 !important;
@@ -1385,7 +1417,7 @@ h5 strong {
     font-size: 33px;
 }
 .heading{
-    width:700px !important;
+    width:80% !important;
     text-align: center;
     color: #0071CE;
     font-family: "Bogle Bold";
@@ -1464,15 +1496,14 @@ span.right {
 }
 .newsletter{
  background-color: #78BF23;
-
     height: auto;
-    padding-bottom: 13px;
+    padding-bottom: 0px;
  
 }
 .newsletter .n_text{
 font-size: 22px;
 color:#fff;  
-/* float: inline-end;   */
+float: inline-end;  
 }
 .tel_icon{
         font-size: 46px;
@@ -1758,7 +1789,7 @@ width:300px;
     .newsletter .n_text {
         font-size: 21px;
         color: #fff;
-        float: inline-end;
+        float: none;
     }
     .line_d {
         transform: rotate(0deg) !important;
@@ -2010,7 +2041,22 @@ background-color: #00000000;
 .h-10{
 min-height:200px !important;
 }
-
+.h-18{
+    height: 18%;
+}
+.h-50{
+    height:50%;
+}
+.h-25{
+    height:25%;
+}
+.w-70{
+    width: 70%;
+    height: auto;
+}
+.w-auto{
+    height: auto;    
+}
 .info{
 display: none;    
 }

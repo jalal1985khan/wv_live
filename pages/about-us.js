@@ -86,9 +86,9 @@ function ContainerExample() {
       <Card.Body className="about-card-body">
         <Image
                   src="/images/flipkart-1.png"
-                  alt=''
-                  width={400}
-                  height={400}
+                  alt='flipkart'
+                  width={200}
+                  height={200}
                   className="img-fluid"
          
                 />
@@ -102,7 +102,7 @@ function ContainerExample() {
         
         <Image
                   src="/images/flipkart-wholesale.png"
-                  alt=''
+                  alt='flipkart wholesale'
                   width={200}
                   height={200}
                   className="img-fluid"
@@ -119,7 +119,7 @@ function ContainerExample() {
         
         <Image
                   src="/images/Walmart-Marketplace.png"
-                  alt=''
+                  alt='walmart market place'
                   width={200}
                   height={200}
                   className="img-fluid"
@@ -136,7 +136,7 @@ function ContainerExample() {
 <Col xs={12} sm={6}>
 <Image
                   src="/images/white-logo-swasti.png"
-                  alt=''
+                  alt='swasti'
                   width={200}
               height={100}
               className="img-fluid"
@@ -150,7 +150,7 @@ Over the past eight years, Walmart and Swasti have shared a meaningful partnersh
 
 <Image
                   src="/images/about-us.png"
-                  alt=''
+                  alt='walmart about us'
                   width={600}
                   height={600}
                   

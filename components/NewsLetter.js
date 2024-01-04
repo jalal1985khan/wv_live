@@ -111,7 +111,7 @@ const NewsletterForm = () => {
       <Container className="newsletter mb-5 m-center">
         <Row className="new_l">
           <Col lg={5} sm={12}>
-            <p className="n_text bogle-medium">Subscribe to the Walmart Vriddhi newsletter</p>
+            <p className="n_text">Subscribe to the Walmart Vriddhi newsletter</p>
           </Col>
           <Col lg={4} sm={12}>
             <Form onSubmit={handleSubmit}>
@@ -132,7 +132,7 @@ const NewsletterForm = () => {
               </Form.Group>
             </Form>
           </Col>
-          <Col lg={2} sm={12} className='m-center'>
+          <Col lg={3} sm={12} className='m-center'>
             <Button variant="outline-primary subs-btn" onClick={handleSubmit}>
               Join us
             </Button>

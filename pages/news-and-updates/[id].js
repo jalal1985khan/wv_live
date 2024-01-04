@@ -63,7 +63,7 @@ return (
     />   
         <Container fluid key={post.id} className="success_post d-flex align-items-end" style={{ backgroundImage: `url(${post['_embedded']['wp:featuredmedia'][0]['source_url']})` }}>
         <Container className="">
-                <h1 className="text-white fs-2">{post['title']['rendered']}</h1>
+                <h1 className="text-white fs-2" dangerouslySetInnerHTML={{__html:post['title']['rendered']}}></h1>
                 </Container>
 </Container>
 <Brand />
