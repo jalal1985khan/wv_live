@@ -16,31 +16,16 @@ const desc ="The MSME spotlight and industry connect series is a collection of w
 const banner ="/images/success_banner.jpeg";
 const url = "https://www.walmartvriddhi.org/success-stories/";
 
-const visiblePosts = '6';
+
 const SuccessStories = ({ initialNewsPosts }) => {
   const pathname = usePathname();
   const [newsPosts, setNewsPosts] = useState(initialNewsPosts);
   const [visiblePosts, setVisiblePosts] = useState(6); // Initial number of posts to display
 
-
-  const fetchNos = async () => {
-    let cat = `${configData.SERVER_URL}categories/12`;
-
-    try {
-      const response = await fetch(cat);
-      const cats = await response.json();
-      //setTotal(cats.count); // Set total count here
-      //setNext(cats);
-      console.log(cats.count)
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const loadMorePosts = () => {
-    setVisiblePosts( visiblePosts + 6); // Increase the number of posts to display on each click
+    setVisiblePosts((prev) => prev + 6); // Increase the number of posts to display on each click
   };
+
 
   return (
     <>
@@ -149,7 +134,7 @@ export default SuccessStories;
 
 
 async function getNews() {
-  const res = await fetch(`${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${visiblePosts}`);
+  const res = await fetch(`${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=100`);
   const json = await res.json();
   return json;
 }
