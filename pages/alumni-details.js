@@ -14,6 +14,7 @@ export default function App() {
 
     const [loading, setLoading] = useState(false);
     const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+    const [checkboxError, setCheckboxError] = useState(false);
 
     const handleCheckboxChange = () => {
         setIsCheckboxChecked(!isCheckboxChecked);
@@ -140,10 +141,16 @@ export default function App() {
 
 
     const handleSubmit = event => {
-        // 👇️ prevent page refresh
         event.preventDefault();
-
-    };
+      
+        if (!isCheckboxChecked) {
+          setCheckboxError(true);
+          return; // Do not proceed with submission
+        }
+      
+        // Continue with form submission logic
+        createPost();
+      };
 
 
     function createPost() {
@@ -201,7 +208,7 @@ export default function App() {
                     //console.log(fieldErrors);
                 }
      
-                console.log(response.data);
+               // console.log(response.data);
                 
             })
         
@@ -554,22 +561,30 @@ export default function App() {
                             </Col>
                         </Row>
                         <Container className="mb-3">
-<div class="form-check">
-<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                                onChange={handleCheckboxChange}
-                                />
-  <label class="form-check-label" for="flexCheckDefault">
-  I hereby consent to the collection, use, and sharing of my personal information as provided in this form on the Walmart Vriddhi website.
-  </label>
-</div>
+                        <div className="form-check">
+        <input
+          className={`form-check-input ${!isCheckboxChecked ? 'is-invalid' : ''}`}
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          onChange={handleCheckboxChange}
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault">
+          I hereby consent to the collection, use, and sharing of my personal information as provided in this form on the Walmart Vriddhi website.
+        </label>
+        {checkboxError && <div className="invalid-feedback">Please check the consent checkbox.</div>}
+      </div>
                         
                         </Container>
                         <Container className="text-center">
-                        <button type='submit'
-                            className={`registers ${!isCheckboxChecked ? 'disabled' : ''}`}
-                            onClick={createPost}
-                            disabled={!isCheckboxChecked}
-                        >Submit</button>    </Container>
+                        <button
+          type="submit"
+          className={`registers ${!isCheckboxChecked ? 'disabled' : ''}`}
+          onClick={createPost}
+          disabled={!isCheckboxChecked} // Disable the button based on checkbox status
+        >
+          Submit
+        </button>    </Container>
                         {loading && <h1 class="reg-success mt-4">{post}</h1>}
                         </form>
                 </Container>
