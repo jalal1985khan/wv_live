@@ -277,10 +277,11 @@ const Webinars = () => {
                                         </Col>
                                     </Row>
                                     <Row className="d-flex align-items-center">
-                                        <Col sm={4} className=" fs-5 p-box-4" ><p>Duration of <br/>Personalized Mentoring:</p><p className="bogle-medium walmart-default fs-2">100 days</p></Col>
-                                        <Col sm={2} className="fs-5 p-box-4"><p><br/>Number of sessions:</p><p className="bogle-medium walmart-default fs-2">6</p></Col>
-                                        <Col sm={2} className="fs-5 p-box-4"><p><br/>Duration of sessions:</p><p className="bogle-medium walmart-default fs-2">60-90 minutes</p></Col>
-                                        <Col sm={4} className="fs-5 p-box-4"><p><br/>Medium:</p><p className="bogle-medium walmart-default fs-2">Virtual meetings</p></Col>
+                                        
+                                        <Col sm={12} lg={3} xs={12} className=" fs-5 p-box-4" ><p>Duration of <br/>Personalized Mentoring:</p><p className="bogle-medium walmart-default fs-2">100 days</p></Col>
+                                        <Col sm={12} lg={3} className="fs-5 p-box-4"><p><br/>Number of sessions:</p><p className="bogle-medium walmart-default fs-2">6</p></Col>
+                                        <Col sm={12} lg={3} className="fs-5 p-box-4"><p><br/>Duration of sessions:</p><p className="bogle-medium walmart-default fs-2">60-90 minutes</p></Col>
+                                        <Col sm={12} lg={3} className="fs-5 p-box-4"><p><br/>Medium:</p><p className="bogle-medium walmart-default fs-2">Virtual meetings</p></Col>
                                     </Row>
                                     <p className="fs-3 bogle-medium walmart-default mt-4">Mentors: Average industry experience of 30 years</p>
                                     <Image

@@ -986,8 +986,8 @@ span.errors {
     flex-direction: column;
     justify-content: center;
     /* width: 100% !important; */
-    margin: 2px !important;
-    width: 24.2% !important;
+    border:2px solid #fff;
+    /* width: 24.2% !important; */
     background-color: #FDBD01 !important;
     /* color: #2F6EB5 !important; */
     -webkit-transition: background-color 1s ease-out;
