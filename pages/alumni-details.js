@@ -14,7 +14,6 @@ export default function App() {
 
     const [loading, setLoading] = useState(false);
     const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
-    const [checkboxError, setCheckboxError] = useState(false);
 
     const handleCheckboxChange = () => {
         setIsCheckboxChecked(!isCheckboxChecked);
@@ -131,6 +130,7 @@ export default function App() {
     const [yourInstagram, setInstagram] = useState(null);
     const [yourLinkedin, setLinkedin] = useState(null);
     const [yourContactPoint, setFromTypes] = useState(null);
+    const [checkboxError, setCheckboxError] = useState(false);
 
     const router = useRouter();
     const { utm_source, utm_medium, utm_campaign, utm_id } = router.query;
@@ -141,23 +141,26 @@ export default function App() {
 
 
     const handleSubmit = event => {
+        // 👇️ prevent page refresh
         event.preventDefault();
-      
-        if (!isCheckboxChecked) {
-          setCheckboxError(true);
-          return; // Do not proceed with submission
-        }
-      
-        // Continue with form submission logic
-        createPost();
-      };
 
+    };
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
 
     function createPost() {
         setErrors({});  
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      
+        if (!emailRegex.test(yourEmail)) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                yourEmail: 'Please enter a valid email address.',
+            }));
+            return;
+        }
 
         axios.post(`${configData.SERVER_FROM}contact-form-7/v1/contact-forms/26552/feedback`,
             {
@@ -208,7 +211,7 @@ export default function App() {
                     //console.log(fieldErrors);
                 }
      
-               // console.log(response.data);
+                console.log(response.data);
                 
             })
         
@@ -267,7 +270,7 @@ export default function App() {
                     onSubmit={handleSubmit}
                         style={{ margin: '20px' }}>
                     <Row>
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3" >
                                     <label className="form-label">Full Name:</label>
                                     <input
@@ -283,7 +286,7 @@ export default function App() {
    {errors && errors.FullName && <div className="invalid-feedback">{errors.FullName}</div>}
                                 </div>
                             </Col>                
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3" >
                                     <label className="form-label">WV Program ID:</label>
                                     <input
@@ -299,7 +302,7 @@ export default function App() {
                                     {errors && errors.WVProgramID && <div className="invalid-feedback">{errors.WVProgramID}</div>}
                                 </div>
                             </Col>
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3">
                                     <label htmlfor="yourPhone" className="form-label">Your Email:</label>
                                     <input
@@ -310,13 +313,28 @@ export default function App() {
                                         name='yourEmail'
                                         placeholder="test@test.com"
                                         value={yourEmail}
-                                        onChange={event => setEmail(event.target.value)}
+                                        onChange={(event) => {
+                                            setEmail(event.target.value);
+                                            // Validate email while typing
+                                            const isValid = validateEmail(event.target.value);
+                                            if (!isValid) {
+                                                setErrors(prevErrors => ({
+                                                    ...prevErrors,
+                                                    yourEmail: 'Please enter a valid email address.',
+                                                }));
+                                            } else {
+                                                setErrors(prevErrors => ({
+                                                    ...prevErrors,
+                                                    yourEmail: null,
+                                                }));
+                                            }
+                                        }}
                                     />
                                     {errors && errors.yourEmail && <div className="invalid-feedback">{errors.yourEmail}</div>}
                                 </div>
                             </Col>
 
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3">
                                     <label htmlfor="Designation" className="form-label">Designation:</label>
                                     <input
@@ -334,7 +352,7 @@ export default function App() {
                             </Col>
                         </Row>
                         <Row>
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3">
                                     <label htmlfor="CompanyName" className="form-label">CompanyName:</label>
                                     <input
@@ -350,7 +368,7 @@ export default function App() {
                                     {errors && errors.yourCompanyName && <div className="invalid-feedback">{errors.yourCompanyName}</div>}
                                 </div> 
                             </Col>
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3">
                                     <label htmlfor="Location" className="form-label">Location:</label>
                                     <input
@@ -366,7 +384,7 @@ export default function App() {
                                     {errors && errors.yourLocation && <div className="invalid-feedback">{errors.yourLocation}</div>}
                                 </div> 
                             </Col>
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3">
                                     <label htmlfor="BusinessCategory" className="form-label">Business Category:</label>
                                     <input
@@ -382,7 +400,7 @@ export default function App() {
                                     {errors && errors.yourBusinessCategory && <div className="invalid-feedback">{errors.yourBusinessCategory}</div>}
                                 </div> 
                             </Col>
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3">
                                     <label htmlfor="LinkProfile" className="form-label">Business Images:</label>
                                     <input
@@ -400,7 +418,7 @@ export default function App() {
                             </Col>
                         </Row>
                         <Row>
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3">
                                     <label htmlfor="ContactPoint" className="form-label"><span className="errors">*</span>Point of Contact:</label>
                                     <Form.Select aria-label="Default select example" className={`form-control ${errors && errors.yourContactPoint ? 'is-invalid' : ''}`}
@@ -419,7 +437,7 @@ export default function App() {
                                     {errors && errors.yourContactPoint && <div className="invalid-feedback">{errors.yourContactPoint}</div>}
                                 </div>
                             </Col>
-                            <Col sm={12} lg={3}>
+                            <Col>
                             <div className="mb-3">
                                     <label htmlfor="ProfileImage" className="form-label">Profile Image(up to 3MB):</label>
                                     <input
@@ -436,7 +454,7 @@ export default function App() {
                                     {errors && errors.yourProfileImage && <div className="invalid-feedback">{errors.yourProfileImage}</div>}
                                 </div>
                             </Col>
-                            <Col sm={6} lg={6}>
+                            <Col sm={6}>
                             <div className="mb-3">
                                     <label htmlfor="ProductImage" className="form-label">Product Image (up to 3 images, maximum size of 7MB):</label>
                                     <input
@@ -561,34 +579,47 @@ export default function App() {
                             </Col>
                         </Row>
                         <Container className="mb-3">
-                        <div className="form-check">
-        <input
-          className={`form-check-input ${!isCheckboxChecked ? 'is-invalid' : ''}`}
-          type="checkbox"
-          value=""
-          id="flexCheckDefault"
-          onChange={handleCheckboxChange}
-        />
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-          I hereby consent to the collection, use, and sharing of my personal information as provided in this form on the Walmart Vriddhi website.
-        </label>
-        {checkboxError && <div className="invalid-feedback">Please check the consent checkbox.</div>}
-      </div>
+<div class="form-check">
+                                <input 
+                                    className={`form-check-input ${checkboxError ? 'is-invalid' : ''}`}
+                                    type="checkbox" value="" id="flexCheckDefault"
+                                onChange={handleCheckboxChange}
+                                />
+                              
+  <label class="form-check-label" for="flexCheckDefault">
+  I hereby consent to the collection, use, and sharing of my personal information as provided in this form on the Walmart Vriddhi website.
+  </label>
+</div>
                         
-                        </Container>
-                        <Container className="text-center">
-                        <button
-          type="submit"
-          className={`registers ${!isCheckboxChecked ? 'disabled' : ''}`}
-          onClick={createPost}
-          disabled={!isCheckboxChecked} // Disable the button based on checkbox status
-        >
-          Submit
-        </button>    </Container>
-                        {loading && <h1 class="reg-success mt-4">{post}</h1>}
-                        </form>
-                </Container>
-            </Container>
+</Container>
+<Container className="text-center">
+{/* <button type='submit'
+className={`registers ${!isCheckboxChecked ? 'disabled' : ''}`}
+onClick={createPost}
+                            >Submit</button> */}
+                            
+                            <button
+        type='submit'
+        className={`registers `}
+        onClick={(e) => {
+            e.preventDefault();
+            // Check if the checkbox is checked
+            if (!isCheckboxChecked) {
+                setCheckboxError(true);
+            } else {
+                setCheckboxError(false);
+                createPost();
+            }
+        }}
+       
+    >
+        Submit
+    </button>
+</Container>
+{loading && <h1 class="reg-success mt-4">{post}</h1>}
+</form>
+</Container>
+</Container>
             
 
             <Footer />
