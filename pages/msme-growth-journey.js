@@ -231,7 +231,7 @@ const Webinars = () => {
                                     <p className="fs-4">Mentors act as strategy experts to guide Vriddhi entrepreneurs on their transformational journey to help them identify the key action points and take their business forward to the next level.</p>
 
                                     <Row className="d-flex align-items-center">
-                                        <Col sm={4}  >
+                                        <Col sm={12} lg={4}  >
                                             <div className="card-box">
                                                 <Image
                                                     src='/images/opportunities.svg'
@@ -247,7 +247,7 @@ const Webinars = () => {
                                                     opportunities and threats)</p>
                                             </div>
                                         </Col>
-                                        <Col sm={4} className="card-border" >
+                                        <Col sm={12} lg={4} className="card-border" >
                                             <div className="card-box">
                                                 <Image
                                                     src='../images/identify.svg'
@@ -261,7 +261,7 @@ const Webinars = () => {
                                                 <p className="bogle-medium fs-5">Identify areas of improvement</p>
                                             </div>
                                         </Col>
-                                        <Col sm={4} className="card-border">
+                                        <Col sm={12} lg={4} className="card-border">
                                             <div className="card-box ">
                                                 <Image
                                                     src='../images/actionable.svg'
@@ -339,7 +339,7 @@ const Webinars = () => {
                                                         alt=''
                                                         width='90'
                                                         height={90}
-                                                        className=""
+                                                        className="w-30 w-20"
                                                      
 
                                                     />
@@ -350,7 +350,7 @@ const Webinars = () => {
                                                         alt=''
                                                         width={90}
                                                         height={90}
-                                                        className="w-50"
+                                                        className="w-30 w-20"
                                                         effect="blur"
 
                                                     /><p style={{ height: 107 }}>Update GSTIN in Seller Dashboard</p></Col>
@@ -360,7 +360,7 @@ const Webinars = () => {
                                                         alt=''
                                                         width={90}
                                                         height={90}
-                                                        className="w-50"
+                                                        className="w-30 w-20"
                                                         effect="blur"
 
                                                     /><p style={{ height: 107 }}>Upload one listing on Flipkart</p></Col>
@@ -370,7 +370,7 @@ const Webinars = () => {
                                                         alt=''
                                                         width={90}
                                                         height={90}
-                                                        className=""
+                                                        className="w-30 w-20"
                                                         
 
                                                     /><p style={{ height: 107 }}>Select brand and vertical approval when listing products</p></Col>
@@ -380,7 +380,7 @@ const Webinars = () => {
                                                         alt=''
                                                         width={100}
                                                         height={100}
-                                                        className=""
+                                                        className="w-30 w-20"
                                                         
 
                                                     /><p style={{ height: 107 }}>Process new orders</p></Col>
@@ -392,25 +392,25 @@ const Webinars = () => {
                                             <div className="onboard fs-3 bogle-medium walmart-border-right walmart-border-left">Incubation</div>
                                             <p className="fs-3 bogle-medium text-white py-4 pb-4">Get a dedicated account manager to help you manage your business efficiently and get maximum customers on Flipkart.</p>
                                             <Container>
-                                                <Row className="d-flex flex-nowrap align-items-center">
-                                                    <Col sm={6} className="fs-4 s-box text-white border-box">
+                                                <Row className="d-flex flex-lg-nowrap flex-sm-nowrap align-items-center">
+                                                    <Col sm={12} lg={6} className="fs-4 s-box text-white border-box">
                                                         <p>Support to select the right products through knowledge of ‘Best Selling’ and ‘New and Trending’. </p></Col>
 
-                                                    <Col sm={6} className="fs-4 s-box text-white border-box">
+                                                    <Col sm={12} lg={6} className="fs-4 s-box text-white border-box">
                                                         <p>Guidance on pricing the products based on available information.</p></Col>
                                                 </Row>
-                                                <Row className="d-flex flex-nowrap align-items-center mt-4">
+                                                <Row className="d-flex flex-lg-nowrap flex-sm-nowrap align-items-center mt-4">
 
-                                                    <Col sm={6} className="fs-4 s-box text-white border-box">
+                                                    <Col sm={12} lg={6} className="fs-4 s-box text-white border-box">
                                                         <p>Support to monitor business performance and connect with an Account Manager at least 4 times a week.</p></Col>
-                                                    <Col sm={6} className="fs-4 s-box text-white border-box">
+                                                    <Col sm={12} lg={6} className="fs-4 s-box text-white border-box">
                                                         <p>Assistance with keyword selection and advertising services to increase visibility.</p></Col>
                                                 </Row>
-                                                <Row className="d-flex flex-nowrap align-items-center mt-4">
+                                                <Row className="d-flex flex-lg-nowrap flex-sm-nowrap align-items-center mt-4">
 
-                                                    <Col sm={6} className="fs-4 s-box text-white border-box">
+                                                    <Col sm={12} lg={6} className="fs-4 s-box text-white border-box">
                                                         <p>Help to improve business metrics and avail programs (Flipkart Fulfillment, Smart Fulfillment, Sunday Working and Express Working)</p></Col>
-                                                    <Col sm={6} className="fs-4 s-box text-white border-box">
+                                                    <Col sm={12} lg={6} className="fs-4 s-box text-white border-box">
                                                         <p>Real-time notifications on Flipkart promotions so you don’t miss out on the best deals.</p></Col>
                                                 </Row>
                                             </Container>

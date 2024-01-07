@@ -4,12 +4,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import type { AppProps } from 'next/app'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import Head from 'next/head'
 import Script from 'next/script';
 config.autoAddCss = false
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+
     
         {/* Start Google Analytics Manager */}
         <Script
@@ -53,6 +55,7 @@ export default function App({ Component, pageProps }: AppProps) {
           style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>  
+
     <Component {...pageProps} />    
     </>
 

@@ -6,7 +6,8 @@ import { MdLocalPhone } from "react-icons/md";
 
 function FloatingMenu() {
   return (
-    <div>
+    <div >
+      <Container className="floating-menu">
           <Container className="float_email">
               <Row>
               <Col className="d-flex align-items-center hide_email" ><a href="mailto:contactus@walmartvriddhi.org">contactus@walmartvriddhi.org</a></Col>
@@ -22,7 +23,8 @@ function FloatingMenu() {
                   <MdLocalPhone size={40} fill="#fff" />
             </Col>
               </Row>
-          </Container>
+        </Container>
+        </Container>
     </div>
   )
 }

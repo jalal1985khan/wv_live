@@ -152,7 +152,7 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
             <div className="tab-pane active">
               <Row className="w-center">
                 {visibleWebinars.map((web, index) => (
-                  <Col md={4} className="py-3" key={index}>
+                  <Col md={6} lg={4} sm={12} className="py-3" key={index}>
                     { console.log(visibleWebinars)}
                     <Card className="webinar_post">
                       <Image
@@ -195,7 +195,7 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
             <div className="tab-pane">
               <Row className="w-center">
                 {visibleSpotlights.map((spot, index) => (
-                  <Col md={4} className="py-3" key={index}>
+                  <Col md={6} lg={4} sm={12} className="py-3" key={index}>
                     <Card className="webinar_post">
                       <Image
                         src={spot['_embedded']['wp:featuredmedia'][0]['source_url']}

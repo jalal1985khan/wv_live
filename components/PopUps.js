@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Example = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState();
   const [movies, setMovies] = useState([]);
   const [modalCounter, setModalCounter] = useState(0);
 

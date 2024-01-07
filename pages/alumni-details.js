@@ -262,10 +262,6 @@ export default function App() {
             <Container className=" p-0 " fluid >
                 <p className="fs-2  text-center pt-5 fw-bold bogle-bold walmart-default">Alumni Details</p>
                 <Container className="p-4 px-4 reg-wid">
-
-
-
-                    
                 <form
                     onSubmit={handleSubmit}
                         style={{ margin: '20px' }}>

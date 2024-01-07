@@ -16,7 +16,7 @@ function Footer() {
     return (
 
         <>
-            {/* <Popups/> */}
+            <Popups/>
             <Floating/> 
             <NewsLetter/>
             <Container fluid className="px-0">
