@@ -6,6 +6,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Head from 'next/head'
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 config.autoAddCss = false
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -55,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
           style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>  
-
+      <Analytics />
     <Component {...pageProps} />    
     </>
 
