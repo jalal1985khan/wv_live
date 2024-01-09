@@ -1687,6 +1687,20 @@ width:300px;
     top: 56%;
     bottom: 56%; 
 }
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+    color: #ffffff;
+    pointer-events: none;
+    background-color: #a9a9a9 !important;
+    border-color: #3c3b3b !important;
+    opacity: 0.65;
+    width:34% !important;
+}
+
+.eaanZl {
+    stroke: #fafafa;
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .modal-title h4{

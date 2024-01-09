@@ -10,7 +10,7 @@ import csc from "country-state-city";
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
-
+import { RotatingLines } from 'react-loader-spinner'
 
 export default function App() {
 
@@ -194,6 +194,7 @@ export default function App() {
     const [loading, setLoading] = useState(false);
     const [selectedSource, setSelectedSource] = useState(""); // Track the selected source
     const [otherSource, setOtherSource] = useState(""); // Track the value of the "Other" source input
+    const [isCheckboxChecked, setIsCheckboxChecked] = useState(true);
     
 
     const router = useRouter();
@@ -210,10 +211,22 @@ export default function App() {
     const handleSubmit = event => {
         // 👇️ prevent page refresh
         event.preventDefault();
+        
+        console.log(errors.yourEmail)
+        if (errors.yourEmail === 'Please enter a valid email address.')
+        {
+            setIsCheckboxChecked(true); 
+        }
+        else {
+            setIsCheckboxChecked(false);    
+        }
+        
 
     };
 
     function createPost() {
+
+        setIsCheckboxChecked(true);
         setErrors({});  
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -222,8 +235,11 @@ export default function App() {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 yourEmail: 'Please enter a valid email address.',
+                
             }));
+            
             return;
+            
         }
         axios.post(`${configData.SERVER_FROM}contact-form-7/v1/contact-forms/26551/feedback`,
             {
@@ -248,11 +264,13 @@ export default function App() {
             }
 
         })
+        
             .then((response) => {
                 setPost(response.data.message);
                 const msg = response.data.status;
                 if (msg == 'mail_sent') {
                     setLoading(true);
+                    setIsCheckboxChecked(true);
 
                 }
                 else if (msg == 'validation_failed') {
@@ -264,6 +282,7 @@ export default function App() {
                     });
                     setErrors(fieldErrors);
                     console.log(fieldErrors);
+                    setIsCheckboxChecked(true);
                 }
 
                 //console.log(response.data)
@@ -435,9 +454,10 @@ export default function App() {
                                     <label htmlfor="yourPhone" className="form-label"><span className="errors">*</span>Your Phone:</label>
                                     <input
                                         //required
-                                        type='tel'
+                                        type='number'
                                         className={`form-control ${errors && errors.yourPhone ? 'is-invalid' : ''}`}
                                         id="yourPhone"
+                                        maxlength="10"
                                         name='yourPhone'
                                         placeholder="1234567890"
                                         value={yourPhone}
@@ -503,8 +523,24 @@ export default function App() {
                 </div>
             )}
 
-
-                                <button type='submit' className='btn btn-primary register pb-4' onClick={createPost}>Submit</button>
+<button type='submit'
+className={`btn btn-primary register pb-4 ${!isCheckboxChecked ? 'disabled' : ''}`}
+                                    onClick={createPost}>
+                                    {isCheckboxChecked ? 'Submit':
+(<>
+Please wait..<RotatingLines
+  visible={true}
+  height="30"
+  width="30"
+  color="#ffff"
+  strokeWidth="5"
+  animationDuration="0.75"
+  ariaLabel="rotating-lines-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+                                    />
+</>)}
+                                </button>
                                 {loading && <h1 class="reg-success mt-4">{post}</h1>}
 
                             </form>

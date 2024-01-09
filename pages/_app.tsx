@@ -7,6 +7,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import Head from 'next/head'
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 config.autoAddCss = false
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -57,6 +58,8 @@ export default function App({ Component, pageProps }: AppProps) {
         ></iframe>
       </noscript>  
       <Analytics />
+      <SpeedInsights/>
+
     <Component {...pageProps} />    
     </>
 
