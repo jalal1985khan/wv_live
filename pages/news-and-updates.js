@@ -164,7 +164,7 @@ export async function bannerPost() {
 }
 
 async function getNews() {
-  const res = await fetch(`${configData.SERVER_URL}posts?_embed&categories[]=13&status[]=publish&production[]=77&per_page=100`);
+  const res = await fetch(`${configData.SERVER_URL}posts?_embed&categories[]=13&status[]=publish&production[]=78&per_page=100`);
   const json = await res.json();
   return json;
 }

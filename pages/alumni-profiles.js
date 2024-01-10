@@ -40,7 +40,7 @@ const alumniProfiles = () => {
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
     //url = `${configData.SERVER_URL}msme_speaks?_embed&status[]=publish&per_page=${urlPage}`;
 
-    url = `${configData.SERVER_URL}msme_speaks?_embed&production[]=77&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
+    url = `${configData.SERVER_URL}msme_speaks?_embed&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
     try {
       const response = await fetch(url);
