@@ -23,11 +23,14 @@ const post = ({ data }) => {
                   <div dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} className="text-white blog-head" />
                 </Col>
                 <Col>
-                  <Image
-                    src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                    alt={post['title']['rendered']}
-                    width="100%"
-                  />
+{post['_embedded']['wp:featuredmedia'][0]['source_url'] && (
+  <Image
+  src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
+  alt={post['title']['rendered']}
+  width="100%"
+/>
+)}
+                  
                 </Col>
               </Row>
             </Container>
