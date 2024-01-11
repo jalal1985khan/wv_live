@@ -51,6 +51,7 @@ function Summit() {
             { url: banner },
           ],
           siteName: title,
+          keywords: ['Walmart Vriddhi MSME Summit 2024', 'MSME growth program benefits', 'MSME growth mentors','MSME growth journey program in India','supplier development program'],
         }}
         twitter={{
           handle: '@handle',
