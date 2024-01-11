@@ -5,20 +5,15 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import CookieConsent from "react-cookie-consent";
 import ScrollToTop from "react-scroll-to-top";
 import { usePathname } from 'next/navigation'
-import NewsLetter from './NewsLetter'
-import Floating from '../components/FloatingMenu'
 import { MdPhone } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
-import Popups from '../components/PopUps'
+
 
 function Footer() {
     const pathname = usePathname()
     return (
 
         <>
-            <Popups/>
-            <Floating/> 
-            <NewsLetter/>
             <Container fluid className="px-0">
             <ScrollToTop smooth />
                 <Container className="wbg-main px-4" fluid>

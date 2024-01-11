@@ -6,6 +6,9 @@ import Footer from '../components/Footer';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { NextSeo } from 'next-seo';
 import Link from 'next/link'
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 function ContainerExample() {
 
@@ -160,7 +163,9 @@ Over the past eight years, Walmart and Swasti have shared a meaningful partnersh
 </Row>
 
 </Container>
-
+<Popups/>
+            <Floating/> 
+            <NewsLetter/>
 <Footer/>
 
     </>

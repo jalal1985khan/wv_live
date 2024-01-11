@@ -9,6 +9,10 @@ import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation'
 import debounce from 'lodash.debounce';
 import ClockLoader from "react-spinners/ClockLoader";
+import Success from '../utils/fetchSuccess'
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 const SuccessStories = () => {
   const pathname = usePathname()
@@ -133,61 +137,11 @@ const SuccessStories = () => {
         <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="MSME Success Stories" />
         <p className="fs-3">We are proud to be part of business journeys that have turned into stories of inspiration and success. Take a look at some of our growth stories.</p>
       </Container>
-      <Container className="wbg-light-gy">
-        <Row>
 
-          {
-
-            movies.map((post, index) => {
-              //console.log(post);
-              return (
-<>
-                <Col sm={6} className="p-3" key={post.id}>
-                  <Card className="story_post" >
-                    <Image
-                      src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                      alt={post['title']['rendered']}
-                      width="100%"
-                    />
-                    <Card.Body>
-                      <Button variant="primary" className="pri-category mb-3 bogle-medium">MSME SuperPower: {post['acf']['primary_category']}</Button>
-                      <Card.Title className="fs-3 bogle-medium mb-4 story-title" dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
-                      <h3 dangerouslySetInnerHTML={{ __html: post['acf']['author_name'] }} className="fs-4 authors bogle-medium"></h3>
-                      <h3 dangerouslySetInnerHTML={{ __html: post['acf']['author_designation'] }} className="fs-7 mb-3" style={{ minHeight: 25 }}></h3>
-                      <div dangerouslySetInnerHTML={{ __html: post['excerpt']['rendered'] }} className="fs-5 mb-3 m-height" style={{ minHeight: 200 }}></div>
-                      <Link key={index} href={`/success-story/${post['slug']}`}>
-                        <Button variant="primary" className="authors_btn fs-5">Know more</Button>
-                      </Link>
-                    </Card.Body>
-                  </Card>
-
-                  </Col>
-                  
-                  </>
-              )
-
-
-            })}
-
-        </Row>
-      </Container>
-
-
-      <section className="section text-center mb-3">
-        
-        <div className="loadmodediv">
-          {end ? (
-            <p>No more posts to load</p>
-          ) : (
-              
-            <Button variant="primary" className="authors_btn fs-5" onClick={loadMore} disabled={loading ? false : true}>
-               Load more
-            </Button>
-            
-            
-          )}
-        </div>
-      </section>
+      <Success />
+      <Popups/>
+            <Floating/> 
+            <NewsLetter/>
       <Footer />
 
 

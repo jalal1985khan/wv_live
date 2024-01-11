@@ -7,6 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation';
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 const post = ({ data }) => {
   const pathname = usePathname();
@@ -40,6 +43,9 @@ const post = ({ data }) => {
           </>
         ))}
       </div>
+      <Popups/>
+            <Floating/> 
+            <NewsLetter/>
       <Footer />
     </div>
   );

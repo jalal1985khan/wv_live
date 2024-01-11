@@ -7,6 +7,9 @@ import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
 import Footer from '../components/Footer';
 import configData from "../config.json";
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 
 const ITEMS_PER_LOAD = 6; // Number of items to load initially and on "Load More"
@@ -155,16 +158,20 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                   <Col md={6} lg={4} sm={12} className="py-3" key={index}>
                     { console.log(visibleWebinars)}
                     <Card className="webinar_post">
-                      <Image
-                        src={web['_embedded']['wp:featuredmedia'][0]['source_url']}
-                        alt={web['title']['rendered']}
-                        className="img-hover webimg"
-                        onClick={() => {
-                          setProduct(web.id);
-                          setUrl(web.acf.video_url);
-                          setTitle(web.title.rendered);
-                        }}
-                      />
+                    {web['_embedded']['wp:featuredmedia'][0]['source_url'] && (
+  <Image
+  src={web['_embedded']['wp:featuredmedia'][0]['source_url']}
+  alt={web['title']['rendered']}
+  className="img-hover webimg"
+  onClick={() => {
+    setProduct(web.id);
+    setUrl(web.acf.video_url);
+    setTitle(web.title.rendered);
+  }}
+/>
+)}
+
+                      
                        <Card.Body>
                             <Card.Title className="fs-4 bogle-medium walmart-default pt-2" style={{ minHeight: 112 }} dangerouslySetInnerHTML={{ __html: web['title']['rendered'] }} />
                             <div dangerouslySetInnerHTML={{ __html: web['acf']['short_decription'] }} style={{ minHeight: 195 }} />
@@ -197,16 +204,20 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
                 {visibleSpotlights.map((spot, index) => (
                   <Col md={6} lg={4} sm={12} className="py-3" key={index}>
                     <Card className="webinar_post">
-                      <Image
-                        src={spot['_embedded']['wp:featuredmedia'][0]['source_url']}
-                        alt={spot['title']['rendered']}
-                        className="img-hover webimg"
-                        onClick={() => {
-                          setProduct(spot.id);
-                          setUrl(spot.acf.video_url);
-                          setTitle(spot.title.rendered);
-                        }}
-                      />
+{spot['_embedded']['wp:featuredmedia'][0]['source_url'] && (
+  <Image
+  src={spot['_embedded']['wp:featuredmedia'][0]['source_url']}
+  alt={spot['title']['rendered']}
+  className="img-hover webimg"
+  onClick={() => {
+    setProduct(spot.id);
+    setUrl(spot.acf.video_url);
+    setTitle(spot.title.rendered);
+  }}
+/>
+)}
+
+                    
                         <Card.Body>
                             <Card.Title className="fs-3 bogle-medium walmart-default" style={{ minHeight: 110 }} dangerouslySetInnerHTML={{ __html: spot['title']['rendered'] }} />
                             <div dangerouslySetInnerHTML={{ __html: spot['acf']['short_decription'] }} style={{ minHeight: 180 }} />
@@ -234,6 +245,9 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
           </div>
         </Container>
       </Container>
+      <Popups/>
+            <Floating/> 
+            <NewsLetter/>
       <Footer />
     </>
   );

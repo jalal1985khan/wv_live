@@ -10,6 +10,9 @@ import Testimonials from '../components/Testimonials';
 import App from '../components/App';
 import Footer from '../components/Footer';
 import { NextSeo } from 'next-seo';
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 export default function Home() {
 
@@ -73,7 +76,10 @@ export default function Home() {
       <Arc/>
       <Growth/>
  <Testimonials/>
- <App/>
+        <App />
+        <Popups/>
+            <Floating/> 
+            <NewsLetter/>
 <Footer/>
     </div>
     </>

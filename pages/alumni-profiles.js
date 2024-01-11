@@ -12,7 +12,9 @@ import News from '../components/AlumniNew'
 import Share from '../components/AlumniShare'
 import { usePathname } from 'next/navigation'
 import Profile from '../components/AlumniProfile'
-
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 const alumniProfiles = () => {
   const pathname = usePathname()
@@ -191,7 +193,9 @@ Introducing our graduates who successfully finished the program.</p>
 <Image src="/images/line-svg-png-1.png" width={100} height={20} alt="Walmart Vriddhi Alumni" />
 <Share/>
 </Container>        
-
+<Popups/>
+            <Floating/> 
+            <NewsLetter/>
  <Footer/>     
       </>
   );

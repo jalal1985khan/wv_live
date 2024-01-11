@@ -3,7 +3,9 @@ import Image from 'next/image'
 import Brand from '../components/BrandLogo';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 function ContainerExample() {
   return (
@@ -63,7 +65,10 @@ function ContainerExample() {
     </Card>
         </Col>
       </Row> 
-    </Container>
+      </Container>
+      <Popups/>
+            <Floating/> 
+            <NewsLetter/>
     <Footer/>
 
 

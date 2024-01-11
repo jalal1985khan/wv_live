@@ -6,6 +6,9 @@ import {Col,Container, Row, Image} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import configData from "../../config.json";
 import { NextSeo } from 'next-seo';
+import NewsLetter from '../../components/NewsLetter'
+import Floating from '../../components/FloatingMenu'
+import Popups from '../../components/PopUps'
 
 const post = ({data}) => {
 //   console.log(data);
@@ -79,7 +82,10 @@ return (
 
 })}
 
-          </div>
+      </div>
+      <Popups/>
+            <Floating/> 
+            <NewsLetter/>
           <Footer/>
       </div>
       

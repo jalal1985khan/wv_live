@@ -13,6 +13,9 @@ import { IoLogoInstagram } from "react-icons/io";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import { AiFillLinkedin } from "react-icons/ai";
+import NewsLetter from '../../components/NewsLetter'
+import Floating from '../../components/FloatingMenu'
+import Popups from '../../components/PopUps'
 
 import {
     TelegramShareButton,
@@ -189,6 +192,9 @@ Share Profile <TbShare className="s-share" />
           </Col>
       </Row></Container>
     </Container>
+    <Popups/>
+            <Floating/> 
+            <NewsLetter/>
 <Footer/>
 </>
 )

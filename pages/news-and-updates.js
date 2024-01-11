@@ -8,15 +8,13 @@ import Footer from '../components/Footer';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
 import date from 'date-and-time';
+import News from '../utils/fetchNews'
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
-const SuccessStories = ({ heroBannerpost, initialNewsPosts }) => {
-  const [newsPosts, setNewsPosts] = useState(initialNewsPosts);
-  const [visiblePosts, setVisiblePosts] = useState(6); // Initial number of posts to display
-
-  const loadMorePosts = () => {
-    setVisiblePosts((prev) => prev + 6); // Increase the number of posts to display on each click
-  };
-
+const SuccessStories = ({ heroBannerpost }) => {
+  
   return (
     <>
       <Header />
@@ -101,52 +99,11 @@ const SuccessStories = ({ heroBannerpost, initialNewsPosts }) => {
         </Row>
       </Container>
       <Brand />
-
-      <Container style={{ background: '#dee2e6' }} fluid>
-        <Container>
-          <Row className="pt-5">
-            {newsPosts.slice(0, visiblePosts).map((post, index) => (
-              <Col sm={4} className="p-3" key={index}>
-                <Card className="news-card">
-                  <Image
-                    src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
-                    alt={post['title']['rendered']}
-                    className="news-img"
-                    width={600}
-                    height={250}
-                  />
-
-                  <div className="ribbon-wrapper">
-                    <div className="ribbon-edge-topleft"></div>
-                  </div>
-
-                  <Card.Body className=" new-card">
-                    <h3 dangerouslySetInnerHTML={{ __html: post['acf']['source'] }} className="fs-6 authors bogle-medium"></h3>
-                    <h3 className="fs-6 walmart-secondary bogle-medium">
-                      {date.format(new Date(post.date), 'MMMM DD, YYYY')}
-                    </h3>
-                    <Card.Title className="fs-5 bogle-medium mb-4" style={{ minHeight: 80, height: 95 }} dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} />
-                    <Link key={index} href={`${post['acf']['source_url']}`} target="_blank">
-                      <Button variant="primary" className="news_btn fs-5">Read more</Button>
-                    </Link>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-      
-        </Container>
-
-        <Container className='text-center pb-5 mb-5'>
-              {/* "Load More" button for spotlights */}
-              {visiblePosts < newsPosts.length && (
-                
-                <Button variant="primary" className="authors_btn fs-5" onClick={loadMorePosts}>
-                Load more
-              </Button>
-              )}</Container>
-      </Container>
-
+      <News/>
+  
+      <Popups/>
+            <Floating/> 
+            <NewsLetter/>
       <Footer />
     </>
   );
@@ -163,19 +120,14 @@ export async function bannerPost() {
   return data;
 }
 
-async function getNews() {
-  const res = await fetch(`${configData.SERVER_URL}posts?_embed&categories[]=13&status[]=publish&production[]=78&per_page=100`);
-  const json = await res.json();
-  return json;
-}
+
 
 export async function getServerSideProps() {
   const heroBannerpost = await bannerPost();
-  const initialNewsPosts = await getNews();
+
   return {
     props: {
       heroBannerpost,
-      initialNewsPosts,
     },
   };
 }

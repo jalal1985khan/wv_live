@@ -7,7 +7,9 @@ import { NextSeo } from 'next-seo';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Form from 'react-bootstrap/Form';
-
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 
 export default function App() {
@@ -617,7 +619,9 @@ onClick={createPost}
 </Container>
 </Container>
             
-
+<Popups/>
+            <Floating/> 
+            <NewsLetter/>
             <Footer />
         </>
     );

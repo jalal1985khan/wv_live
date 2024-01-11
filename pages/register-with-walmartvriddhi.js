@@ -11,6 +11,9 @@ import configData from "../config.json";
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import { RotatingLines } from 'react-loader-spinner'
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 export default function App() {
 
@@ -537,7 +540,8 @@ Please wait..<RotatingLines
   animationDuration="0.75"
   ariaLabel="rotating-lines-loading"
   wrapperStyle={{}}
-  wrapperClass=""
+wrapperClass=""
+strokeColor="#fff"
                                     />
 </>)}
                                 </button>
@@ -564,7 +568,9 @@ Please wait..<RotatingLines
                 </Container>
             </Container>
             
-
+            <Popups/>
+            <Floating/> 
+            <NewsLetter/>
             <Footer />
         </>
     );

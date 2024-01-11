@@ -7,8 +7,9 @@ import { Card, Col, Row } from 'react-bootstrap';
 import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-
-
+import NewsLetter from '../components/NewsLetter'
+import Floating from '../components/FloatingMenu'
+import Popups from '../components/PopUps'
 
 
 
@@ -435,6 +436,9 @@ const Webinars = () => {
 
                 
             </Container>
+            <Popups/>
+            <Floating/> 
+            <NewsLetter/>
             <Footer />
         </div>
     )
