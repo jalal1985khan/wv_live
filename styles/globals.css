@@ -1727,11 +1727,11 @@ width:300px;
 z-index: 0;    
 }
 .padding-left{
-padding-left: 100px;    
+padding-left: 100px !important;    
 }
 @media only screen and (max-width: 600px) {
     .padding-left{
-        padding-left: 0px;    
+        padding-left: 0px !important;    
         }
 
     .img-banner{
