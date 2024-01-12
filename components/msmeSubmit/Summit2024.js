@@ -18,12 +18,12 @@ function Summit2024() {
 <Container className='wbg-blue-m rounded-3 mb-5 text-center' style={{width:'80'+'%'}}>
 <Row class="d-flex justify-content-center pt-2">
 <Col lg="12" sm="12" className='pb-5 pt-5'>
-<h3 className='fs-3 text-white bogle-medium'>New Delhi, Bengaluru, Surat, Guwahati, Chennai, Agra & Lucknow</h3>
+<h3 className='fs-3 text-white bogle-medium mb-2'>New Delhi, Bengaluru, Surat, Guwahati, Chennai, Agra & Lucknow</h3>
 <Image
-        src="/images/meeting-date.svg" 
+        src="/images/time.svg" 
         alt="Bottom Corner Image"
         className="img-fluid"
-        style={{ width: '521px', height: '34px' }}
+        style={{ width: '621px', height: '44px' }}
       />
        </Col>
      </Row>
