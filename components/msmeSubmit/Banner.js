@@ -20,7 +20,7 @@ function Banner() {
         fluid
         className="text-center position-relative d-flex justify-content-center"
         style={{ 
-          backgroundImage: `url("/images/Background.png")` ,height:'650px'
+          backgroundImage: `url("/images/Background.png")` ,height:'640px'
         }}
         
       >
@@ -36,11 +36,11 @@ function Banner() {
           className="position-absolute bottom-0 start-0 img-banner z-index"
         
         />
-        <Row className="d-flex justify-content-center align-items-center">
-          <Col lg="6" className="d-flex align-items-center justify-content-sm-center justify-content-md-center">
+        <Row className="ravi d-flex justify-content-center align-items-center">
+          <Col lg="6" className="d-flex align-items-end justify-content-center">
             <Row className="d-flex flex-column">
               <Col style={{ marginBottom: '33' }}>
-                <h2 className="bogle-medium fs-1 text-white">
+                <h2 className="bogle-medium b-font text-white text-center">
               Celebrating today,<br/>building tomorrow
                 </h2></Col>
   

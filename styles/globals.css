@@ -101,6 +101,9 @@ button.register.btn.btn-primary {
     text-decoration: none;
 
 }
+.b-font{
+    font-size: 50px;    
+}
 
 .navbar-toggler-icon {}
 
@@ -1740,7 +1743,21 @@ z-index: 0;
 .padding-left{
 padding-left: 100px !important;    
 }
+.ms_banner{
+
+}
 @media only screen and (max-width: 600px) {
+
+    .ms_banner{
+        display: flex!important;
+        align-content: center !important;
+        justify-content: center !important;
+        align-items: flex-end !important;
+    }
+
+    .b-font {
+        font-size: 37px;
+    }
     .padding-left{
         padding-left: 0px !important;    
         }

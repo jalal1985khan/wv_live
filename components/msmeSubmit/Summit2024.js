@@ -5,7 +5,7 @@ function Summit2024() {
   return (
     <>
 <Container className='text-center'>
-        <h1 className='fs-1 bogle-medium mt-5'>Walmart Vriddhi MSME Summit 2024</h1>
+        <h1 className='fs-2 bogle-medium mt-5'>Walmart Vriddhi MSME Summit 2024</h1>
         <Image
               src='/images/line-svg-png-1.png'
               alt='walmart vriddhi'
@@ -15,9 +15,9 @@ function Summit2024() {
           />
 </Container>
 
-<Container className='wbg-blue-m rounded-3 mb-5 text-center' style={{width:'80'+'%'}}>
+<Container className='wbg-blue-m rounded-3 mb-2 text-center' style={{width:'80'+'%'}}>
 <Row class="d-flex justify-content-center pt-2">
-<Col lg="12" sm="12" className='pb-5 pt-5'>
+<Col lg="12" sm="12" className='pb-4 pt-4'>
 <h3 className='fs-3 text-white bogle-medium mb-2'>New Delhi, Bengaluru, Surat, Guwahati, Chennai, Agra & Lucknow</h3>
 <Image
         src="/images/time.svg" 
@@ -28,7 +28,7 @@ function Summit2024() {
        </Col>
      </Row>
 </Container>
-<Container className='mb-5'>
+<Container className='mb-5 mt-5'>
       <p className='fs-4'> The Walmart Vriddhi MSME Summit 2024 is a moment to reflect on the journey and milestones of thousands of MSMEs who have accelerated their growth and accessed new markets through the Walmart Vriddhi supplier development program. It is also an event to commemorate the graduation of MSMEs, which is a testament to their efforts to embrace digitisation and grow. </p>
        <p className='fs-4'>By connecting, growing, and accelerating Walmart and Flipkart’s ongoing supplier development initiatives, the Walmart Vriddhi program seeks to empower Indian MSMEs, artisans, weavers, and craftspeople for growth and have a lasting effect.</p>
 
