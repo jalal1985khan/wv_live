@@ -16,11 +16,14 @@ function Banner() {
 
   return (
     <>
-      <Container
+      <Link href="/walmart-vriddhi-msme-summit-2024" >
+      <Image src="/images/msmeDesktopBanner.png" className="w-100 d-sm-none d-lg-block d-xs-none d-none" />
+      <Image src="/images/msme-mobile-banner.png" className="w-100 d-lg-none"/></Link>
+      {/* <Container
         fluid
         className="text-center position-relative d-flex justify-content-center"
         style={{ 
-          backgroundImage: `url("/images/Background.png")` ,height:'640px'
+          backgroundImage: `url("/images/msmeDesktopBanner.png")` ,height:'640px'
         }}
         
       >
@@ -60,8 +63,8 @@ function Banner() {
               className="img-fluid h-100 z-index"
             />
           </Col>
-        </Row>
-      </Container>
+        </Row> 
+      </Container>*/}
      
     </>
   );

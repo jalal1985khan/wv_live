@@ -24,13 +24,13 @@ style={{ width: "117px", height: "114px" }}
     height={20}
     className='mb-3'
 />
-              <p className='fs-4'> Shri Narayan Rane, the Minister for Micro, Small, and Medium Enterprises in India, has been invited as a special guest to speak at the event. </p>
+              <p className='fs-5'> Shri Narayan Rane, the Minister for Micro, Small, and Medium Enterprises in India, has been invited as a special guest to speak at the event. </p>
               <hr className='dot-line'/>
-              <p className='fs-4'>Listen to experienced leaders from Flipkart, Walmart Vriddhi, Swasti, and other industry experts as they share valuable tips on how to grow your business in the digital world.</p>
+              <p className='fs-5'>Listen to experienced leaders from Flipkart, Walmart Vriddhi, Swasti, and other industry experts as they share valuable tips on how to grow your business in the digital world.</p>
               <hr className='dot-line'/>
-              <p className='fs-4'>There will also be a special fireside chat with mentors from Walmart Vriddhi and MSMEs who have successfully graduated from the program. They will share their experiences on the benefits of joining the program.</p>
+              <p className='fs-5'>There will also be a special fireside chat with mentors from Walmart Vriddhi and MSMEs who have successfully graduated from the program. They will share their experiences on the benefits of joining the program.</p>
               <hr className='dot-line'/>
-<p className='fs-4'>Please do join these informative sessions and learn how it prepares, trains, and supports MSMEs in accelerating their business growth.</p>          
+<p className='fs-5'>Please do join these informative sessions and learn how it prepares, trains, and supports MSMEs in accelerating their business growth.</p>          
             
             </Col>
             <Col lg={2} className='d-flex justify-content-end'>

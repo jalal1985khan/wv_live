@@ -17,7 +17,7 @@ function InteractiveFlipkart() {
     width={100}
     height={20}
     className='mb-3'/>
-<p className='fs-4'>Visit our live kiosk to resolve your queries and learn how to seamlessly onboard<br/>with Flipkart – a step towards expanding your business horizons.</p>            
+<p className='fs-5'>Visit our live kiosk to resolve your queries and learn how to seamlessly onboard<br/>with Flipkart – a step towards expanding your business horizons.</p>            
 <Image
         src="/images/flipcart.png" 
         alt="Bottom Corner Image"

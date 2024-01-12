@@ -28,9 +28,9 @@ function Summit2024() {
        </Col>
      </Row>
 </Container>
-<Container className='mb-5 mt-5'>
-      <p className='fs-4'> The Walmart Vriddhi MSME Summit 2024 is a moment to reflect on the journey and milestones of thousands of MSMEs who have accelerated their growth and accessed new markets through the Walmart Vriddhi supplier development program. It is also an event to commemorate the graduation of MSMEs, which is a testament to their efforts to embrace digitisation and grow. </p>
-       <p className='fs-4'>By connecting, growing, and accelerating Walmart and Flipkart’s ongoing supplier development initiatives, the Walmart Vriddhi program seeks to empower Indian MSMEs, artisans, weavers, and craftspeople for growth and have a lasting effect.</p>
+<Container className='mb-5 mt-5 text-center'>
+      <p className='fs-5'> The Walmart Vriddhi MSME Summit 2024 is a moment to reflect on the journey and milestones of thousands of MSMEs who<br/> have accelerated their growth and accessed new markets through the Walmart Vriddhi supplier development program.It is also<br/> an event to commemorate the graduation of MSMEs, which is a testament to their efforts to embrace digitisation and grow. </p>
+       <p className='fs-5'>By connecting, growing, and accelerating Walmart and Flipkart’s ongoing supplier development initiatives, the Walmart Vriddhi<br/> program seeks to empower Indian MSMEs, artisans, weavers, and craftspeople for growth and have a lasting effect.</p>
 
 </Container>
     </>
