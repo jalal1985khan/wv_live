@@ -80,6 +80,7 @@ className="w-100 h-auto"
 width={600}
 height={400}
 priority
+
 />
 )}
 

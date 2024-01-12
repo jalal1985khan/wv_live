@@ -15,7 +15,7 @@ const Home = () => {
   const fetchMovies = async () => {
     setLoading(true);
     let url = "";
-    url = `${configData.SERVER_URL}testimonials?_embed&status=publish&production[]=78`;
+    url = `${configData.SERVER_URL}testimonials?_embed&status=publish&production[]=${configData.SERVER}`;
     try {
       const response = await fetch(url);
       const data = await response.json();

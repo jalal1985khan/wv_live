@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Card, Button, Col, Row, Container, Image,Dropdown,Form } from 'react-bootstrap';
-import Link from 'next/link'
+import React, { useEffect, useState, lazy, Suspense } from 'react';
+import { Container } from 'react-bootstrap';
+
 import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
 import Footer from '../components/Footer';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 import Carousel from '../components/AlumniCarousel'
 import Video from '../components/AlumniVideo'
 import News from '../components/AlumniNew'
-import Share from '../components/AlumniShare'
-import { usePathname } from 'next/navigation'
-import Profile from '../components/AlumniProfile'
+import Share from '../components/AlumniShare';
+import Profile from'../components/AlumniProfile';
 import NewsLetter from '../components/NewsLetter'
-import Floating from '../components/FloatingMenu'
-import Popups from '../components/PopUps'
+import Floating from'../components/FloatingMenu';
+import Popups from '../components/PopUps';
 
 const alumniProfiles = () => {
   const pathname = usePathname()
@@ -37,13 +38,7 @@ const alumniProfiles = () => {
     setLoading(true);
     let url = "";
     const urlPage = `${page}`;
-    //console.log(urlPage)
-    //url = query ? `${API_ENDPOINT}${urlPage}${urlQuery}` : "";
-    //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&status[]=publish&per_page=${urlPage}`;
-    //url = `${configData.SERVER_URL}msme_speaks?_embed&status[]=publish&per_page=${urlPage}`;
-
-    url = `${configData.SERVER_URL}msme_speaks?_embed&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
-    //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
+    url = `${configData.SERVER_URL}msme_speaks?_embed&production[]=${configData.SERVER}&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -137,12 +132,11 @@ const alumniProfiles = () => {
           <Header />
           <Image
         src={banner}
-        width="100%"
+        width="900"
         height="620"
         background='no-repeat'
         background-size='cover'
-        
-        className="banner-img"
+        className="banner-img w-100 h-auto"
         
       />
 <Brand />
@@ -194,8 +188,8 @@ Introducing our graduates who successfully finished the program.</p>
 <Share/>
 </Container>        
 <Popups/>
-            <Floating/> 
-            <NewsLetter/>
+<Floating/> 
+<NewsLetter/>
  <Footer/>     
       </>
   );

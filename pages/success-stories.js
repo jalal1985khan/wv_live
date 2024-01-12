@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useCallback } from "react";
-import { Card, Button, Col, Row, Container, Image } from 'react-bootstrap';
+import { Card, Button, Col, Row, Container} from 'react-bootstrap';
 import Link from 'next/link'
 import Header from '../components/Header';
 import Brand from '../components/BrandLogo';
@@ -13,6 +13,7 @@ import Success from '../utils/fetchSuccess'
 import NewsLetter from '../components/NewsLetter'
 import Floating from '../components/FloatingMenu'
 import Popups from '../components/PopUps'
+import Image from 'next/image'
 
 const SuccessStories = () => {
   const pathname = usePathname()
@@ -33,7 +34,7 @@ const SuccessStories = () => {
     setLoading(true); 
     let url = "";
     const urlPage = `${page}`;
-    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=78&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
+    url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=${configData.SERVER}&status[]=publish&per_page=${urlPage}`; //Staging Enviroment
     //url = `${configData.SERVER_URL}posts?_embed&categories[]=12&&production[]=77&status[]=publish&per_page=${urlPage}`; //Live Enviroment
     try {
       const response = await fetch(url);
@@ -123,12 +124,12 @@ const SuccessStories = () => {
       <Header />
       <Image
         src={banner}
-        width="100%"
+        width="800"
         height="620"
         background='no-repeat'
         background-size='cover'
-        
-        className="banner-img"
+        className="banner-img w-100 h-auto"
+        alt="walmart vriddhi"
         
       />
       <Brand />
@@ -140,8 +141,8 @@ const SuccessStories = () => {
 
       <Success />
       <Popups/>
-            <Floating/> 
-            <NewsLetter/>
+      <Floating/> 
+      <NewsLetter/>
       <Footer />
 
 
