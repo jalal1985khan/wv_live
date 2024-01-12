@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Col, Row, Image } from "react-bootstrap";
 import Link from 'next/link'
+import { usePathname } from "next/navigation";
 
 function Banner() {
+  const pathname = usePathname()
+  const [url, setUrl] = useState(true)
+  
+  useEffect(() => {
+    if (pathname === '/walmart-vriddhi-msme-summit-2024') {
+      setUrl(false);
+    }
+  }, [pathname]);
+
+
   return (
     <>
       <Container
@@ -31,8 +42,13 @@ function Banner() {
               <Col style={{ marginBottom: '33' }}>
                 <h2 className="bogle-medium fs-1 text-white">
               Celebrating today,<br/>building tomorrow
-            </h2></Col>
-              {/* <Col className="mt-5"><Link href="" className="walmart-orange fs-5">Know more</Link></Col> */}
+                </h2></Col>
+  
+              {url ? (
+              <Col className="mt-5"><Link href="/walmart-vriddhi-msme-summit-2024" className="w-orange fs-5">Know more</Link></Col>
+
+              ) :''}
+              
             </Row>
           </Col>
           <Col lg="6"

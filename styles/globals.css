@@ -88,6 +88,17 @@ button.register.btn.btn-primary {
     background-color: #FAB221 !important;
     text-decoration: none;
     border: 7px solid #fddfa3;
+}
+.w-orange{
+    padding-right: 50px !important;
+    padding-left: 50px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    border-radius: 50px !important;
+    width: 150px;
+    height: 50px;
+    background-color: #FAB221 !important;
+    text-decoration: none;
 
 }
 

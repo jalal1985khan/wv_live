@@ -13,6 +13,7 @@ import { NextSeo } from 'next-seo';
 import NewsLetter from '../components/NewsLetter'
 import Floating from '../components/FloatingMenu'
 import Popups from '../components/PopUps'
+import MsmeBanner from '../components/msmeSubmit/Banner'
 
 export default function Home() {
 
@@ -69,13 +70,14 @@ export default function Home() {
     
     <div>
       <Header/>
-      <Banner/>
+        {/* <Banner /> */}
+        <MsmeBanner/>
       <BrandLogo/>
       <Learning/>
       <Programme/>  
       <Arc/>
       <Growth/>
- <Testimonials/>
+      <Testimonials/>
         <App />
         <Popups/>
             <Floating/> 
