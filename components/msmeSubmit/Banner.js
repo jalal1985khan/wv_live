@@ -36,11 +36,11 @@ function Banner() {
           className="position-absolute bottom-0 start-0 img-banner z-index"
         
         />
-        <Row className="ravi d-flex justify-content-center align-items-center">
-          <Col lg="6" className="d-flex align-items-end justify-content-center">
+        <Row className="d-flex justify-content-center align-items-lg-center">
+          <Col lg="6" md={8} className="d-flex align-items-center justify-content-center">
             <Row className="d-flex flex-column">
-              <Col style={{ marginBottom: '33' }}>
-                <h2 className="bogle-medium b-font text-white text-center">
+              <Col style={{ marginBottom: '33' }} className="m-height">
+                <h2 className="bogle-medium b-font text-white text-center mobile-padding">
               Celebrating today,<br/>building tomorrow
                 </h2></Col>
   
@@ -51,8 +51,8 @@ function Banner() {
               
             </Row>
           </Col>
-          <Col lg="6"
-            className="d-flex justify-content-center align-items-center"
+          <Col lg="6" md={4}
+            className="d-flex justify-content-center"
           >
             <Image
               src="/images/msme.png"
