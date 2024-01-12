@@ -18,7 +18,9 @@ function Banner() {
     <>
       {url ? (
 <Link href="/walmart-vriddhi-msme-summit-2024" >
-<Image src="/images/New-Home-Banner.png" className="w-100 d-sm-none d-lg-block d-xs-none d-none" /></Link>
+          <Image src="/images/New-Home-Banner.png" className="w-100 d-sm-none d-lg-block d-xs-none d-none" />
+          <Image src="/images/New-Home-Banner-Mobile.png" className="w-100 d-lg-none"/>
+        </Link>
       ) : (
           <>
       <Image src="/images/msmeDesktopBanner.png" className="w-100 d-sm-none d-lg-block d-xs-none d-none" />
