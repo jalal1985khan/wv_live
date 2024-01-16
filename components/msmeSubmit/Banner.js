@@ -24,7 +24,8 @@ function Banner() {
       ) : (
           <>
       <Image src="/images/msmeDesktopBanner.png" className="w-100 d-sm-none d-lg-block d-xs-none d-none" />
-      <Image src="/images/msme-mobile-banner.png" className="w-100 d-lg-none"/>
+            <Image src="/images/msme-mobile-banner.png" className="w-100 d-lg-none" />
+            
           </>
               )}
 
