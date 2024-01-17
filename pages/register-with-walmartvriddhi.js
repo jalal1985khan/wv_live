@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useFormik } from "formik";
 import Select from "react-select";
-import csc from "country-state-city";
+import { State, City } from 'country-state-city';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
@@ -50,8 +50,6 @@ export default function App() {
         }
         //setFromTypes(type.name);
     };
-
-    
 
     const sectorList = [
         { name: "Accessories" },
@@ -158,31 +156,8 @@ export default function App() {
     // busness type function end here
 
     // state wise city function start here 
-    const addressFromik = useFormik({
-        initialValues: {
-            country: "India",
-            state: null,
-            city: null
-        },
-
-    });
-    const countries = csc.getAllCountries();
-    const updatedCountries = countries.map((country) => ({
-        label: country.name,
-        value: country.id,
-        ...country
-    }));
-    const updatedStates = (countryId) =>
-        csc
-            .getStatesOfCountry('101')
-            .map((state) => ({ label: state.name, value: state.id, ...state }));
-    const updatedCities = (stateId) =>
-        csc
-            .getCitiesOfState(stateId)
-            .map((city) => ({ label: city.name, value: city.id, ...city }));
-    const { values, setFieldValue, setValues } = addressFromik;
-    useEffect(() => { }, [values]);
-    // state wise city function end here
+ 
+    
 
     const [post, setPost] = React.useState(null);
     const [errors, setErrors] = useState({});
@@ -198,6 +173,8 @@ export default function App() {
     const [selectedSource, setSelectedSource] = useState(""); // Track the selected source
     const [otherSource, setOtherSource] = useState(""); // Track the value of the "Other" source input
     const [isCheckboxChecked, setIsCheckboxChecked] = useState(true);
+    const [selectCountry, SetSelectCountry] = useState('IN');
+    const[selectState,SetSelectState] = useState('KA');
     
 
     const router = useRouter();
@@ -210,6 +187,53 @@ export default function App() {
     console.log('utm_medium:' + utm_medium);
     console.log('utm_campaign:' + utm_campaign);
     console.log('utm_id' + utm_id);
+
+
+    const stateData = State.getStatesOfCountry(selectCountry).map(state => ({
+        value: state.value,
+        displayValue: state.name,
+        innerValue:state.isoCode
+    }));
+
+    const cityData = City.getCitiesOfState(selectCountry, selectState).map(city => ({
+        value: city.name,
+        displayValue: city.name
+    }));
+
+    const handleStateChange = (event) => {
+        // Call the parent component's onChange function with the selected value
+        const selectedValue = event.target.value;
+        const selectedOption = event.target.options[event.target.selectedIndex];
+        // Get the label (text) of the selected option
+        const selectedLabel = selectedOption.text;
+
+        SetSelectState(selectedValue)
+        setState(selectedLabel)
+        //console.log(selectedLabel)
+    };
+
+    const handleCityChange = (event) => {
+        // Call the parent component's onChange function with the selected value
+        const selectedValue = event.target.value;
+        const selectedOption = event.target.options[event.target.selectedIndex];
+        // Get the label (text) of the selected option
+        const selectedLabel = selectedOption.text;
+        if (selectedLabel === 'South 24 Parganas district') {
+            setCity('South 24 Parganas')
+        }
+        else if (selectedLabel === 'North 24 Parganas district') {
+            setCity('North 24 Parganas')
+        }
+        else {
+            setCity(selectedLabel)    
+        }
+
+        //SetSelectState(selectedValue)
+        
+        //console.log(selectedLabel)
+    };
+
+    
 
     const handleSubmit = event => {
         // 👇️ prevent page refresh
@@ -424,33 +448,34 @@ export default function App() {
                                 </select>
                                 {errors && errors.yourSector && <div className="invalid-feedback">{errors.yourSector}</div>}          
                                 <label className="form-label mt-2"><span className="errors">*</span>State:</label>
-                                <Select
-                                    //required
-                                    className={`form-control ${errors && errors.yourState ? 'is-invalid' : ''}`}
+
+                                <select onChange={handleStateChange}
                                     id='yourState'
                                     name='yourState'
-                                    options={updatedStates(values.country ? values.country.value : null)}
-                                    value={values.name}
-                                    onChange={(value) => {
-                                        setValues({ state: value, city: null }, false);
-                                        setState(value.name, 'yourState');
-                                    }}
-                                />
+                                    className={`form-control ${errors && errors.yourState ? 'is-invalid' : ''}`}
+                                    
+                                    >
+            {stateData.map((option, index) => (
+                <option key={index} value={option.innerValue} >
+                    {option.displayValue}
+                </option>
+            ))}
+            </select>
                         {errors && errors.yourState && <div className="invalid-feedback">{errors.yourState}</div>}          
 
                                 <label className="form-label mt-2"><span className="errors">*</span>City:</label>
-                                <Select
-                                    className={`form-control ${errors && errors.yourCity ? 'is-invalid' : ''}`}
-                                    id='yourCity'
+                                <select
+                                 className={`form-control ${errors && errors.yourCity ? 'is-invalid' : ''}`}
+                                 id='yourCity'
                                     name='yourCity'
-                                    options={updatedCities(values.state ? values.state.value : null)}
-                                    value={values.city}
-                                    onChange={(value) => {
-                                        setFieldValue("city", value);
-                                        setCity(value.name, 'yourCity');
-                                    }}
-
-                                />
+                                    onChange={handleCityChange}
+                                >
+            {cityData.map((option, index) => (
+                <option key={index} value={option.value}>
+                    {option.displayValue}
+                </option>
+            ))}
+        </select>
                                 {errors && errors.yourCity && <div className="invalid-feedback">{errors.yourCity}</div>}          
 
                                 <div className="mb-3 mt-3">
@@ -506,10 +531,10 @@ export default function App() {
 </option>
     ))}
 
-                                    </select></div>
+</select></div>
                                 
 
-                                    {selectedSource === "Others (Please specify)" && (
+{selectedSource === "Others (Please specify)" && (
                 <div className="mb-3">
                     <label htmlFor="otherSource" className="form-label">
                         Specify Other Source:
@@ -549,7 +574,6 @@ strokeColor="#fff"
 
                             </form>
                         </Col>
-
                         <Col className="wbg-white m-tm-none p-0" sm={6}>
                             
                             <Image
