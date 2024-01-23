@@ -133,6 +133,9 @@ export default function App() {
     const [yourLinkedin, setLinkedin] = useState(null);
     const [yourContactPoint, setFromTypes] = useState(null);
     const [checkboxError, setCheckboxError] = useState(false);
+    const [yourFile, setYourFile] = useState(null);
+    const [yourProduct, setProductFile] = useState(null);
+    const [loader, setLoader] = useState(false);
 
     const router = useRouter();
     const { utm_source, utm_medium, utm_campaign, utm_id } = router.query;
@@ -141,7 +144,15 @@ export default function App() {
     const desc = "Fill the form to be a part of the Walmart Vriddhi program and unlock your business growth!"
     const Myimg ="/images/registration_banner.png"
 
-
+    const handleFileChange = (event) => {
+        setYourFile(event.target.files[0]);
+        setProfileImage(event.target.value)
+      };
+    const handleProductChange = (event) => {
+        setProductFile(event.target.files[0]);
+        setProductImage(event.target.value)
+    };
+    
     const handleSubmit = event => {
         // 👇️ prevent page refresh
         event.preventDefault();
@@ -150,10 +161,13 @@ export default function App() {
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+        setLoader(false);
     };
 
     function createPost() {
-        setErrors({});  
+        setErrors({}); 
+        setLoader(true);
+       // formData.append('yourProductImage', yourFile);
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailRegex.test(yourEmail)) {
@@ -162,7 +176,10 @@ export default function App() {
                 yourEmail: 'Please enter a valid email address.',
             }));
             return;
+            setLoader(false);
         }
+
+
 
         axios.post(`${configData.SERVER_FROM}contact-form-7/v1/contact-forms/26552/feedback`,
             {
@@ -174,8 +191,8 @@ export default function App() {
                 'yourLocation': { yourLocation },
                 'yourBusinessCategory': { yourBusinessCategory },
                 'yourLinkProfile': { yourLinkProfile },
-                'yourProfileImage': { yourProfileImage },
-                'yourProductImage': { yourProductImage },
+                'yourProfileImage': { yourFile },
+                'yourProductImage': { yourProduct },
                 'yourAboutBusiness': { yourAboutBusiness },
                 'yourWebsiteLink': { yourWebsiteLink },
                 'yourFacebook': { yourFacebook },
@@ -196,7 +213,7 @@ export default function App() {
         })
             .then((response) => {
                 setLoading(true)
-                setPost(response.data.message);
+                //setPost(response.data.message);
                 const msg = response.data.status;
                 
                 if (msg == 'mail_sent') {
@@ -447,7 +464,9 @@ export default function App() {
                                         placeholder="ProfileImage"
                                         multiple
                                         value={yourProfileImage}
-                                        onChange={event => setProfileImage(event.target.value)}
+                                        //onChange={event => setProfileImage(event.target.value)}
+                                        //event.target.files[0]
+                                        onChange={handleFileChange}
                                     />
                                     {errors && errors.yourProfileImage && <div className="invalid-feedback">{errors.yourProfileImage}</div>}
                                 </div>
@@ -464,7 +483,8 @@ export default function App() {
                                         placeholder="Product Image"
                                         multiple
                                         value={yourProductImage}
-                                        onChange={event => setProductImage(event.target.value)}
+                                        //onChange={event => setProductImage(event.target.value)}
+                                        onChange={handleProductChange}
                                     />
                                     {errors && errors.yourProductImage && <div className="invalid-feedback">{errors.yourProductImage}</div>}
                                 </div>
@@ -591,10 +611,10 @@ export default function App() {
                         
 </Container>
 <Container className="text-center">
-{/* <button type='submit'
-className={`registers ${!isCheckboxChecked ? 'disabled' : ''}`}
-onClick={createPost}
-                            >Submit</button> */}
+                            {
+                                loader ? 'show' :'hide'
+
+}
                             
                             <button
         type='submit'

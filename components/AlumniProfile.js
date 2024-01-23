@@ -221,7 +221,11 @@ const fetchTaxonomyCount = async () => {
                   <div className="row g-0">
                     <div className="col-md-4">
                       <Image
-                        src={post['_embedded']['wp:featuredmedia'][0]['source_url']}
+                        src={ 
+                          post['_embedded']['wp:featuredmedia'][0]['source_url'] ?
+                          post['_embedded']['wp:featuredmedia'][0]['source_url'] : ''
+
+                        }
                         className="profile-img img-fluid rounded-start"
                         alt="..."
                         width={150}
