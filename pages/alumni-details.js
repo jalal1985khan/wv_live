@@ -176,7 +176,7 @@ export default function App() {
                 yourEmail: 'Please enter a valid email address.',
             }));
             return;
-            setLoader(false);
+            
         }
 
 
@@ -243,7 +243,9 @@ export default function App() {
     return (
         <>
             
-<NextSeo
+            <NextSeo
+                noindex={true}
+                nofollow={true}
     title={ title}
     description={ desc}
         canonical='https://www.walmartvriddhi.org/register-with-walmartvriddhi/'

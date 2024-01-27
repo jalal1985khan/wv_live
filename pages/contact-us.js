@@ -6,10 +6,53 @@ import Footer from '../components/Footer';
 import NewsLetter from '../components/NewsLetter'
 import Floating from '../components/FloatingMenu'
 import Popups from '../components/PopUps'
+import { NextSeo } from 'next-seo';
+import { usePathname } from 'next/navigation'
 
 function ContainerExample() {
+  const pathname = usePathname()
+  const title = "Contact us  - Walmart Vriddhi";
+  const desc = "Contact us to receive tailored support for MSMEs and learn more about the program";
+  const banner = '/images/alumni_profile_banner.png';
+  const url = 'https://www.walmartvriddhi.org/contact-us'; 
   return (
     <>
+       <NextSeo
+        noindex={true}
+        nofollow={true}
+      title={title}
+      description={desc}
+        canonical={pathname}
+        openGraph={{
+          url: pathname,
+          title: title,
+          description: desc,
+          images: [
+            {
+              url:banner,
+              width: 800,
+              height: 600,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            {
+              url:banner,
+              width: 900,
+              height: 800,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            { url: banner },
+            { url: banner },
+          ],
+          siteName: title,
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+          />
     <Header/>
     
       <Image

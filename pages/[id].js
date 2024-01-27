@@ -16,6 +16,10 @@ const post = ({ data }) => {
 
   return (
     <div>
+       <NextSeo
+        noindex={true}
+        nofollow={true}
+      />
       <Header />
       <div className='grid grid-cols-3 gap-5 w-full g-0'>
         {data.map((post, index) => (

@@ -30,7 +30,9 @@ const post = ({data}) => {
 
 return (
 <div key={post.id}>
-<NextSeo
+    <NextSeo
+      noindex={true}
+      nofollow={true}
       title={post['title']['rendered']}
       description={string} 
       canonical="https://www.canonical.ie/"

@@ -320,7 +320,9 @@ export default function App() {
 
     return (
         <>
-<NextSeo
+            <NextSeo
+                 noindex={true}
+                 nofollow={true}
     title={ title}
     description={ desc}
         canonical='https://www.walmartvriddhi.org/register-with-walmartvriddhi/'

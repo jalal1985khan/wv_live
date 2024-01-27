@@ -47,7 +47,9 @@ const Webinars = ({ webinarvideo, spotlightvideo }) => {
 
   return (
     <>
-     <NextSeo
+      <NextSeo
+         noindex={true}
+         nofollow={true}
       title="MSME Business Training, Business Training Programs, Small Business Training Programs, Business Training Programs Online"
       description="Walmart Vriddhi is a supplier development program tailored to help MSMEs grow their business by expanding their domestic and international markets Know more about us here"
         canonical=''

@@ -27,12 +27,15 @@ export default function Home() {
       <Head>
         <title>{title}</title>
         <meta name="description" content={desc} />
+        <meta name="robots" content="noindex,nofollow"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" /> 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" async />
       </Head>
 
       <NextSeo
+         noindex={true}
+         nofollow={true}
       title={title}
       description={desc}
       canonical="https://www.walmartvriddhi.org/"

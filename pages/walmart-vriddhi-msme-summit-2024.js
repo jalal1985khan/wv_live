@@ -25,6 +25,8 @@ function Summit() {
   return (
     <>
       <NextSeo
+         noindex={true}
+         nofollow={true}
       title= {title}
       description={desc}
         canonical={url}

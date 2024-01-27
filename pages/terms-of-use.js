@@ -13,6 +13,8 @@ const privacy = ({ data }) => {
   return (
     <div>
       <NextSeo
+         noindex={true}
+         nofollow={true}
       title="Privacy policy  - Walmart Vriddhi"
       description="Privacy policy  - Walmart Vriddhi"
         canonical={pathname}
