@@ -4,9 +4,55 @@ import Footer from '../components/Footer'
 import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'next/image'
 import Link from 'next/link'
+import { NextSeo } from 'next-seo';
+import { usePathname } from 'next/navigation'
+
 function MarketPlace() {
+
+  const pathname = usePathname()
+  const title = "Strategic partnerships for MSMEs: Marketplace for online business growth";
+  const desc = "Optimise your online business and experience accelerated growth with Walmart Vriddhi’s seamless cross border marketplace integration";
+  const banner = '/images/market-banner.png';
+  const url = 'https://www.walmartvriddhi.org/marketplace '; 
+
   return (
-      <>
+    <>
+       <NextSeo
+        noindex={true}
+        nofollow={true}
+      title={title}
+      description={desc}
+        canonical={pathname}
+        openGraph={{
+          url: pathname,
+          title: title,
+          description: desc,
+          images: [
+            {
+              url:banner,
+              width: 800,
+              height: 600,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            {
+              url:banner,
+              width: 900,
+              height: 800,
+              alt: 'Walmart Vridhi',
+              type: 'image/jpeg',
+            },
+            { url: banner },
+            { url: banner },
+          ],
+          siteName: title,
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+          />
           <Header />
           <Container class="market-banner"  fluid>
               <Row style={{height:'760px'}}>
