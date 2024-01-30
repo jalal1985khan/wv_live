@@ -66,7 +66,12 @@
     margin: 0;
     font-family: BOGLEREGULAR;
 }
+.market-banner{
+    background-image: url(/images/market-banner.png);
+    height:760px;
+    background-size:cover;
 
+}
 button.register.btn.btn-primary {
     padding: 11px;
     border-radius: 30px;
@@ -160,7 +165,7 @@ button.navbar-toggler.collapsed {
 }
 
 .wbg-blue-m {
-    background-color: #1471CE;
+    background-color: #1471CE !important;
 }
 
 .wbg-footer {
@@ -209,6 +214,36 @@ button.navbar-toggler.collapsed {
 .wbg-light-gy{
     background-color:#eaeaea1a !important;
 }
+.mt-n5 {
+    margin-top: -45px;
+}
+.margin-l{
+    margin-left:45px;
+}
+.bm-end{
+border-right:1px solid #5ea8f1;    
+}
+.market-hover{
+ padding:5px;
+ border-radius:12px;   
+}
+.market-hover:hover{
+    background: #39ac31;
+    color:#fff;
+    padding:5px;
+    border-radius:12px;   
+   }
+.b-bottom {
+    border-bottom: dotted 2px #FCB525 !important;
+}
+.b-end {
+border-right: dotted 2px #FCB525 !important;
+}
+.p-end {
+    border-right: solid 2px #FCB525 !important;
+    height:44px;
+    margin-left:6px;
+    }
 img.card-img.img-contact {
     width: 15%;
 }
@@ -1681,6 +1716,9 @@ width:300px;
     width: 25px !important;
 }
 @media only screen and (max-width: 1400px) {
+    .mw-70{
+        width:70% !important;
+        }
     img.circle_lady{
         margin-top: -21px;
         position: inherit;
@@ -1746,6 +1784,41 @@ padding-left: 100px !important;
 
 
 @media only screen and (max-width: 600px) {
+    .market-banner{
+        background-image: url(/images/mobile-market-banner.png);
+        height:auto;
+        background-size:cover;
+    
+    }
+    .mw-70{
+        width:100% !important;
+        }
+    .bm-end{
+        border-bottom:1px solid #5ea8f1;    
+        border-right:0px solid #5ea8f1;    
+        }
+    .margin-l{
+        margin-left:0px;
+    }
+    .p-end{
+        border-bottom: solid 2px #FCB525 !important;
+        border-right: solid 0px #FCB525 !important;
+    height: auto;
+    margin-left: 2px;
+    padding: 8px;
+    }
+    .m-bottom{
+        border-bottom: dotted 2px #FCB525 !important;
+    }
+    .b-end {
+        border-right: dotted 0px #FCB525 !important;
+    }
+    .mpt-5{
+        margin-top: 32px !important;
+    }
+    .mt-n5 {
+        margin-top: 0px !important;
+    }
     .mobile-padding{
         padding-top:51px;
     }
@@ -2091,6 +2164,9 @@ button.register.btn.btn-primary {
 }
 
 @media (min-width: 992px) {
+    .mw-70{
+        width:70% !important;
+        }
     .m-tm-none {
         display: flex;
     }
@@ -2173,6 +2249,7 @@ min-height:200px !important;
     width: 70%;
     height: auto;
 }
+
 .w-auto{
     height: auto;    
 }
