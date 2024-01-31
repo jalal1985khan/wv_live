@@ -42,6 +42,7 @@ function Footer() {
                                 <li className="f-text"><Link href="/alumni-profiles" className={pathname == "/alumni-profiles" ? "activef" : ""}>Alumni Profiles</Link></li>
                                 <li className="f-text"><Link href="/webinars" className={pathname == "/webinars" ? "activef" : ""}>Webinars</Link></li>
                                 <li className="f-text"><Link href="/news-and-updates" className={pathname == "/news-and-updates" ? "activef" : ""}>News and updates</Link></li>
+                                <li className="f-text"><Link href="/marketplace" className={pathname == "/marketplace" ? "activef" : ""}>Marketplace</Link></li>
                                 <li className="f-text"><Link href="/contact-us" className={pathname == "/contact-us" ? "activef" : ""}>Contact us</Link></li>
                             </ul>
                         </Col>

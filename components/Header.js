@@ -20,6 +20,7 @@ const SuccessStories = () => {
   const [error, setError] = useState({});
   const [query, setQuery] = useState();
   const [end, setEnd] = useState(true);
+  const [showLogo , setShowLogo]= useState(true)
   const API_ENDPOINT = `${configData.SERVER_URL}posts?_embed&search=`;
 
   const fetchMovies = async () => {
@@ -54,8 +55,17 @@ const SuccessStories = () => {
   }, [debouncedVal]);
 
   useEffect(() => {
-  fetchMovies();
+    fetchMovies();
+    
+    if (pathname === '/marketplace') {
+      setShowLogo(false)
+    }
+
   }, [query]);
+
+
+
+
 
   return (
     <div>
@@ -69,15 +79,17 @@ const SuccessStories = () => {
           <Container fluid>
             <Link href="/">
               <Navbar.Brand >
-                <Image
+                {
+                  showLogo?
+                (<Image
                   src='/images/Walmart-Vriddhi-logo.svg'
                   alt="walmart Vriddhi"
                   width={400}
                   height={90}
                   className="logo-img"
                   
-                />
-
+                    />) : (<div style={{height:'90px'}}></div>)
+}
               </Navbar.Brand>
             </Link>
             <Nav className="ms-auto d-flex flex-row flex-nowrap">
@@ -140,6 +152,9 @@ const SuccessStories = () => {
                     </li>
                     <li className="nav-item">
                       <Link href="/news-and-updates" className={pathname == "/news-and-updates" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >News and Updates</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link href="/marketplace" className={pathname == "/marketplace" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >Maketplace</Link>
                     </li>
                     <li className="nav-item">
                       <Link href="/contact-us" className= {pathname == "/contact-us" ? "active nav-link px-5" : "nav-link px-5"}  aria-current="page" >Contact us</Link>

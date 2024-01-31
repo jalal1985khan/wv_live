@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useCallback, useEffect, useState} from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -7,8 +7,38 @@ import Link from 'next/link'
 import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation'
 
-function MarketPlace() {
 
+const useMediaQuery = (width) => {
+  const [targetReached, setTargetReached] = useState(false);
+
+  const updateTarget = useCallback((e) => {
+    if (e.matches) {
+      setTargetReached(true);
+    } else {
+      setTargetReached(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: ${width}px)`);
+    media.addListener(updateTarget);
+
+    // Check on mount (callback is not called until a change occurs)
+    if (media.matches) {
+      setTargetReached(true);
+    }
+
+    return () => media.removeListener(updateTarget);
+  }, []);
+
+  return targetReached;
+};
+
+
+
+
+function MarketPlace() {
+  const isBreakpoint = useMediaQuery(768)
   const pathname = usePathname()
   const title = "Strategic partnerships for MSMEs: Marketplace for online business growth";
   const desc = "Optimise your online business and experience accelerated growth with Walmart Vriddhi’s seamless cross border marketplace integration";
@@ -53,21 +83,32 @@ function MarketPlace() {
           cardType: 'summary_large_image',
         }}
           />
-          <Header />
-          <Container class="market-banner"  fluid>
-              <Row style={{height:'760px'}}>
-                  <Col className='d-flex justify-content-center align-items-center order-sm-1 order-lg-0' sm={12} lg={6}><h1 className='text-white fs-1 bogle-medium'><span className='fs-1 bogle-medium walmart-primary'>#GrowKaro</span> with<br/>Walmart Marketplace</h1></Col>
-                  <Col className='position-relative g-0 order-0 order-lg-1' sm={12} lg={6}>
-                  
-              </Col></Row>
-          </Container>
-          <Container className='w-80 p-5'>
-              <h2 className='walmart-default fs-1 text-center bogle-medium'>Boost Your Business with Cross Border Trade</h2>
-              <p className='fs-5 text-center mt-5'>Expand your business via Cross Border Trade (CBT) on Walmart Marketplace and reach new heights. Walmart Marketplace is a popular eCommerce platform that allows third-party sellers to list their products for sale on Walmart.com.</p>
+      <Header />
+      {isBreakpoint ? (<Container fluid style={{backgroundImage: 'url(/images/mobile-market-banner.png)',height:'auto',backgroundSize:'cover'}}>
+        <Row style={{height:'760px'}}>
+                    <Col className='d-flex justify-content-center align-items-center order-sm-1 order-lg-0' sm={12} lg={6}><h1 className='text-white fs-1 bogle-medium'><span className='fs-1 bogle-medium walmart-primary'>#GrowKaro</span> with<br/>Walmart Marketplace</h1></Col>
+                    <Col className='position-relative g-0 order-0 order-lg-1' sm={12} lg={6}>
+                    
+                </Col></Row>
+            </Container>
+        ):(<Container  fluid style={{backgroundImage: 'url(/images/market-banner.png)',height:'auto',backgroundSize:'cover'}}>
+        <Row style={{height:'760px'}}>
+                    <Col className='d-flex justify-content-center align-items-center order-sm-1 order-lg-0' sm={12} lg={6}><h1 className='text-white fs-1 bogle-medium'><span className='fs-1 bogle-medium walmart-primary'>#GrowKaro</span> with<br/>Walmart Marketplace</h1></Col>
+                    <Col className='position-relative g-0 order-0 order-lg-1' sm={12} lg={6}>
+                    
+                </Col></Row>
+            </Container>)}
+          
+
+          <Container className='w-80 p-5 text-center'>
+        <h2 className='walmart-default fs-1 text-center bogle-medium'>Boost Your Business with Cross Border Trade</h2>
+        <Image src="/images/line.svg" width={100} height={20} alt="Boost Your Business with Cross Border Trade" className="my-1"/>
+              <p className='fs-5 text-center'>Expand your business via Cross Border Trade (CBT) on Walmart Marketplace and reach new heights. Walmart Marketplace is a popular eCommerce platform that allows third-party sellers to list their products for sale on Walmart.com.</p>
 
           </Container>
-          <Container className='wbg-blue-m p-4 rounded-5'>
-              <h2 className='text-white fs-1 text-center bogle-medium mt-3'>What’s in it for the MSMEs?</h2>
+          <Container className='wbg-blue-m p-4 rounded-5 text-center'>
+        <h2 className='text-white fs-1 text-center bogle-medium mt-3'>What’s in it for the MSMEs?</h2>
+        <Image src="/images/line.svg" width={100} height={20} alt="What’s in it for the MSMEs?" className="my-1"/>
               <Container className='p-5'>
                   <Row><Col>
                   
@@ -88,9 +129,10 @@ function MarketPlace() {
               </Container>
           </Container>
 
-          <Container className='mt-5 w-70 p-5'>
-              <h2 className='fs-1 walmart-default bogle-medium text-center'>What Does CBT Offer?</h2>
-              <p className='fs-5 text-center mt-5'>Walmart’s marketplace offers a trusted partnership for MSMEs, facilitating their growth and providing the biggest opportunity for business expansion online. Acceptance into Walmart Marketplace is a strong endorsement of a seller’s quality and trustworthiness which will attract customers.</p>
+          <Container className='mt-5 w-70 p-5 text-center'>
+        <h2 className='fs-1 walmart-default bogle-medium text-center'>What Does CBT Offer?</h2>
+        <Image src="/images/line.svg" width={100} height={20} alt="What Does CBT Offer?" className="my-1"/>
+              <p className='fs-5 text-center'>Walmart’s marketplace offers a trusted partnership for MSMEs, facilitating their growth and providing the biggest opportunity for business expansion online. Acceptance into Walmart Marketplace is a strong endorsement of a seller’s quality and trustworthiness which will attract customers.</p>
 </Container>
 
 <Container style={{border:'3px solid #FCB525'}} className='rounded-5 p-5'>
