@@ -237,7 +237,7 @@ function MarketPlace() {
               </Row>
               <Container>
               <h2 className='fs-1 text-center bogle-medium mt-5 mb-5'>Eligibility</h2>
-                  <div className='d-flex flex-lg-row justify-content-center'>
+                  <div className='d-flex flex-lg-row justify-content-center flex-column'>
                   <div className='p-end px-2'><p className='fs-5'>Import Export Code (IC)</p></div>
                   <div className='p-end px-2'><p className='fs-5'>GSTIN</p></div>
                   <div className='p-end px-2'><p className='fs-5'>PAN</p></div>

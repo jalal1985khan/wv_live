@@ -153,6 +153,9 @@ background-color: #2f6eb5;
 padding: 12px;
 border-radius: 25px;    
 }
+.navbar-toggler {
+    color: rgb(248 249 250) !important;
+}
 .g-box-1 {
     height: 220px;
     display: flex;
