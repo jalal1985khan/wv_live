@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo';
 import { usePathname } from 'next/navigation'
+import FloatingMenu from '../components/FloatingMenu'
 
 
 const useMediaQuery = (width) => {
@@ -293,7 +294,8 @@ function MarketPlace() {
 </Container>
 <Container fluid className='wbg_grey p-4'>
               <p className='fs-6'><b className='bogle-medium'>Disclaimer:</b> Completion of these modules does not assure onboarding to Walmart.com. Walmart Marketplace team will reach out to you if your products align with market demand, providing onboarding and incubation support to assist potential sellers.</p>
-</Container>
+      </Container>
+      <FloatingMenu/>
           <Footer />
               
       
