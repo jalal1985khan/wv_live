@@ -13,7 +13,6 @@ import Popups from '../components/PopUps'
 
 const post = ({ data }) => {
   const pathname = usePathname();
-
   return (
     <div>
        <NextSeo
@@ -61,5 +60,10 @@ export async function getServerSideProps(context) {
   const { id } = context.params;
   const res = await fetch(`${configData.SERVER_URL}posts?_embed&slug=${id}`);
   const data = await res.json();
-  return { props: { data } };
+  //return { props: { data } };
+  return {
+    props: { data },
+    // If data is empty, return a 404 status
+    notFound: !data || data.length === 0,
+  };
 }

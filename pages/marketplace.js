@@ -110,7 +110,7 @@ function MarketPlace() {
         <h2 className='text-white fs-1 text-center bogle-medium mt-3'>What’s in it for the MSMEs?</h2>
         <Image src="/images/line.svg" width={100} height={20} alt="What’s in it for the MSMEs?" className="my-1"/>
               <Container className='p-5'>
-                  <Row><Col>
+          <Row><Col sm={12} lg={6}>
                   
                   <div class="card border-0 wbg-blue-m">
                           <img src="/images/icon-1.svg" class="card-img-top" alt="" width={70} height={70} />
@@ -118,7 +118,7 @@ function MarketPlace() {
     <p class="card-text text-white fs-5 text-center">Walmart Marketplace enables third-party sellers to showcase their products on Walmart’s website, focusing on popular sectors such as home and kitchen, beauty, jewellery, apparel, leather accessories, and other emerging segments.</p>
   </div>
 </div>
-                  </Col><Col>
+                  </Col><Col sm={12} lg={6}>
                   <div class="card border-0 wbg-blue-m">
   <img src="/images/icon-2.svg" class="card-img-top" alt="..." width={70} height={70}/>
   <div class="card-body">
@@ -237,13 +237,13 @@ function MarketPlace() {
               </Row>
               <Container>
               <h2 className='fs-1 text-center bogle-medium mt-5 mb-5'>Eligibility</h2>
-                  <Row className='g-0'>
-                  <Col className='p-end'sm={12} lg={3} ><p className='fs-5 market-hover'>Import Export Code (IC)</p></Col>
-                  <Col lg={1} sm={12} className='p-end'><p className='fs-5 market-hover'>GSTIN</p></Col>
-                  <Col lg={1} sm={12} className='p-end'><p className='fs-5 market-hover'>PAN</p></Col>
-                  <Col className='p-end' sm={12} lg={3}><p className='fs-5 market-hover'>Online (Marketplace) experience</p></Col>
-                  <Col className=''sm={12} lg={3}><p className='fs-5 market-hover'>Export volume above $20K/ year</p></Col>
-              </Row>
+                  <div className='d-flex flex-lg-row justify-content-center'>
+                  <div className='p-end px-2'><p className='fs-5'>Import Export Code (IC)</p></div>
+                  <div className='p-end px-2'><p className='fs-5'>GSTIN</p></div>
+                  <div className='p-end px-2'><p className='fs-5'>PAN</p></div>
+                  <div className='p-end px-3' ><p className='fs-5'>Online (Marketplace) experience</p></div>
+                  <div className='px-3'><p className='fs-5'>Export volume above $20K/ year</p></div>
+              </div>
               </Container>
 
               <Container>
