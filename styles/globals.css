@@ -147,7 +147,12 @@ button.navbar-toggler.collapsed {
     display: flex;
     align-items: flex-start;
 }
-
+.error-btn{
+text-decoration: none;
+background-color: #2f6eb5;
+padding: 12px;
+border-radius: 25px;    
+}
 .g-box-1 {
     height: 220px;
     display: flex;
