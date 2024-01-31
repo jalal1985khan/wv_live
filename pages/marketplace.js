@@ -242,8 +242,8 @@ function MarketPlace() {
                   <div className='p-end px-2'><p className='fs-5'>Import Export Code (IC)</p></div>
                   <div className='p-end px-2'><p className='fs-5'>GSTIN</p></div>
                   <div className='p-end px-2'><p className='fs-5'>PAN</p></div>
-                  <div className='p-end px-3' ><p className='fs-5'>Online (Marketplace) experience</p></div>
-                  <div className='px-3'><p className='fs-5'>Export volume above $20K/ year</p></div>
+                  <div className='p-end px-2' ><p className='fs-5'>Online (Marketplace) experience</p></div>
+                  <div className='px-2'><p className='fs-5'>Export volume above $20K/ year</p></div>
               </div>
               </Container>
 
