@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -9,25 +10,39 @@ import { MdPhone } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 
 
+
 function Footer() {
     const pathname = usePathname()
+    const [showLogo, setShowLogo] = useState(true)
+    
+
+    useEffect(() => {
+        
+        if (pathname === '/marketplace') {
+          setShowLogo(false)
+        }
+    
+      },);
+
+
     return (
 
         <>
             <Container fluid className="px-0">
-            <ScrollToTop smooth />
-                <Container className="wbg-main px-4" fluid>
-                    <Row className="px-4">
-                        <Col xs={2} className="px-4">
-                            <LazyLoadImage
-                                src='/images/footer_logo.png'
-                                alt='walmart vriddhi'
+                <ScrollToTop smooth />
+                {showLogo ? (
+                    <Container className="wbg-main px-4" fluid>
+                        <Row className="px-4">
+                            <Col xs={2} className="px-4">
+                                <LazyLoadImage
+                                    src='/images/footer_logo.png'
+                                    alt='walmart vriddhi'
 
-                            />
-                        </Col>
-                        <Col xs={10}></Col>
-                    </Row>
-                </Container>
+                                />
+                            </Col>
+                            <Col xs={10}></Col>
+                        </Row>
+                    </Container>) : ''}
 
                 <Container className="wbg-footer px-4" fluid>
                     <Row className="pt-4">
