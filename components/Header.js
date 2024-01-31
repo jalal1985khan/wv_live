@@ -88,7 +88,7 @@ const SuccessStories = () => {
                   height={90}
                   className="logo-img"
                   
-                    />) : (<div style={{height:'90px'}}></div>)
+                    />) : (<div style={{height:'60px'}}></div>)
 }
               </Navbar.Brand>
             </Link>
