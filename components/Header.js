@@ -169,10 +169,6 @@ const SuccessStories = () => {
 
       ))}
 
-
-
-
-
       <Container className="search-box">
 
       {val && 
