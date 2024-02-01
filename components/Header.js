@@ -154,7 +154,7 @@ const SuccessStories = () => {
                       <Link href="/news-and-updates" className={pathname == "/news-and-updates" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >News and Updates</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/marketplace" className={pathname == "/marketplace" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >Walmart Maketplace</Link>
+                      <Link href="/marketplace" className={pathname == "/marketplace" ? "active nav-link px-5" : "nav-link px-5"} aria-current="page" >Walmart Marketplace</Link>
                     </li>
                     <li className="nav-item">
                       <Link href="/contact-us" className= {pathname == "/contact-us" ? "active nav-link px-5" : "nav-link px-5"}  aria-current="page" >Contact us</Link>
