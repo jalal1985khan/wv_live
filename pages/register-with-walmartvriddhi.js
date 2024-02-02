@@ -524,15 +524,25 @@ export default function App() {
                                     <label htmlfor="yourPhone" className="form-label"><span className="errors">*</span>Your Phone:</label>
                                     <input
                                         //required
-                                        type='number'
+                                        type='tel'
                                         className={`form-control ${errors && errors.yourPhone ? 'is-invalid' : ''}`}
                                         id="yourPhone"
                                         maxlength="10"
+                                        minLength="10"
                                         name='yourPhone'
+                                        pattern="[0-9]*"
                                         placeholder="1234567890"
                                         value={yourPhone}
                                         defaultValue={yourPhone}
                                         onChange={event => setPhone(event.target.value)}
+                                        onKeyPress={(event) => {
+                                            // Prevent entering non-numeric characters
+                                            const keyCode = event.charCode || event.keyCode;
+                                            if (keyCode < 48 || keyCode > 57) {
+                                                event.preventDefault();
+                                            }
+                                        }}
+
 
                                     />
 
