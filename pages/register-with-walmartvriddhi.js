@@ -4,8 +4,6 @@ import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useFormik } from "formik";
-import Select from "react-select";
 import { State, City } from 'country-state-city';
 import configData from "../config.json";
 import { NextSeo } from 'next-seo';
@@ -16,6 +14,24 @@ import Floating from '../components/FloatingMenu'
 import Popups from '../components/PopUps'
 
 export default function App() {
+
+
+    const resetForm = () => {
+        setBusiness('');
+        setFromTypes('');
+        setName('');
+        setFromSectors('');
+        setPhone('');
+        setEmail('');
+        setState('');
+        setCity('');
+        setSelectedSource("");
+        setOtherSource("");
+        SetSelectCountry('IN');
+        SetSelectState('KA');
+        // Add any additional state variables that need to be reset
+    };
+
 
     const typeList = [
         { name: "Manufacturing" },
@@ -197,7 +213,7 @@ export default function App() {
 
     const cityData = City.getCitiesOfState(selectCountry, selectState).map(city => ({
         value: city.name,
-        displayValue: city.name
+        CityValue: city.name
     }));
 
     const handleStateChange = (event) => {
@@ -299,6 +315,20 @@ export default function App() {
                     setLoading(true);
                     setIsCheckboxChecked(true);
 
+                    resetForm();
+
+                    document.getElementById("yourBusiness").value = "";
+                    document.getElementById("yourType").value = "";
+                    document.getElementById("yourName").value = "";
+                    //document.getElementById("yourSector").value = "";
+                    document.getElementById("yourState").value = "";
+                    document.getElementById("yourCity").value = "";
+                    document.getElementById("yourPhone").value = "";
+                    document.getElementById("yourEmail").value = "";
+                    document.getElementById("selectedSource").value = "";
+                    //document.getElementById("otherSource").value = "";
+
+
                 }
                 else if (msg == 'validation_failed') {
                    
@@ -310,6 +340,8 @@ export default function App() {
                     setErrors(fieldErrors);
                     console.log(fieldErrors);
                     setIsCheckboxChecked(true);
+
+                                   
                 }
 
                 //console.log(response.data)
@@ -391,6 +423,7 @@ export default function App() {
                                         name='yourBusiness'
                                         placeholder="India Pvt Ltd"
                                         value={yourBusiness}
+                                        defaultValue={yourBusiness} // Add this line
                                         onChange={event => setBusiness(event.target.value)}
                                     />
 
@@ -427,6 +460,7 @@ export default function App() {
                                         name='yourName'
                                         placeholder="Ravi Kumar"
                                         value={yourName}
+                                        defaultValue={yourBusiness} // Add this line
                                         onChange={event => setName(event.target.value)}
                                     />
                                     {errors && errors.yourName && <div className="invalid-feedback">{errors.yourName}</div>}
@@ -439,8 +473,11 @@ export default function App() {
                                     aria-label="Default select example"
                                     name='yourSector'
                                     value={yourSector}
+                                    defaultValue={yourSector} // Add this line    
+
                                     //onChange={event => setSector(event.target.value)}
                                     onChange={(e) => handleFromSectors(e)}>
+                                     <option value="">Select option</option>
                                     
                                     {sectorList.map((sector, key) => (
                                         <option key={key} title={sector.code} value={sector.name}>
@@ -455,8 +492,9 @@ export default function App() {
                                     id='yourState'
                                     name='yourState'
                                     className={`form-control ${errors && errors.yourState ? 'is-invalid' : ''}`}
-                                    
-                                    >
+                                    defaultValue={yourState}
+                                >
+                                    <option value="">Select State</option>
             {stateData.map((option, index) => (
                 <option key={index} value={option.innerValue} >
                     {option.displayValue}
@@ -471,10 +509,12 @@ export default function App() {
                                  id='yourCity'
                                     name='yourCity'
                                     onChange={handleCityChange}
+                                    defaultValue={yourCity}
                                 >
+                                    <option value="">Select City</option>
             {cityData.map((option, index) => (
                 <option key={index} value={option.value}>
-                    {option.displayValue}
+                    {option.CityValue}
                 </option>
             ))}
         </select>
@@ -491,6 +531,7 @@ export default function App() {
                                         name='yourPhone'
                                         placeholder="1234567890"
                                         value={yourPhone}
+                                        defaultValue={yourPhone}
                                         onChange={event => setPhone(event.target.value)}
 
                                     />
@@ -508,6 +549,7 @@ export default function App() {
                                         name='yourEmail'
                                         placeholder="test@test.com"
                                         value={yourEmail}
+                                        defaultValue={yourEmail}
                                         onChange={event => setEmail(event.target.value)}
 
                                     />
@@ -524,7 +566,8 @@ export default function App() {
     aria-label="Default select example"
     id="selectedSource"
     name="selectedSource"
-    value={selectedSource}
+                                        value={selectedSource}
+                                        defaultValue={selectedSource}
     onChange={(e) => handleSourceTypes(e)}>
     <option value="">Select option</option>
     {sourceList.map((type, key) => (
@@ -547,7 +590,8 @@ export default function App() {
                         id="otherSource"
                         name="otherSource"
                         placeholder="Specify Other Source"
-                        value={otherSource}
+                                            value={otherSource}
+                                            defaultValue={otherSource}
                         onChange={(e) => setOtherSource(e.target.value)}
                     />
                 </div>

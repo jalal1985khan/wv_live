@@ -162,6 +162,10 @@ border-radius: 25px;
     align-items: flex-start;
 }
 
+.navbar-nav .nav-link.active:hover {
+    color: white !important;
+}
+
 .benefits {
     display: flex;
     justify-content: space-around;
